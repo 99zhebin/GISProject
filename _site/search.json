@@ -25,7 +25,7 @@
     "href": "intro.html#project-tasks",
     "title": "Introduction",
     "section": "Project Tasks",
-    "text": "Project Tasks\nThe project tasks are as follows:\n\nTo compile the necessary data:\n\nLists of Primary Schools and their Postal Codes before and after school mergers, closures and relocations\nList of Singapore subzones affected by school closures\n\nTo derive new data sets:\n\nSingapore road network"
+    "text": "Project Tasks\nThe project tasks are as follows:\n\nTo compile the necessary data:\n\nSingapore road network\n\nTo derive new data sets:\n\nLists of Primary Schools and their Postal Codes before and after school mergers, closures and relocations\nList of Singapore subzones affected by school closures\n\nTo perform Network Analysis on the locations of primary schools in Singapore before and after closures to find areas in Singapore disproportionately far away from primary schools after the change.\nTo provide recommendations on new schools or new estate locations based on our findings"
   },
   {
     "objectID": "intro.html#the-data",

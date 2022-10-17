@@ -15,13 +15,17 @@ The project tasks are as follows:
 
 -   To compile the necessary data:
 
+    -   Singapore road network
+
+-   To derive new data sets:
+
     -   Lists of Primary Schools and their Postal Codes before and after school mergers, closures and relocations
 
     -   List of Singapore subzones affected by school closures
 
--   To derive new data sets:
+-   To perform Network Analysis on the locations of primary schools in Singapore before and after closures to find areas in Singapore disproportionately far away from primary schools after the change.
 
-    -   Singapore road network
+-   To provide recommendations on new schools or new estate locations based on our findings
 
 ## The Data
 
