@@ -1,7 +1,3 @@
----
-title: "GISProject"
----
-
 # Welcome to our GIS Project Website! {style="text-align: center"}
 
 This is the project website for AY2022-23 SMT201 G1 Group 2 and our project \_\_\_\_\_\_\_\_\_
