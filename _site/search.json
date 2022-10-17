@@ -18,20 +18,20 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "This is"
+    "text": "Our project _________, aims to find the impact of closures or mergers of primary schools on the equity of access to primary school education in Singapore.\nOur group chose to tackle this problem due to the competitiveness in primary school enrollment for schools in nearby neighborhoods. Since 2017, MOE started announcing school mergers and closures in waves every year, in order to improve “the quality of the school experience” due to declining birth rates leading to low-enrolment schools with insufficient class sizes. By merging these schools, MOE wants to maintain class sizes so schools can offer wider ranges of subjects, CCAs and programmes. Our group’s objective is to find if these school mergers and closures have resulted in certain estates and subzones getting left behind in terms of access to nearby schools as their schools have been shut down."
   },
   {
     "objectID": "intro.html#project-tasks",
     "href": "intro.html#project-tasks",
     "title": "Introduction",
     "section": "Project Tasks",
-    "text": "Project Tasks\nThe project tasks are as follows:\n\nto compile the necessary data\nto derive new data sets"
+    "text": "Project Tasks\nThe project tasks are as follows:\n\nTo compile the necessary data:\n\nLists of Primary Schools and their Postal Codes before and after school mergers, closures and relocations\nList of Singapore subzones affected by school closures\n\nTo derive new data sets:\n\nSingapore road network"
   },
   {
     "objectID": "intro.html#the-data",
     "href": "intro.html#the-data",
     "title": "Introduction",
     "section": "The Data",
-    "text": "The Data\nThe following data sets will be used:"
+    "text": "The Data\nThe following data sets will be used:\n\nSingapore School Locations from geo.sg\nListing of all school location changes in Singapore from 2010 - elite.com.sg\nRoad data from Open Street Maps downloaded from GeoFabrik\nMaster Plan 2019 Subzone Boundary (No Sea) from Data.gov.sg"
   }
 ]
