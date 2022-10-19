@@ -31,10 +31,14 @@ The project tasks are as follows:
 
 The following data sets will be used:
 
-1.  Singapore School Locations from [geo.sg](https://geo.sg/gmaps/singapore-schools/show_data)
+1.  Singapore School Locations from School Directory and Information on [Data.gov.sg](https://data.gov.sg/dataset/school-directory-and-information)
 
 2.  Listing of all school location changes in Singapore from 2010 - [elite.com.sg](https://elite.com.sg/school-change)
 
 3.  Road data from Open Street Maps downloaded from [GeoFabrik](https://download.geofabrik.de/asia/malaysia-singapore-brunei.html)
 
 4.  Master Plan 2019 Subzone Boundary (No Sea) from [Data.gov.sg](https://data.gov.sg/dataset/master-plan-2019-subzone-boundary-no-sea)
+
+## Project Timeline
+
+![](images/Gantt%20Chart.png){fig-align="center"}
