@@ -18,14 +18,14 @@
     "href": "intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "Our project _________, aims to find the impact of closures or mergers of primary schools on the equity of access to primary school education in Singapore.\nOur group chose to tackle this problem due to the competitiveness in primary school enrollment for schools in nearby neighborhoods. Since 2017, MOE started announcing school mergers and closures in waves every year, in order to improve “the quality of the school experience” due to declining birth rates leading to low-enrolment schools with insufficient class sizes. By merging these schools, MOE wants to maintain class sizes so schools can offer wider ranges of subjects, CCAs and programmes. Our group’s objective is to find if these school mergers and closures have resulted in certain estates and subzones getting left behind in terms of access to nearby schools as their schools have been shut down."
+    "text": "Our project _________, aims to find the impact of closures or mergers of schools on the equity of access to education in Singapore.\nOur group chose to tackle this problem due to the competitiveness in primary school enrollment for schools in nearby neighborhoods. Since 2017, MOE started announcing school mergers and closures in waves every year, in order to improve “the quality of the school experience” due to declining birth rates leading to low-enrolment schools with insufficient class sizes. By merging these schools, MOE wants to maintain class sizes so schools can offer wider ranges of subjects, CCAs and programmes. Our group’s objective is to find if these school mergers and closures have resulted in certain estates and subzones getting left behind in terms of access to nearby schools as their schools have been shut down."
   },
   {
     "objectID": "intro.html#project-tasks",
     "href": "intro.html#project-tasks",
     "title": "Introduction",
     "section": "Project Tasks",
-    "text": "Project Tasks\nThe project tasks are as follows:\n\nTo compile the necessary data:\n\nSingapore road network\n\nTo derive new data sets:\n\nLists of Primary Schools and their Postal Codes before and after school mergers, closures and relocations\nList of Singapore subzones affected by school closures\n\nTo perform Network Analysis on the locations of primary schools in Singapore before and after closures to find areas in Singapore disproportionately far away from primary schools after the change.\nTo provide recommendations on new schools or new estate locations based on our findings"
+    "text": "Project Tasks\nThe project tasks are as follows:\n\nTo compile the necessary data:\n\nSingapore road network\nSingapore MRT network\n\nTo derive new data sets:\n\nLists of Schools and their Postal Codes before and after school mergers, closures and relocations\nList of Singapore subzones affected by school closures\n\nTo perform Network Analysis on the locations of primary schools in Singapore before and after closures to find areas in Singapore disproportionately far away from primary, secondary and tertiary schools after the change.\nTo provide recommendations on new schools or new estate locations based on our findings"
   },
   {
     "objectID": "intro.html#the-data",
