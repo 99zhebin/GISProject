@@ -32,7 +32,7 @@
     "href": "intro.html#the-data",
     "title": "Introduction",
     "section": "The Data",
-    "text": "The Data\nThe following data sets will be used:\n\nSingapore School Locations from School Directory and Information on Data.gov.sg\nListing of all school location changes in Singapore from 2010 - elite.com.sg\nRoad data from Open Street Maps downloaded from GeoFabrik\nMaster Plan 2019 Subzone Boundary (No Sea) from Data.gov.sg"
+    "text": "The Data\nThe following data sets will be used:\n\nSingapore School Locations from School Directory and Information on Data.gov.sg\nListing of all school location changes in Singapore from 2010 - elite.com.sg\nTrain Station Dataset - LTA Data Mall\nRoad data and MRT track data from Open Street Maps downloaded from GeoFabrik\nMaster Plan 2019 Subzone Boundary (No Sea) from Data.gov.sg"
   },
   {
     "objectID": "intro.html#project-timeline",

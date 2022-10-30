@@ -35,9 +35,11 @@ The following data sets will be used:
 
 2.  Listing of all school location changes in Singapore from 2010 - [elite.com.sg](https://elite.com.sg/school-change)
 
-3.  Road data from Open Street Maps downloaded from [GeoFabrik](https://download.geofabrik.de/asia/malaysia-singapore-brunei.html)
+3.  Train Station Dataset - [LTA Data Mall](https://datamall.lta.gov.sg/content/datamall/en/static-data.html)
 
-4.  Master Plan 2019 Subzone Boundary (No Sea) from [Data.gov.sg](https://data.gov.sg/dataset/master-plan-2019-subzone-boundary-no-sea)
+4.  Road data and MRT track data from Open Street Maps downloaded from [GeoFabrik](https://download.geofabrik.de/asia/malaysia-singapore-brunei.html)
+
+5.  Master Plan 2019 Subzone Boundary (No Sea) from [Data.gov.sg](https://data.gov.sg/dataset/master-plan-2019-subzone-boundary-no-sea)
 
 ## Project Timeline
 
