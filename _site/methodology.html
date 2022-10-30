@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>GISProject - Methodology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">GISProject</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./intro.html">Introduction</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./methodology.html" aria-current="page">Methodology</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./analysis.html">Analysis</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./findings.html">Results and Discussion</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#step-by-step-guide" id="toc-step-by-step-guide" class="nav-link active" data-scroll-target="#step-by-step-guide">Step by Step Guide</a>
+  <ul class="collapse">
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">1.0 Data Collection</a></li>
+  <li><a href="#data-preparation-data-cleaning-and-qgis-project-setup" id="toc-data-preparation-data-cleaning-and-qgis-project-setup" class="nav-link" data-scroll-target="#data-preparation-data-cleaning-and-qgis-project-setup">2.0 Data Preparation, Data Cleaning and QGIS Project Setup</a></li>
+  <li><a href="#preparing-maps-for-analysis" id="toc-preparing-maps-for-analysis" class="nav-link" data-scroll-target="#preparing-maps-for-analysis">3.0 Preparing Maps for Analysis</a></li>
+  </ul></li>
+  <li><a href="#accessibility-analysis-for-secondary-school" id="toc-accessibility-analysis-for-secondary-school" class="nav-link" data-scroll-target="#accessibility-analysis-for-secondary-school">Accessibility Analysis for Secondary School&nbsp;</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">1.0 Data Preparation&nbsp;</a>
+  <ul class="collapse">
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">1.1 Data cleaning&nbsp;</a></li>
+  <li><a href="#geocode-the-prepared-data" id="toc-geocode-the-prepared-data" class="nav-link" data-scroll-target="#geocode-the-prepared-data">1.1 Geocode the prepared data</a></li>
+  </ul></li>
+  <li><a href="#preparing-base-layer-for-study-area-1" id="toc-preparing-base-layer-for-study-area-1" class="nav-link" data-scroll-target="#preparing-base-layer-for-study-area-1">2.0&nbsp; Preparing base layer for study area</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Methodology</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="step-by-step-guide" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-guide">Step by Step Guide</h2>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">1.0 Data Collection</h3>
+<section id="downloading-data" class="level4">
+<h4 class="anchored" data-anchor-id="downloading-data">1.1 Downloading Data</h4>
+<p>Firstly, you are required to download the following data from data.gov.sg:</p>
+<ol type="1">
+<li><p><a href="https://data.gov.sg/dataset/master-plan-2019-subzone-boundary-no-sea">Master Plan 2019 Subzone Boundary (No Sea)</a></p></li>
+<li><p><a href="https://data.gov.sg/dataset/school-directory-and-information">General Information of Schools</a></p></li>
+</ol>
+<p>Next, you are required to download geospatial data from <a href="https://download.geofabrik.de/asia/malaysia-singapore-brunei.html">geofabrik</a>:&nbsp;</p>
+<ol type="1">
+<li>Roads data from OpenStreetMap (OSM) data sets&nbsp;</li>
+</ol>
+<ul>
+<li>Click on Asia → Malaysia, Singapore, and Brunei → Download malaysia-singapore-brunei-latest-free.shp.zip&nbsp;</li>
+</ul>
+<p>Next, you are required to download MRT data (Train Station) from the <a href="https://datamall.lta.gov.sg/content/datamall/en/static-data.html">Land Transport Authority (LTA) Data Mall</a>. The data set provides the locations of MRT stations in Singapore.&nbsp;</p>
+</section>
+<section id="managing-the-imported-data" class="level4">
+<h4 class="anchored" data-anchor-id="managing-the-imported-data">1.2 Managing the Imported Data</h4>
+<p>Assuming the root directory of this project is called GISProject, create a sub-folder called data.</p>
+<ul>
+<li><p>Place the downloaded data from data.gov.sg and LTA Data Mall into the data sub-folder</p>
+<ul>
+<li><p>Unzip the respective zipped files,</p></li>
+<li><p>Extract the zipped files, and</p></li>
+<li><p>Place them in data folder</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="data-preparation-data-cleaning-and-qgis-project-setup" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation-data-cleaning-and-qgis-project-setup">2.0 Data Preparation, Data Cleaning and QGIS Project Setup</h3>
+<section id="creating-a-new-project-and-assigning-project-coordinate-system-for-new-project" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-new-project-and-assigning-project-coordinate-system-for-new-project">2.1 Creating a New Project and Assigning Project Coordinate System for New Project</h4>
+<ol type="1">
+<li><p>From Windows Desktop, launch QGIS.&nbsp;</p></li>
+<li><p>You will start a new QGIS project. From the menu bar, select <strong>Project → New</strong>.&nbsp;</p></li>
+<li><p>Ensure that your projection system at the bottom right bar is using EPSG:3414, if not reassign the projection system by selecting SVY21 / Singapore TM.</p></li>
+</ol>
+<p><img src="https://lh6.googleusercontent.com/bwKWnQl9JdxpcVqCMOKEn3o1XJhLiHtPfUR_cbR3RionwEAL0kwopM45PMllwXqSJtIz0H9JTRHYU53otj3D4aqNDwOA2tmJNEIjGM0KCvkR_MQ2_y7ZiR5D6HyJi1bgsM26AhOXk6fxUNxE8DX-mP0rVJj3SMF2WdHMbaFXo1oMynNW0VFavI2IrQ.png" class="img-fluid"></p>
+<p>Notice that the projection system has been updated to EPSG:3414 now.</p>
+<p><img src="https://lh4.googleusercontent.com/FrJeuwHSEMfrALtKD23aYDLSkW3Mn2BZqlBkoE3p6ni0LP9UPu9JYHBrGdjVJESNdUosM6Si-00jxMKC-schBQ9aV5lepZIUp8TIrquYObsUZvo3fz1kT199WJkWf5QWVORVqyNnTomMM9rUGsrdWNkgwNn4RHfDlYMPhgBnjwSJ82Cpt0CzhdA6lA.png" class="img-fluid"></p>
+</section>
+<section id="saving-your-project" class="level4">
+<h4 class="anchored" data-anchor-id="saving-your-project">2.1.1 Saving your project</h4>
+<p>It is time to save the project.&nbsp;</p>
+<ol type="1">
+<li><p>From the menu bar, click <strong>Project → Save</strong>.&nbsp;</p></li>
+<li><p>At the <strong>Choose a QGIS project file</strong> dialog window, navigate to the root project folder, then provide a proper project name such as GISProject in QGIS files (.qgs) format from the <strong>Save as type</strong>: dropdown list. Your screen should look similar to the screenshot below.</p></li>
+</ol>
+<p><img src="https://lh4.googleusercontent.com/-C7G9FQli426MwwYc_YV86TGcgrJEHQVNoiY9kBE7iJGC1uKZH7FVQPZ6EC01XIvQnEZGWk1wtfzkNwCvcqH1eeXTQYln78f5FybWcMqlfuAoQQY6WLTcQvMH_UYJwxnFbuSvk4kxrTPQbAxjcFHlTAztRvpP0wYj5PEqE84Xrpe7FAJe4BPMgaFiw.png" class="img-fluid"></p>
+</section>
+<section id="preparing-base-layer-for-study-area" class="level4">
+<h4 class="anchored" data-anchor-id="preparing-base-layer-for-study-area">2.2 Preparing base layer for study area</h4>
+<p>Our study area would be the Singapore Planning Subzone excluding all the outer islands&nbsp; such as Pulau Ubin and Pulau Tekong.</p>
+<ol type="1">
+<li>From the <strong>Browser</strong> panel, navigate to the path of GISProject as shown in the screenshot below.&nbsp;</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/HabmqiwHJmgOHpcGyIlpkNzSuW9xn62-FHVoprPTLfQKm_Jguv6VKidfPqzN9lFRbb36JfSQzq1awTCDlSpzuBv08hn0cyoNAmg8_KDMVVvaZdFTTVmKWGj-XAeqbJG3k-AVkZx8uBYuyP9_52kqXIeVuw2omm-kIbm4UV_VR1F1pV4eHwKwV88VDw.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>Double click on URA_MP19_SUBZONE_NO_SEA_PL.shp Notice that URA_MP19_SUBZONE_NO_SEA_PL.shp is added in the <strong>Layer</strong> panel.&nbsp;&nbsp;</p></li>
+<li><p>The View window should look like this.&nbsp;</p></li>
+</ol>
+<p><img src="https://lh6.googleusercontent.com/ckvbH39E1jW7LaHn4-dk5iuzKdnn6_Hg-YguSJqDsjJ4kLA979THNMFebuQt2fKbvv_Cm-Vb9hikQOvZRFXc_ViAv5kSWP-dxIZ-8VmqE8G83ylRAGz_May5tXvzciSlj4_QYU3QDwGajljXdBlTpL9bas3H-U_OLVJ0WtOisJxNSQuC0ewzVm1Otg.png" class="img-fluid"></p>
+<p>We will now select the main island of Singapore, excluding the outer islands.&nbsp;</p>
+<ol type="1">
+<li>From the toolbar, click <strong>Select Features by Polygon</strong></li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/YE7ygowf46IwM0ktmyzCRuLyS58moctBTU-tIYhMdbTOdVK99Qh_Q4tj0kVLKkNAH3hHqA1NDi9ELr6Xa-v4e_t7OCJXfF4jpiBp3zScfUD8CI7hI7f1IDxxcaMmjI0Jms2hFjzA5SN-sZAB9HuUm0_KK_8GPuq9XOEHRdBsw5hYUfLGz-1EqW6AKg.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Select the main island of Singapore. Your screen should look similar to the screenshot below.</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/bDad4Shiv5LhAyH23OEvoZVucRh4L5Nq6Rl9uRzHUzWjAgDH2bNj5etIytmWCaJmVjFgNT6TyYu4Mh-dvuVnjhG_Ib8iLAO5ChP1YguX5k21bzksRcsXr3beWQwvNWYMV4ogZJaRGvbF9_KDMiXKUfF_LsJc0wEDE7__mgCqCtw8QKhMd7lSoKXIWw.png" class="img-fluid"></p>
+</section>
+<section id="storing-your-data-sets-in-geopackage-format" class="level4">
+<h4 class="anchored" data-anchor-id="storing-your-data-sets-in-geopackage-format">2.3 Storing your data sets in GeoPackage format</h4>
+<ol type="1">
+<li><p>Save all your data sets into an integrated database called GISProject.</p></li>
+<li><p>From the <strong>Layers</strong> panel, right-click on URA_MP19_SUBZONE_NO_SEA_PL layer.</p></li>
+<li><p>Select <strong>Export → Save Selected Features As</strong> from the context menu.</p>
+<ol type="1">
+<li><p>The <strong>Save Vector Layer</strong> dialog window appears. For <strong>Format</strong>, select GeoPackage from the drop-down list.&nbsp;</p></li>
+<li><p>For <strong>Save as</strong>, click on the Browse button. The <strong>Save Layer As</strong> dialog window appears</p></li>
+<li><p>Navigate to \GISProject\Geopackage\ sub-folder.&nbsp;</p></li>
+<li><p>For <strong>File Name</strong>, type GISProject.&nbsp;</p></li>
+<li><p>Rename your layer as MP19_SUBZONE.&nbsp;</p></li>
+<li><p>Check that the CRS is Project CRS: EPSG:3414 – SVY21</p></li>
+</ol></li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/IBEWinEhH8wZUDvhIzZ82yC98CMwQ_oFP-UOkNxngwW3xrYowVfIFmMZvS7I5exBWNyxLWhVR7ZuKpFxmzSoVQOk6LXKuRKW1Ri-Q8wy6xa0xcR2oNeTl5y1-fqXzIL-fHmxUBrGdodVoQ6Af8U6b8Z5ytJ4zMxSd6QMlSM45fdPKcjgw7P3Kaeltg.png" class="img-fluid"></p>
+<p>From the Layers panel, right click the URA_MP19_SUBZONE_NO_SEA_PL layer and click <strong>Remove Layer.</strong></p>
+</section>
+<section id="preparation-of-primary-school-layer" class="level4">
+<h4 class="anchored" data-anchor-id="preparation-of-primary-school-layer">2.4 Preparation of Primary School Layer</h4>
+<p>Review the content of general-information-of-schools.csv file. Locate and open the file with <strong>Excel.</strong></p>
+<p>Your screen should look like the figure below.</p>
+<p><img src="https://lh4.googleusercontent.com/3bsiDILqB6i5n_KWOVo6GMyl1hPrHO1va6vmN7IQFw-GYFW1F75jKN3G2h6cENOs7_t_gIMZLjEO5tS_rjXQ70Bo4AySQn9J8FPDW_437lgOVvvgY9p4ohVXEw9MNmbuC3Ww5fXdOfhgWuWYAn2wB1IHtPCf36vUikjnjKy08X2Gz77qaiugEg2dPg.png" class="img-fluid"></p>
+<ol type="1">
+<li>Using appropriate Excel functions to sort the schools according to the&nbsp; mainlevel_code field, retain only the schools categorized as Primary.&nbsp;</li>
+</ol>
+<p>Take note that there are 3 Primary Schools: Catholic High School, CHIJ St.&nbsp;Nicholas Girls'&nbsp; School and Maris Stella High School categorized as Mixed Levels under the mainlevel_code.&nbsp;</p>
+<ol start="2" type="1">
+<li><p>Using appropriate Excel function, retain the school_name, address,&nbsp; postal_code, and mainlevel_code field and delete the unwanted fields.&nbsp;</p></li>
+<li><p>Create two new fields: country and city fields</p></li>
+<li><p>Fill the two fields with Singapore</p></li>
+<li><p>The final general-information-of-schools.csv should look like this. Save the file.</p></li>
+</ol>
+<p><img src="https://lh5.googleusercontent.com/jKfnkA7gLytkN_nCxAOjhyI3MuRsDqfpbk1B8xzcR6iID_9PnFf_OPF0OMc8KGXYpG_xgvbu16734BA8gTciknZrvz9PuuDPIN6Xtg0FhHI3SzPJkMX-fQhP0hdvf1sj419zV07dELN7X0iaiTo2GpXZJf2HCoQWF0zn6rvY-h03BPVNNvDTg93Tkw.png" class="img-fluid"></p>
+</section>
+<section id="geocoding-prepared-data" class="level4">
+<h4 class="anchored" data-anchor-id="geocoding-prepared-data">2.4.1 Geocoding Prepared Data</h4>
+<ol type="1">
+<li>Geocode the general-information-of-schools data set by using SLA OneMap API. Save the geocoded data set in &nbsp;geocoded_school.csv. The geocoded data set should have the new fields Latitude and Longitude.</li>
+</ol>
+<p>The geocoded_school.csv should look similar to this.</p>
+<p><img src="https://lh6.googleusercontent.com/VSe1dVfZmRfwW3qR6rLotzSPQ-txM-1LTHStKWxVRN2aVp0mH7YhwRbR8AonsU16RZMgeK7Z3zPRY9VjKlbGa42RAaH8ZimUoPDo2l_aFiSC7KbAjlGc_6ttqb-eUmWAqH6zr1s0I-ulLZjCCwZaYkaU3zBpGSW4lOZ9keAdVABHAd_ctmkD_YJBOA.png" class="img-fluid"></p>
+<p>Notice the first 4 entries do not have values under Latitude and Longitude.</p>
+<ol start="2" type="1">
+<li><p>Collate the 4 primary schools without any values in the Latitude and Longitude fields and save them in not-foundschools.csv.&nbsp;</p>
+<ol type="1">
+<li><p>Create two new fields: country and city&nbsp;</p></li>
+<li><p>Fill the cell below country and city fields with Singapore.&nbsp;</p></li>
+</ol></li>
+</ol>
+<p>The final not-foundschools.csv should look similar to this.&nbsp;</p>
+<p><img src="https://lh6.googleusercontent.com/suX0hTnkzvf7rxV3PRvBMU6a2AWOgoZ9fQSA5JU2YzjobSPOY_MQKEDtnMw44RYySJhyWguYhGCxre83mr6MNusS7L4TbIQF7aVearFd76ucGcZH86gNS1ogzSYMtG0STaq_R1oUfiBjbNJp6HkwH6qo_79aNCb6UGtSOpFwLSXkppm4mAcBDFNBuA.png" class="img-fluid"></p>
+</section>
+<section id="installing-the-mmqgis-plugin" class="level4">
+<h4 class="anchored" data-anchor-id="installing-the-mmqgis-plugin"><strong>Installing the MMQGIS Plugin</strong></h4>
+<p>To install the MMQGIS plugin, you will need to load the QGIS plugin repository by following the steps below.</p>
+<ul>
+<li>From the menu bar, select <strong>Plugins → Manage and Install Plugins.</strong></li>
+</ul>
+<p><strong>Plugins</strong> dialog window appears as shown below.</p>
+<p><img src="https://lh5.googleusercontent.com/AU7ih_t3A9OirBDUK4Ui0U__dkKO9nTT92ncUm-vX4EU84kwOPeff1ICmyyxzQgNCeCCWChJHbbwN_3c2KvSWhkKBD6_tgouQUafqrqAFhz1K7BXjuXj3FfBs7S_w6WBDl1GPckPG2BIRjPtJ52BR9WwhyKPrjOx5JnJFUslnD1xJ0ca8hZzOKLTZw.png" class="img-fluid"></p>
+<p>Notice that there is a long list of plugins available. We can use the Search function to locate mmqgis plugin easily.</p>
+<ul>
+<li>At Search, type mmqgis.</li>
+</ul>
+<p>Your screen should look similar to the figure below.</p>
+<p><img src="https://lh3.googleusercontent.com/6T-firBRqp2LLfjf-kZ12Bi6N3NdJrvZJnsgBp0tsJSo1p5jQoi3_VocWSvrpnEJ2NK1eewBcBf7YHIU9kR-RwTUk4fmIhaP9ZG02pbpKiasV1Df7OvHcRxN_zlZerlR0xhqKCQUnWrqG5Ep2-QhZPu01wlWeA8DE2jCJh86UeSFl5kW8hHsigyJcA.png" class="img-fluid"></p>
+<ul>
+<li>Click on <strong>Install Plugin</strong> button to run the installer.</li>
+</ul>
+<p>After installing mmqgis plugin, remember to close the <strong>Plugin</strong> dialog window.</p>
+<ul>
+<li>Click on <strong>Close</strong> button.</li>
+</ul>
+</section>
+<section id="geocoding-using-mmqgis-plugin" class="level4">
+<h4 class="anchored" data-anchor-id="geocoding-using-mmqgis-plugin">Geocoding using MMQGIS Plugin</h4>
+<p>Now, you are ready geocode not-foundschools dataset.</p>
+<ul>
+<li>From the menu bar, select <strong>MMQGIS → Geocode → Geocode CSV with Web Service.</strong></li>
+</ul>
+<p>Web Service Geocode dialog window appears.</p>
+<p><img src="https://lh4.googleusercontent.com/sN1WI43lLSsUAxQBqegOc3yvm43Xrfe5awAXv3A9fJapOb41LhUcrgR8YJkYm6Nv6B4CBOeruNe-iQMPqb4IyArTVWObEIQoElq5OVgAEw6gKmO3wc5rRLicTLz-3Tcu1dz43JC-i7u4ROULRi_V25S3tSAZhzlGo9IEXosgHeGicOe11HQtjwNOIQ.png" class="img-fluid"></p>
+<ul>
+<li>From Input CSV File (UTF-8), click on <strong>Browse</strong> button.</li>
+</ul>
+<p>Select a file dialog window appears.</p>
+<ul>
+<li><p>Navigate to the path where &nbsp;not-foundschools.csv reside.</p></li>
+<li><p>Click on not-foundschools.csv.</p></li>
+<li><p>Click on <strong>Open</strong> button.</p></li>
+</ul>
+<p>Your screen should similar to the screenshot below.</p>
+<p><img src="https://lh6.googleusercontent.com/XXtFLbgVp1P-zucryTev-toEt530dghOxFYMlylEjr7YKGgaAiBhoWD_W5HJevdogbyqg5FJqcOKyLU5b7AJLJlmK-DijS4Xq8nc_lhUM9dZasdqhNjictvGJG2kKV08vOyjgre-ME-IIDthKsvcxhQpjZ-G-K85QxbtL3AC49lAx25waFGVWme2Zw.png" class="img-fluid"></p>
+<ul>
+<li>For Web Service, select OpenStreetMap/Nominatim from the drop-down list.</li>
+</ul>
+<p>Geocode Tool will generate two output files. They are a point feature GIS data set along with a Not Found CSV file containing all rows that could not be geocoded (for whatever reason). We need to tell Geocode Tool where to keep these two output files.</p>
+<ul>
+<li><p>Use File Explorer to create a new sub-folder called geocoding in GISProject directory.</p></li>
+<li><p>For Output File Name, click on Browse button.</p></li>
+</ul>
+<p>Create or select a file dialog window appears.</p>
+<ul>
+<li><p>Navigate to the newly create geocoding sub-folder.</p></li>
+<li><p>For File name, type geocoded_sch.shp</p></li>
+<li><p>Click on Save button.</p></li>
+</ul>
+<p>You also need to provide the Not Found List Output list a place holder.</p>
+<ul>
+<li>For Not Found Output list, click on Browse button.</li>
+</ul>
+<p>Create or select a file dialog window appears.</p>
+<ul>
+<li><p>Navigate to the newly create geocoding sub-folder.</p></li>
+<li><p>For File name, type not_found_sch.csv</p></li>
+<li><p>Click on Save button.</p></li>
+</ul>
+<p>The completed dialog window should look similar to the screenshot below.</p>
+<p><img src="https://lh4.googleusercontent.com/nWWyRs9z5_0nphh07PPePY4h_yCMBEvbUVWPAPeLn3SxYWQcDRLjDlzanPAIesJy_TWr5ArJld6hxNMgXiddvAoYcV1yve3WDiEHu81Nht19FVyzqKhv2IoS3H_N_0AtReZegqSx6qJGQ-H_1KUqp_9kctLi5kkA-9BrLdYRPjvskBfPF2k3x_UGPA.png" class="img-fluid"></p>
+<p>Now, you are ready to perform the geocoding function.</p>
+<ul>
+<li>At the Web Service Geocode dialog window, click on <strong>Apply</strong> button.</li>
+</ul>
+<p>When the geocoding function is completed, notice that a new shapefile layer will be added on QGIS map window. At the same time, the progress bar will indicate numbers of records that have been geocoded successfully.</p>
+<ul>
+<li>Click on the <strong>Close</strong> button to close the dialog window.</li>
+</ul>
+<p>At the <strong>Layers</strong> panel, right-click on &nbsp;geocoded_schs layer → <strong>Open Attribute Table</strong></p>
+<p><img src="https://lh3.googleusercontent.com/ehmS9bAPzJTB0bK-EjNCo0d1v1xC3Tytrdn9FkHKHDaHjSIMqqzIA8Brp8rQu_Trfcm68ubVuiZOu0hQf73QaoIeC9Inn2CGLO3VkIh1jxN2NXW7p2HiHEYWRFKzk0QONJOWB2rBK3p9cdslLvaVSOg-dQVouVY64al42FrpHu50faMRH0Hnb_X3xw.png" class="img-fluid"></p>
+<ul>
+<li><p>Extract the values from the latlong field and fill in the missing Latitude and Longitude of the 3 primary schools in the geocoded_school.csv.&nbsp;</p></li>
+<li><p>The final geocoded_school.csv should look similar to the screenshot below. Save the file as primary_schools.csv.</p></li>
+</ul>
+<p><img src="https://lh4.googleusercontent.com/FQsbturdPtCsO6eCrBvk09yDWQLfBA7bik_pyvRkEQ2vG_hgq-OEOEi6BVGgsO1FZYdBk27cgI9uY-E2ACKtnwGNl9K3SIhA_qkEyP8HhfLffm6sm8lWPZbyakQte5HRU1uKTjnppLqdOQidbNpvcoBe2SoM8rvdF8A6oTWLpBNs4zhrAuYlqRelhA.png" class="img-fluid"></p>
+</section>
+<section id="adding-primary-school-layer-into-qgis-project" class="level4">
+<h4 class="anchored" data-anchor-id="adding-primary-school-layer-into-qgis-project">2.4.2 Adding Primary School Layer into QGIS Project</h4>
+<p>We will now import the primary school csv into the project.&nbsp;</p>
+<ul>
+<li>Click <strong>Layer → Add Layer → Add Raster Layer.</strong></li>
+</ul>
+<p><img src="https://lh6.googleusercontent.com/_dDn6XtpHsJVRD3o52eFYsECMacand1SSWKKZJyKFa-YxBTd0fWc7dED7IMWYD-9k5MA7dzAQQwSV32HDyDPJ0k4fa5PjXC5l9XKSdQC9U1ZKa8IOalQ8mznyw2VGQKD47nR5V7qx2OafHm4_wMSl_phTWUgzlX6oiCrfPEZO69ru8AKbpAmEJXq_Q.png" class="img-fluid"></p>
+<p><strong>Data Source Manager | Delimited Text</strong> dialog window appears.&nbsp;</p>
+<ul>
+<li><p>For <strong>File name,</strong> navigate to the folder where the primary school csv resides</p></li>
+<li><p>For <strong>Geometry Definition</strong>, click Point coordinates and ensure <strong>X field</strong> is set as Longitude and <strong>Y field</strong> is set as Latitude</p></li>
+<li><p>Click <strong>Add</strong> button.</p></li>
+<li><p>Click <strong>Close</strong> button.</p></li>
+</ul>
+<p><img src="https://lh5.googleusercontent.com/Kdnb1C55S3ZAlqDdQpT99qhfNFvWDD1ur-hOWG2axf3Qz_OakI34Vph8emB7Hysn3E1CHjZKcrC_ZdbxnpzdQ4uF-Z11MjijxupVRUJdGjsVBOC70J-JViS-oPMn8ClaghiNu__FOHd1d3pmKhB3Q_uF299QQyYESA7QRggDw_m-WcsqII0Oz4XjLw.png" class="img-fluid"></p>
+<p>In the <strong>Layers</strong> panel, notice that the primary_schools layer has been added.&nbsp;</p>
+<p><img src="https://lh6.googleusercontent.com/b1Ru68nDvxvtSv8nnqg_pf6DOOhvbEvW3BjcKi5hwaJUG4lhjye5OlP4V0POGyVf-tPcUAZOSaZ8GcVcAwxCjO8dgaVQKpecB49A_X56WZfIjq4wO2jFzm0PW5u63f1kaNT7FhmU3Fo0BXY4itAVVyLi7mT24N5_uhM_pT0huAcWm3XzXnAxewO1AQ.png" class="img-fluid"></p>
+</section>
+<section id="preparation-of-road-network-layer" class="level4">
+<h4 class="anchored" data-anchor-id="preparation-of-road-network-layer">2.5 Preparation of Road Network Layer</h4>
+<p>Using the steps learned from the previous section, import the Road Network Data (gis_osm_roads_free_1.shp) into QGIS. The Road Network data contains road networks from Malaysia, Brunei and Singapore.</p>
+</section>
+<section id="selecting-all-road-networks-within-the-study-area" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-all-road-networks-within-the-study-area">2.5.1 Selecting all road networks within the study area</h4>
+<p>Using spatial query function of QGIS, extract the road network features that fall within Singapore mainland study area.&nbsp;</p>
+<ol type="1">
+<li><p>From the icon bar, click on the drop-down list next to <strong>Selection</strong> icon</p>
+<ol type="1">
+<li>Select <strong>Select Features by Polygon</strong> from the drop-down list</li>
+</ol></li>
+</ol>
+<p><img src="https://lh5.googleusercontent.com/oDcbiJF2vKw8ZFL6Wp6tey16yei39wvzkNg6B_8uUSIF7A2opAHUo9-EnguOTenHfNXavQOoxo-8tDvGLxL-q-bBShr1D7a5hik1lXUVvd_0ANPtnoBd1p37k3pfK3lbAl-q5EOy70xsROvZuAMv1z3SK-USEp-SaMNmxPVwbQJEnIfEssDpemQUkg.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>At <strong>Browser</strong> panel, click on gis_osm_roads_free_1 to make sure that it is the active layer.</p></li>
+<li><p>Click and drape to form a freehand coloured shape to cover all the road network features that fall within Singapore mainland.&nbsp;</p></li>
+<li><p>Next, release the mouse and notice that all the selected features are highlighted.</p></li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/xbuv7LJfZ7FTYmd3GC2BJaiXh8j7pd-84fT9J1My4ogeEZ93vXT_lvq1NV8kTJiVFYF5nZ-B5JOQs9dduRQjxuMwWRIELmJ3RsvdIoKBTyttszADOkAbqeF61_PeIjef_xb1Er_lbaQ1Aybbm8LRJlc856qEDqzPkD7LOV1q8zte5udJvY306brqSQ.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Using the steps learned from previous sections, save the selected features in GeoPackage format. Name the layer all_road_networks.Your screen should look similar to the screenshot below.</li>
+</ol>
+<p><img src="https://lh5.googleusercontent.com/-1hYoYdf4i8YpVuB5o1IIe_SK-ksYNQpi9mcbKE1O6s6cs1yO2QIYmcG-yvC99UQudGKBMXxFHtS1TytIKdbOCefo8M0hYPTRiISgTDpFvZzF1BfP_4X5v89xuiJ4MYU0cmTwRWPO__-F5iwdPkXWZV2l_TbPwdF6XWkhP0KuK1-I4qUq2MlVkWWTw.png" class="img-fluid"></p>
+<p>To further filter the road network layer, we will exclude roads that are not walking or motor roads.</p>
+<ol type="1">
+<li><p>Under the <strong>Layers</strong> panel, right click on all_road_networks → <strong>Open Attribute Table</strong></p></li>
+<li><p>Click on the <strong>Select features using an expression</strong> icon. The <strong>Select features by expression</strong> dialog window will appear.</p></li>
+<li><p>At the upper left corner of the window, click on the <strong>Expression</strong> tab.</p>
+<ol type="1">
+<li>Under the expression pane, key in the following:</li>
+</ol></li>
+</ol>
+<p><strong>“fclass” not in ('bridleway', 'track', 'track_grade1', 'track_grade2', 'track_grade3', 'track_grade4', 'track_grade5', 'unclassified', 'unknown')</strong></p>
+<p>The query statement in the Expression pane should look similar to this:</p>
+<p><img src="https://lh3.googleusercontent.com/FHu7N2vLUzCGRey8zMHp6S5T5M9Q4UnWdNgt5l5HcsQWnA4BtKhNHazwa0NZMSp6KeN3FV45XdJX7TPK2GxWeS5xoQcRPFILlSjCHfL1LI4GX2nTgAtxCD01mRxfhb_6CGFacsuJY-R1w8YACiFd-YfrkB-TkUpumetsd_2tBwEKpTJEsHA_vA-1qQ.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li><p>Click on <strong>Select Features</strong> button and close the window.</p></li>
+<li><p>Using the steps learned from previous sections, save the selected features in GeoPackage format. Name the layer all_roads.</p></li>
+</ol>
+</section>
+<section id="extracting-motor-vehicle-road-network" class="level4">
+<h4 class="anchored" data-anchor-id="extracting-motor-vehicle-road-network">2.5.2 Extracting Motor Vehicle Road Network</h4>
+<ol start="4" type="1">
+<li><p>Under the <strong>Layers</strong> panel, right click on all_roads → <strong>Open Attribute Table</strong></p></li>
+<li><p>Click on the <strong>Select features using an expression</strong> icon. The <strong>Select features by expression</strong> dialog window will appear.</p></li>
+<li><p>At the upper left corner of the window, click on the <strong>Expression</strong> tab.</p>
+<ol type="1">
+<li>Under the expression pane, key in the following:</li>
+</ol></li>
+</ol>
+<p><strong>“fclass” = ‘motorway’ or “fclass” = ‘motorway_link’ or “fclass” = ‘primary’ or “fclass” = ‘primary_link’ or “fclass” = ‘secondary’ or “fclass” = ‘secondary_link’ or&nbsp; “fclass” = ‘tertiary’ or “fclass” = ‘tertiary_link’ or “fclass” = ‘residential’ or&nbsp; “fclass” = ‘trunk’ or “fclass” = ‘trunk_link’</strong></p>
+<p>The query statement in the Expression pane should look similar to this:</p>
+<p><img src="https://lh3.googleusercontent.com/l8-pSGTiYvwkOmZ3DjpjqXy6-FxNaPAY8ZuyuEMp8mWfUKPFuVAGQD0LAljXjMuS3EWVm-Oh6JXIQOBXUZVMyLII0ij5BDaxqR5Vtrz02USSAL5T3iG4zORkvIqptoWbv3ndvfw3makHUeL1FczbBE-D9o1cAy-93J940_N35--4wP2N6FHQXCtZcA.png" class="img-fluid"></p>
+<ol start="7" type="1">
+<li><p>Click on <strong>Select Features</strong> button and close the window.</p></li>
+<li><p>Using the steps learned from previous sections, save the selected features in GeoPackage format. Name the layer motor_roads.The motor_roads layer should look similar to the screenshot below.</p></li>
+</ol>
+<p><img src="https://lh6.googleusercontent.com/zg_1VasWG2zswxqB-lUvpTHv4LnTmq0Kl-xCznK6fGqqs1vPVaJKmW26mgnElXhCsif3jA1N3dTmhqUF_MyZ5DkPO68HvpbheGBE_BC2nVj2d6-nwBFSunBlR_NRX0I8ceXX6nly20ZmsjMFg8Z7DTNgzO9KzSHTs50tGc8nTXPwvOKQclsWeBzfgg.png" class="img-fluid"></p>
+</section>
+<section id="extracting-pedestrian-path-network" class="level4">
+<h4 class="anchored" data-anchor-id="extracting-pedestrian-path-network">2.5.3 Extracting Pedestrian Path Network</h4>
+<p>Using appropriate QGIS functions learnt from previous sections, extract the pedestrian path network from the all_road_networks layer.</p>
+<ol type="1">
+<li>Under the expression pane, key in the following:</li>
+</ol>
+<p><strong>“fclass” = ‘residential’ or “fclass” = ‘living_street’ or “fclass” = ‘pedestrian’ or&nbsp; “fclass” = ‘service’ or “fclass” = ‘cycleway’ or “fclass” = ‘footway’ or “fclass” = ‘path’ or&nbsp; “fclass” = ‘steps’</strong></p>
+<p><img src="https://lh5.googleusercontent.com/OdCgoIZ3yCkRZSByXyzD7jvC4DbtC-UfCd-gw4rBfDaaYonEi4O7ScW9cObSavcENpjT6qBcmgogbxjQ1Hb_1PFkN7SQJzSELFGjBjn4PRlrUN-wu5dVFdmho_hVa7JzeSBV3QBYdS2D58Nxtz5VygSUX6LoTtDdjBAzqIqHkZrkX72_fi3-wcJ_xQ.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Using the steps learned from previous sections, save the selected features in GeoPackage format. Name the layer walking_roads.The walking_roads layer should look similar to the screenshot below.</li>
+</ol>
+<p><img src="https://lh6.googleusercontent.com/DRohgciAwlrOz0KwQI3ZpRSoZhQojiPz1dLTuOqaQFz3lD7ErSfuTGacBC3UM4TlCkYvWZKvx8P7BKrHTOLtyls8ZbmNnEEA6QWtu8Y3rD2GhwCM6pjM1ATrZnNfEuFFsO1smTkDv52gzBvBQpN_Ce-ltcurJnL_3ZY5reXtyS7r6uajFHpIGW9jXw.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="preparing-maps-for-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="preparing-maps-for-analysis">3.0 Preparing Maps for Analysis</h3>
+<section id="creating-the-hexagon-layer" class="level4">
+<h4 class="anchored" data-anchor-id="creating-the-hexagon-layer">3.1 Creating the hexagon layer</h4>
+<p>Now, we are going to create a hexagon layer by using the MP19_SUBZONE layer as the base. The hexagon distance is 250m.</p>
+<ul>
+<li>From the menu bar, select <strong>Vector → Research Tools → Create Grids</strong>.</li>
+</ul>
+<p><strong>Create Grids</strong> dialog window appears.</p>
+<ul>
+<li>For Grid type: select Hexagon (Polygon) from the drop down list.</li>
+</ul>
+<p><img src="https://lh4.googleusercontent.com/mdnNunHXuZtpG0LU48cDaZySI2mPzY_E_eMNwx14APLOUiLCnKDY63QEzHUmAzt8natsfBDNovXFFqEInBXHagZACBJrfsQUiN3YYZQOi8vTk41l33f0XTNldvGs0HxWX5ssMA9LauhgyQ-lufyKgJHjwGrokHKXGXHF8h3v71OWbO8iHU-pHFXg7w.png" class="img-fluid"></p>
+<ul>
+<li>For Grid extend:, select Calculate from Layer →&nbsp; MP19_SUBZONE</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/B0jZYnQc-RiuqrOH23uBS-Z4EdxxomGNTd43Ds0WXYJDryZT0_6NqxafHDGXohFaWJjvz5z2Roc8ZTkDNcop43K4YSA8mUX4WABKzWBpbu70R75M2TVB3f37ifBruA4-Ss8-gm1y1ap32bMIejzLtXW2stnGVIFfIW39HRU1zJsIMrXv0MuAj8HmUw.png" class="img-fluid"></p>
+<ul>
+<li><p>For Horizontal spacing, type 500.</p></li>
+<li><p>For Vertical spacing, type 500.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>For Grid CRS, make sure that EPSG 3414 is used.</li>
+</ul>
+<p>When you are ready to run the process,</p>
+<ul>
+<li>Click on <strong>Run</strong> button.</li>
+</ul>
+<p>Read the Log before closing the dialog window.</p>
+<ul>
+<li>Click on <strong>Close</strong> button.</li>
+</ul>
+<p>Notice that a new temporary layer called Grid is added on the Layer pane and display on <strong>Map</strong> window.</p>
+<p><img src="https://lh5.googleusercontent.com/CFbBTcYh_aQfBNVEeBb8lxUAZCIJGH-Hg5W5EvIAkdIltLZ1NtZzzmZNvb31MXhHA2Vlc9vGE8S14voFuxxokAH9ud9xjj_ngZjcKKxyumv4MCXqImu7frA4mLwxFqRTELUMwFqlKh9XDIjU-1WKDINOdDWoDftQQq-ITS8UDiZ5mhv8Y9aEPR5a4w.png" class="img-fluid"></p>
+</section>
+<section id="editing-the-hexagon-layer" class="level4">
+<h4 class="anchored" data-anchor-id="editing-the-hexagon-layer">3.1.1 Editing the hexagon layer</h4>
+<p>Using the <strong>Intersection</strong> function, intersect the Grid layer and MP19_SUBZONE layer.</p>
+<p>Using <strong>Select features by polygon</strong> function as learnt in the previous section, select the area that falls under Singapore mainland.&nbsp;</p>
+<p><img src="https://lh4.googleusercontent.com/3X1jHMIkM7pLbADvkhYAfEaT4owZSVAGYqvQu3ihAfsRygAyAGZjL17hZqtySilN6IebhhqmI0Cj21ziLVFiBBrVbtwhpZG6FBmBPd504pJNUqBuScKOkqlYjO9mbFiEVo6arcbLCD94PN4-UiQJW9jtrulKeFrdonuDLaTNgRNghkPWvIA2681WkQ.png" class="img-fluid"></p>
+<p>Your screen should look similar to the screenshot below.</p>
+<p><img src="https://lh6.googleusercontent.com/xC1lfMh1PzSk3YMDy2iLDgGaIArugnXZTi07eHDFje919k3iJatwMdKQ8MjpjVeeuJrjaO0jSqXpRNGqHYDMpJYO40xvlesFQfrjl7P1NtF_9Ay4WUCXONk-ILOHsE8lF8QEO1yB08BI0Ly8CJRVSm1xzNQ_jRFXt0x3Du87k17UqtW_P3b6Z-eH5A.png" class="img-fluid"></p>
+</section>
+<section id="saving-the-hexagon-layer" class="level4">
+<h4 class="anchored" data-anchor-id="saving-the-hexagon-layer">3.1.2 Saving the hexagon layer</h4>
+<p>Using the steps you had learned in previous sections, save the edited Grid layer into GeoPackage format. Name the layer hexagon.</p>
+<p>Before you move on to the next section, remember to remove the temporary Grid layer.</p>
+</section>
+<section id="computing-hexagon-centroid" class="level4">
+<h4 class="anchored" data-anchor-id="computing-hexagon-centroid">3.1.3&nbsp; Computing hexagon centroid</h4>
+<p>In general, network analysis required the demand in a point feature. Hexagon, on the other hand, is a polygon feature. In order to meet the analysis need, we will compute the centroids of the hexagons.</p>
+<ul>
+<li>From the menu bar, select <strong>Vector → Geometry Tools → Centroids.</strong></li>
+</ul>
+<p>Centroids dialog window appears.</p>
+<ul>
+<li>For <strong>Input layer</strong>, select hexagon from the drop-down list.</li>
+</ul>
+<p>When you are ready to run the process,</p>
+<ul>
+<li>Click on <strong>Run</strong> button.</li>
+</ul>
+<p>Reminder: Read the log before closing.</p>
+<ul>
+<li>Click on <strong>Close</strong> button.</li>
+</ul>
+<p>Notice that a new temporary layer called Centroids is added onto the <strong>Layers</strong> panel and display on Map view.</p>
+<p><img src="https://lh3.googleusercontent.com/jwwAf98S1Fhf5VdpzzPgoY5lY8xrkQ8RhyHGrpyktE_6D-QXobOrSc0sS35y6o1uqZ_2J2GFTVpeNJ7Ui8RTP-Bni_tr_mYR-DDWrKn29ZNd5h1d5ahOK_y8QlSGQKxes9QAmpQ8wpRJLQdpzqsIU4WwgGdtX24QOPRps8hfAGZ4gUng0oVPWbEaXw.png" class="img-fluid"></p>
+</section>
+<section id="saving-the-centroid-layer" class="level4">
+<h4 class="anchored" data-anchor-id="saving-the-centroid-layer">3.1.4 Saving the centroid layer</h4>
+<p>Using the steps you had learned in previous hands-on exercise, save the temporary Centroids layer into GeoPackage format. Name the newly created layer hex_centroids .</p>
+<p>Before you move on to the next section, remember to remove the temporary Centroids layer.</p>
+</section>
+<section id="network-accessibility-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="network-accessibility-analysis">3.2.2 Network Accessibility Analysis</h4>
+</section>
+<section id="install-qneat-plugin" class="level4">
+<h4 class="anchored" data-anchor-id="install-qneat-plugin">3.2.2.1 Install QNEAT Plugin</h4>
+<ol type="1">
+<li><p>From the menu bar, select <strong>Plugins → Manage and Install plugins</strong>. <strong>Plugins</strong> dialog window appears.&nbsp;</p></li>
+<li><p>At the query, type QNEAT3. Notice that QNEAT3 appears on the search output list.</p></li>
+<li><p>Click on QNEAT3.&nbsp;</p>
+<ol type="1">
+<li>Click on <strong>Install Plugin</strong> button.&nbsp;</li>
+</ol></li>
+</ol>
+<p>When the installation is completed, click on the <strong>Close</strong> button.&nbsp;</p>
+</section>
+<section id="working-with-od-matrix-tool" class="level4">
+<h4 class="anchored" data-anchor-id="working-with-od-matrix-tool">3.2.2.2 Working with OD Matrix Tool</h4>
+<p>Next, we will use the Origin-Destination Matrix (OD Matrix) tool of QNEAT3 plugin to calculate the distances between hexagon centrois (as the demand points) and primary schools (as the supply points).</p>
+<ul>
+<li><p>From the menu bar, click on <strong>Processing → Toolbox</strong></p></li>
+<li><p>At the Search pane, type OD Matrix.</p></li>
+</ul>
+<p>Your screen should look similar to the screenshot below.</p>
+<p><img src="https://lh4.googleusercontent.com/dk8UVG-2OyQsuYhM85ABY1cwNN__6hNVqo8v4YYI6lbOp2QEXNxtYy2_inUaMMV4ababnykhvFoFpgoaj15vJRyKex2kZG7DGu-CZ-aIpRIPHNV3dWkB4DyBvhCd128iGjgSV4JUs5Do7-WAx49BYbJPVarC42QseLGi3leCG9QFOdh8tLsNH9QoWA.png" class="img-fluid"></p>
+<ul>
+<li>Click on OD Matrix Layers as Table (m:n).</li>
+</ul>
+<p>OD Matrix Layers as Table (m:n) dialog window appears.</p>
+<ul>
+<li><p>For Network Layer, select motor_roads from the drop-down list.</p></li>
+<li><p>For From-Point Layer, select hex_centroids from the drop-down list.</p></li>
+<li><p>For Unique Point ID Field, select fid from the drop-down list.</p></li>
+<li><p>For To-Point Layer, select primary_schools from the drop-down list.</p></li>
+<li><p>For Unique Point ID Field, select field_1 from the drop-down list.</p></li>
+<li><p>For Optimization Criterion, select Shortest Path (distance optimization) from the drop-down list.</p></li>
+<li><p>For Entry Cost calculation method, select Ellipsoidal from the drop-down list.</p></li>
+<li><p>For Direction field, select oneway from the drop-down list.</p></li>
+<li><p>For Value for forward direction, type F.</p></li>
+<li><p>For Value for backward direction, type T.</p></li>
+<li><p>For Value for both direction, type B.</p></li>
+<li><p>For Topology tolerance, type 0.5 (i.e.&nbsp;0.5 m).</p></li>
+</ul>
+<p>The completed dialog window should look similar to the screenshot below.</p>
+<p><img src="https://lh5.googleusercontent.com/74cu05aNRYSrvfFEBZPme3zMLL7q0vnqd8ppNN1DTpciSfW6p8BPGqpp5p9OAX6EOD_OtGtKlMvJTWIMXAUo4wJaNI0ZYwKKSEM2sU3tM_bdIAjEF7-pOI7UmHYc-t1r6sxE4ShzCPuYja_bXs1HtFx2ANHCOCKWEABNtatKt6TaGXvXkM5ZmcIA0Q.png" class="img-fluid"></p>
+<p>When you are ready to run the process.</p>
+<ul>
+<li>At the OD Matrix dialog window, click on <strong>Run</strong> button.</li>
+</ul>
+<p>When you are ready to close the dialog window, click on the <strong>Close</strong> button.</p>
+<p>Notice that a new temporary table called Output OD Matrix is added onto <strong>Layers</strong> panel.</p>
+<ul>
+<li>At the <strong>Layers</strong> panel, right-click on Output OD Matrix and select <strong>Open Attribute Table</strong> from the context menu.</li>
+</ul>
+<p>A data table that looks similar to the screenshot below appears.</p>
+<p><img src="https://lh6.googleusercontent.com/GGu17HOgWePCro2m93OtOtiO2RX36Mq8Pzk5mxuTsumK6a0-RIB3kZz7FNcMNogoXaq6Xfuw9VmYZLEnC-Cjfv2p6zzBRTsCIFXoGHk1Fj6DXiu2EMlu-j8sy4gr5xAmwqszMufJrzAbRXyXR3-XOUczNOdomdKNO18QS1Dme3tyzO1KY8dKdIV8fA.png" class="img-fluid"></p>
+<p>&nbsp;Using the steps learnt in previous sections, save the temporary Output OD Matrix table as GeoPackage format. Name the layer OD_primaryschools.</p>
+</section>
+<section id="extracting-shortest-distance-pairs" class="level4">
+<h4 class="anchored" data-anchor-id="extracting-shortest-distance-pairs">2.2.2.3 Extracting shortest distance pairs</h4>
+<p>Next, we will use the SQL tool of QGIS to select destination points with the shortest distance.</p>
+<ul>
+<li>At the <strong>Search</strong> pane of <strong>Processing Toolbox</strong>, type SQL.</li>
+</ul>
+<p><strong>SQL</strong> function appears on the list.</p>
+<p><img src="https://lh6.googleusercontent.com/MPPXub142iXVP9-GWSKyGhXLXRN3ysaZkrI63lcrnldBUcr-geRYNfCOfxLErbVApPQuJxqGIiqQ2tUsG3za2CqbT6YSLBsyLNDo_tIg9sM_zNLuyeUpRdiHGUB4BkVHVpplBQCPZHvh_-2PWuTJl-zPAhLp6q5Y9xG8JbWM-KHIxN3jsPIk8dk41A.png" class="img-fluid"></p>
+<ul>
+<li>Double-click on <strong>Execute SQL</strong> of <strong>Vector general.</strong></li>
+</ul>
+<p><strong>Execute SQL</strong> dialog window appears.</p>
+<ul>
+<li><p>For <strong>Additional input datasources</strong>, select on the button at the right end.</p></li>
+<li><p>Click on the checkbox Output OD Matrix.</p></li>
+</ul>
+<p><img src="https://lh5.googleusercontent.com/5lF8sFuH4SQUrBASjXlktlrCkhVkk0brdcEOpzEAhmknYs_ON4DjXLjjfLuteD1hFh9lXz_iFaTugreOt4kM0snKbx_W06jpOrRGJDA0KCW0V9ssiUPOtXm0CmjbzxYee1xd7OCJw1kMzNDzmF3owMHEYgJAJF-2tyqr17EJZ55oUrjReWYJkPOATA.png" class="img-fluid"></p>
+<ul>
+<li><p>Click on <strong>OK</strong> button.</p></li>
+<li><p>At SQL query panel, type the following SQL</p></li>
+</ul>
+<p><img src="https://lh4.googleusercontent.com/HVuFrm4Yy7feunexJbcikXmhR1ouzhGBb5BHzKUijRsJiiEWiHPo4MHHu-QLeqRKXEYS1RS2JM9ih7hkOcwI_vMm6VOksIlgpHAbqPVZ5rz6IKBeW71IBUCIQhBYXAlVC3w3hInwa-z7TP60E95A_zE7iSQab2OhS5tDw2Nzr9xTWp5mWtDLaSDYXg.png" class="img-fluid"></p>
+<ul>
+<li>For Geometry type, select No Geometry from the drop-down list.</li>
+</ul>
+<p><img src="https://lh5.googleusercontent.com/Tk5yHl5qra0OjmwiGbESnvVhZybRsbJ_pi_DdEQoDrMlgAuRvHbLRch9OiGiJiKEwIGxswkWiekpXOHWwYABO5UoRZoMEIBLu8aexp5WsdOSZIzcoP72MjLcFVUI4efGtIk1O-UQCC8Qqs88vDpgHw3cXQezspxKWvcoO9f6ZU7XIKuPwad2yAYS8Q.png" class="img-fluid"></p>
+<p>Notice that a temporary table called SQL Output is added onto <strong>Layers</strong> panel. It consists of four fields. The values in shortest_distance field are the shortest distance between demand points and its nearest primary school.</p>
+<p><img src="https://lh6.googleusercontent.com/UoncgCk2xnrmrYDG-b_jfNZ95KCVZyoEqZsnmqBVLW0iFTr7736JdncI6mtf6wm7FK_FPfYVPJ81LfFdn86BqbqKRJYnKxhbzeIAdwqSqSIPVur_mlNjeB_EzCCETJJdrGp8DiYGuUsnaDFylGrqGfY8uPosxwqlj8Qr_kGMIQGl66-Ws76MaEIakQ.png" class="img-fluid"></p>
+<p>Using the steps you learnt in previous sections save the temporary SQL Output table as GeoPackage format. Name the layer acc_primaryschools.</p>
+</section>
+<section id="mapping-accessibility-values" class="level4">
+<h4 class="anchored" data-anchor-id="mapping-accessibility-values">3.2.3 Mapping Accessibility Values</h4>
+</section>
+<section id="creating-a-duplicate-layer" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-duplicate-layer">3.2.3.1 Creating a Duplicate Layer</h4>
+<p>Before we getting started, let us create a duplicate copy of hexagon layer</p>
+<ul>
+<li>At the <strong>Layers</strong> panel, right-click on hexagon layer and select Duplicate Layer from the context menu.</li>
+</ul>
+<p>A new layer called hexagon copy is added onto <strong>Layers</strong> panel.</p>
+<ul>
+<li>Rename the layer to Accessibility to primary schools.</li>
+</ul>
+</section>
+<section id="performing-relational-join" class="level4">
+<h4 class="anchored" data-anchor-id="performing-relational-join">3.2.3.2 Performing relational join</h4>
+<p>Before we can prepare the choropleth map, we need to join acc_primaryschools data table to the newly created&nbsp; Accessibility to primary schools by using fid of acc_primaryschools data table and fid of Accessibility to primary schools attribute table as unique join fields.</p>
+<ul>
+<li>At the <strong>Layer</strong> panel, right-click on Accessibility to primary schools layer and select <strong>Properties</strong> from the context menu.</li>
+</ul>
+<p>The <strong>Properties</strong> dialog window appears.</p>
+<ul>
+<li><p>At the option panel, click on <strong>Joins</strong>.</p></li>
+<li><p>Click on <strong>+</strong> button to add a join.</p></li>
+</ul>
+<p>The <strong>Add Vector Join</strong> dialog window appears.</p>
+<ul>
+<li><p>For <strong>Join layer</strong>, select acc_primaryschools from th drop-down list.</p></li>
+<li><p>For <strong>Join field</strong>, select fid from the drop-down list.</p></li>
+<li><p>For <strong>Target field,</strong> select fid from the drop-down lsit.</p></li>
+<li><p>Keep the checkbox in front of Cache join layer in memory checked.</p></li>
+</ul>
+<p><img src="https://lh4.googleusercontent.com/iMRlIQLCn04MD3_lvpzlwnSZH8suOn7Wo1vnfZNh_25GMXwdudzMmZ7fz-9W11BQtmxrwHTHRxpFtXWvECiOtLAwA_M36nijWTMCZ9JdqOGbvhNNAVVnYPrlk5ZXOlA0KLIs9z-xFMyEEiFrGXOARtcVRCmanJV_ktbLJiwGSvM7wpw4dbD-iK3ygw.png" class="img-fluid"></p>
+<ul>
+<li>When you are ready, click on <strong>OK</strong> button.</li>
+</ul>
+</section>
+<section id="preparing-choropleth-map" class="level4">
+<h4 class="anchored" data-anchor-id="preparing-choropleth-map">3.2.3.3 Preparing Choropleth Map</h4>
+<p>Prepare a choropleth map to show the distribution of accessibility to primary schools.</p>
+<ol type="1">
+<li><p>From the <strong>Layers</strong> panel, double-click on the Accessibility to primary schools layer. The <strong>Layer Properties</strong> dialog window appears.&nbsp;</p></li>
+<li><p>Click on the <strong>Symbology</strong> tab.&nbsp;</p></li>
+<li><p>At <strong>Symbol</strong> selection drop-down list, select <strong>Graduated</strong> from the drop-down list.</p></li>
+<li><p>For <strong>Value</strong>, select access_primaryschools_shortest_distance from the drop down list.</p></li>
+<li><p>For <strong>Classes</strong>, keep it as 5.</p></li>
+<li><p>&nbsp;For <strong>Color</strong> ramp, choose Blues or any colour of your choice from the drop-down&nbsp; list.</p>
+<ol type="1">
+<li>Select <strong>Invert Color Ramp</strong></li>
+</ol></li>
+<li><p>For <strong>Mode</strong>, choose Equal Count (Quantile) from the drop-down list.</p></li>
+<li><p>Click on the <strong>Classify</strong> button.&nbsp;</p></li>
+</ol>
+<p>Your screen should look similar to the screenshot below.</p>
+<p><br>
+</p>
+<p>Your choropleth map should look similar to the screenshot below.</p>
+</section>
+</section>
+</section>
+<section id="accessibility-analysis-for-secondary-school" class="level1">
+<h1>Accessibility Analysis for Secondary School&nbsp;</h1>
+<p><br>
+</p>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">1.0 Data Preparation&nbsp;</h2>
+<section id="data-cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="data-cleaning">1.1 Data cleaning&nbsp;</h3>
+<p>a. Clean School Directory and Information file downloaded from <a href="https://data.gov.sg/dataset/school-directory-and-information">General Information of Schools</a> by keeping the column like shown below, filtering the mainlevel_code with the value of SECONDARY and MIXED_LEVEL.</p>
+<p>b. Carefully check each school labelled with mixed_level, and remove schools that do not include secondary school, for example Singapore Sports School and School of the Arts, save it into <strong>Data</strong> folder and name it <strong>Singapore_Secondary_Schools</strong>.</p>
+<p><img src="https://lh5.googleusercontent.com/wu3QHPvlBfJhezdEeNp8rI6nZbHmCmGmf6jCAZV0s3ek7uw6ulyGJ9jwsb85TqD1QgqzQyxiihbHJg7X4ywjfa-Rk5bU3OduyjJelWlaqJ4lT5WumsNcttae07sl8evZY8G4AABOgYGF5-r8xSlnUrQ8nkiu_U_IDlR74R3rv9PQCFQLrUn3FuAQGQ.png" class="img-fluid"></p>
+</section>
+<section id="geocode-the-prepared-data" class="level3">
+<h3 class="anchored" data-anchor-id="geocode-the-prepared-data">1.1 Geocode the prepared data</h3>
+<ol type="1">
+<li>Open MMQGIS -&gt; Geocode -&gt; Geocode CSV with Web Service&nbsp;</li>
+</ol>
+<p><br>
+</p>
+<p><img src="https://lh3.googleusercontent.com/0HqpdPINV1IRIqXR_uBuEtQ1ja4sujhDxYvvctTk7PYS406Ie3qHF2UzXkBzrlntmAm3OGrky8njQydioBxfvxDuRi0LunJF4scUgvVf6zdDTS8qIwbvQ8F-BMkrXrovDpadz6u7GOWMKkY_rf23Bc_BUZW5Mg_kZpzUzsy_RLAfwJojNVr50qFphw.png" class="img-fluid"></p>
+<p><br>
+</p>
+<ol start="2" type="1">
+<li>Navigate to the singapore_secondary_schools.csv by clicking the button at the end of the bar under <strong>Input CSV File (UTF-8 )</strong></li>
+</ol>
+<ul>
+<li><p>For <strong>Address</strong>, select address from the dropdown list</p></li>
+<li><p>For <strong>City</strong>, select City</p></li>
+<li><p>For <strong>Country</strong>, select Country&nbsp;</p></li>
+<li><p>For <strong>Web Service</strong>, select OpenStreetMap / Nominatim</p></li>
+<li><p>Then save it in your geocoded file</p></li>
+</ul>
+<p><img src="https://lh4.googleusercontent.com/xlfEFfEYIkG6iIM00G7jAbZ8L0AKWLjlB7PIlqHlzX1wE6uQRgLxyL5AG_fHCZODh_sT2At6P8jd-IMVc4OpBzIN8QeEeCNUvh217LVD7BvEz_Hz_2uMB23eaQe6qdw4-bQ18mC6c-1Qb6KhrfMXqIo0pyIbyd7ZBhsPGGsTWJAKpSjJ6sTuh_d_Bg.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li><p>Now you may notice a layer called geocoded appears, let's rename it 'SecondarySchool'</p></li>
+<li><p>&nbsp;navigate to the notfound file in your geocode folder, there are some schools are not geocoded properly, we need to manually find it one the map</p></li>
+</ol>
+<p><img src="https://lh6.googleusercontent.com/cJwvfCfGgBkhAoiNIOFvQXBeQZ7yHxVmEaLc3iaIf6cZ94EaLLkkza-p0usnDPYcNeVtEa0uTgtvcs-FKl9FWQJU631ZaGEv_d9sEzsm_BIDb64wx5DWeMEJGvWIO1HhTGIG7EIeSrM3zqrw23mJFiYRXJVuHhcczwfxsRz6LKNs3H2PHPAygF-ppA.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Now click Browser -&gt; double click OpenStreetMap</li>
+</ol>
+<p><img src="https://lh5.googleusercontent.com/5EfWA3jEV4Qe2uOXAsjQCwWoVFKW3oLjuJ38Mjeg657UJOaLTvK62YaOKWVRrBW7FDeGIAoFfeogn6FDJJkb4Mzr3BLGqnxitEz9RWetDo5rNUm2xDyuqYL5ztfCY66IeJIPOl6MYNGNbbgh4XlGlm9oUF0Wy44ESWaaF6mcUHBpSSMNrdhpdfzmsQ.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>For example, Bowen Secondary school is not geocoded properly, we can manually find it by using the OpenStreetMap by using its address.</li>
+</ol>
+<p><img src="https://lh4.googleusercontent.com/O6wdfK2nK4WS-zGoC7u6_MGJ_0oOHf1vuGQyhThE4vS2eq3pK-8IaJ4hIjVE2WrWKOWzceqhvb9_3aPG0mdD-gUR-iIL2cdb1uMQA7DKg999Iv1Qvv-kThaTeKf5-TRBm2g32Mvzj8QRSZhg03Bs-14KVB2RuKYvfWA_RuUdYbHEpcbOaNOsshn9xg.png" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>After you find Bowen Secondary School on Open Map, active and tick the SecondarySchool layer, right click and select Toggle Editing&nbsp;</li>
+</ol>
+<p><img src="https://lh4.googleusercontent.com/FSpGGarEroK9X5F4pFqkCgsTwwj2zuldn0Cl-bfUk70hoLhtWL-HciPv5NDT7oX5ZFMQYPbpkjc8pNBM1kTz45Jz0PveW2YBnTYYa28rY-NTyozC9-eLF5k_Rbg9OqfZVxf3_ojHjmXTF-LC3ZOmk4UACRwqDXKNB57dgFFwkWmi-GqYiRtSwOVLjw.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li>Click the Add Point Feature icon that circled in red</li>
+</ol>
+<p><img src="https://lh5.googleusercontent.com/RYoHE0LDUcxoAzZB9yo19aVGwYjxpjbGY9BP5CVhf-OLXreVs9_UbRpbb5HNVLFFSpkr2lfxC4dBfy4wlhg4vikxydSndu-bPrFArOX8h34dcY2rz3_5MBmXvmkMWLyJSV58vqEeJ4RQBUv_Ckry0_fy4LB7dU8ZupUd_XIAt2NllFWVAYXuL_spbA.png" class="img-fluid"></p>
+<ol start="9" type="1">
+<li>Fill in the necessary information according to your notfound.csv file</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/hY8khGIJEAgWHyDHYSZY2g0JlQgNG1m4AHge6JHYJEZym7Lx-QNYBpRfH78-VJv4o8JMAuvueeCMoTZj_URocNzaSSYIcJ_O5MP83vDjZCb1u35MBNI_cuJGr1RqRopK63w2hhYgOmAkCBSNxHQw0WdCDss96_h1VDmpjwT-nhIsVpQ2mQiaywpbwA.png" class="img-fluid"></p>
+<ol start="10" type="1">
+<li>Repeat the steps for the other school in the notfound.csv file, now open the attribute table， there should be 153 features, now save it into the geopackage database</li>
+</ol>
+<p><br>
+</p>
+<p><img src="https://lh6.googleusercontent.com/xJQzxJ_g4Rqeii5ncrcllVuV3-N27Qg8up9YfxUNjd-7NTPuZf71rsm0ECmZL5OP8oNJI-Q2ihqjAazIWBtb0kMP5QTxYxzAzemxR9fs5mKx4SJwTYLmmRW_OpD9oGFrfDs0kjiQt9QLfRkPlseBgb5V2T7F5Lb8__GWrX3Yfz4L9X9RzBWoVyCA4g.png" class="img-fluid"></p>
+<p><br>
+</p>
+</section>
+</section>
+<section id="preparing-base-layer-for-study-area-1" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-base-layer-for-study-area-1">2.0&nbsp; Preparing base layer for study area</h2>
+<ul>
+<li><p>The steps of preparing base layer which is MP19_Subzone and hexagon layer are demonstrated in previous section, the logic is same for analysing secondary school</p></li>
+<li><p><br>
+</p></li>
+</ul>
+<p><br>
+</p>
+<p>Accessibility Analysis for Junior Colleges</p>
+<p><br>
+</p>
+<p>Data Used</p>
+<p>Clean School Directory and Information file downloaded form <a href="https://data.gov.sg/dataset/school-directory-and-information">General Information of Schools</a> by keeping the column like shown below, filtering the mainlevel_code with the value of SECONDARY and MIXED_LEVEL</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p><img src="https://lh5.googleusercontent.com/q0rViv4kgK17JEQgV3ERjp3qTf50Il0PZ1kiWWm1b-NasTvn3z88GmDGQ4eS0gzpqle6eYgHXxwkYqS5faNNQj8XjjXCo4n9S1pZ9Qlm7RiGH4bL8ooIS06Y3Cl07Odto3XeDdjXgOfcEq5t6eD9w-qv8wrPg1QzCcMiRVSrdC9jqVZLrzjT5amYpQ.png" class="img-fluid"></p>
+<p><br>
+</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
