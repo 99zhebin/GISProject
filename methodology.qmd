@@ -45,7 +45,7 @@ Assuming the root directory of this project is called GISProject, create a sub-f
 
 3.  Ensure that your projection system at the bottom right bar is using EPSG:3414, if not reassign the projection system by selecting SVY21 / Singapore TM.
 
-![](images/image1)
+    ![](images/image1)
 
 Notice that the projection system has been updated to EPSG:3414 now.
 
