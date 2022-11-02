@@ -3,11 +3,11 @@ title: "Methodology"
 editor: visual
 ---
 
-## Step by Step Guide
+# Step by Step Guide
 
-### 1.0 Data Collection
+## 1.0 Data Collection
 
-#### 1.1 Downloading Data
+### 1.1 Downloading Data
 
 Firstly, you are required to download the following data from data.gov.sg:
 
@@ -23,7 +23,7 @@ Next, you are required to download geospatial data from [geofabrik](https://down
 
 Next, you are required to download MRT data (Train Station) from the [Land Transport Authority (LTA) Data Mall](https://datamall.lta.gov.sg/content/datamall/en/static-data.html). The data set provides the locations of MRT stations in Singapore. 
 
-#### 1.2 Managing the Imported Data
+### 1.2 Managing the Imported Data
 
 Assuming the root directory of this project is called GISProject, create a sub-folder called data.
 
@@ -35,9 +35,9 @@ Assuming the root directory of this project is called GISProject, create a sub-f
 
     -   Place them in data folder
 
-### 2.0 Data Preparation, Data Cleaning and QGIS Project Setup
+## 2.0 Data Preparation, Data Cleaning and QGIS Project Setup
 
-#### 2.1 Creating a New Project and Assigning Project Coordinate System for New Project
+### 2.1 Creating a New Project and Assigning Project Coordinate System for New Project
 
 1.  From Windows Desktop, launch QGIS. 
 
@@ -51,7 +51,7 @@ Notice that the projection system has been updated to EPSG:3414 now.
 
 ![](images/image2.jpg)
 
-#### 2.1.1 Saving your project
+### 2.1.1 Saving your project
 
 It is time to save the project. 
 
@@ -61,7 +61,7 @@ It is time to save the project. 
 
 ![](images/image3.jpg)
 
-#### 2.2 Preparing base layer for study area
+### 2.2 Preparing base layer for study area
 
 Our study area would be the Singapore Planning Subzone excluding all the outer islands  such as Pulau Ubin and Pulau Tekong.
 
@@ -85,7 +85,7 @@ We will now select the main island of Singapore, excluding the outer islands. 
 
 ![](images/image7.jpg)
 
-#### 2.3 Storing your data sets in GeoPackage format
+### 2.3 Storing your data sets in GeoPackage format
 
 1.  Save all your data sets into an integrated database called GISProject.
 
@@ -109,7 +109,7 @@ We will now select the main island of Singapore, excluding the outer islands. 
 
 From the Layers panel, right click the URA_MP19_SUBZONE_NO_SEA_PL layer and click **Remove Layer.**
 
-#### 2.4 Preparation of Primary School Layer
+### 2.4 Preparation of Primary School Layer
 
 Review the content of general-information-of-schools.csv file. Locate and open the file with **Excel.**
 
@@ -131,7 +131,7 @@ Take note that there are 3 Primary Schools: Catholic High School, CHIJ St. Nicho
 
 ![](images/image10.jpg)
 
-#### 2.4.1 Geocoding Prepared Data
+### 2.4.1 Geocoding Prepared Data
 
 1.  Geocode the general-information-of-schools data set by using SLA OneMap API. Save the geocoded data set in  geocoded_school.csv. The geocoded data set should have the new fields Latitude and Longitude.
 
@@ -151,7 +151,7 @@ The final not-foundschools.csv should look similar to this. 
 
 ![](images/image12.jpg)
 
-#### **Installing the MMQGIS Plugin**
+### **2.4.1.1 Installing the MMQGIS Plugin**
 
 To install the MMQGIS plugin, you will need to load the QGIS plugin repository by following the steps below.
 
@@ -175,7 +175,7 @@ After installing mmqgis plugin, remember to close the **Plugin** dialog window.
 
 -   Click on **Close** button.
 
-#### Geocoding using MMQGIS Plugin
+### 2.4.1.2 Geocoding using MMQGIS Plugin
 
 Now, you are ready geocode not-foundschools dataset.
 
@@ -249,7 +249,7 @@ At the **Layers** panel, right-click on  geocoded_schs layer → **Open Attribu
 
 ![](images/image19.jpg)
 
-#### 2.4.2 Adding Primary School Layer into QGIS Project
+### 2.4.2 Adding Primary School Layer into QGIS Project
 
 We will now import the primary school csv into the project. 
 
@@ -273,11 +273,11 @@ In the **Layers** panel, notice that the primary_schools layer has been added. 
 
 ![](images/image22.jpg)
 
-#### 2.5 Preparation of Road Network Layer
+### 2.5 Preparation of Road Network Layer
 
 Using the steps learned from the previous section, import the Road Network Data (gis_osm_roads_free_1.shp) into QGIS. The Road Network data contains road networks from Malaysia, Brunei and Singapore.
 
-#### 2.5.1 Selecting all road networks within the study area
+### 2.5.1 Selecting all road networks within the study area
 
 Using spatial query function of QGIS, extract the road network features that fall within Singapore mainland study area. 
 
@@ -319,7 +319,7 @@ The query statement in the Expression pane should look similar to this:
 
 7.  Using the steps learned from previous sections, save the selected features in GeoPackage format. Name the layer all_roads.
 
-#### 2.5.2 Extracting Motor Vehicle Road Network
+### 2.5.2 Extracting Motor Vehicle Road Network
 
 4.  Under the **Layers** panel, right click on all_roads → **Open Attribute Table**
 
@@ -341,7 +341,7 @@ The query statement in the Expression pane should look similar to this:
 
 ![](images/image28.jpg)
 
-#### 2.5.3 Extracting Pedestrian Path Network
+### 2.5.3 Extracting Pedestrian Path Network
 
 Using appropriate QGIS functions learnt from previous sections, extract the pedestrian path network from the all_road_networks layer.
 
@@ -355,9 +355,9 @@ Using appropriate QGIS functions learnt from previous sections, extract the pede
 
 ![](images/image30.jpg)
 
-### 3.0 Preparing Maps for Analysis
+## 3.0 Preparing Maps for Analysis
 
-#### 3.1 Creating the hexagon layer
+### 3.1 Creating the hexagon layer
 
 Now, we are going to create a hexagon layer by using the MP19_SUBZONE layer as the base. The hexagon distance is 250m.
 
@@ -393,7 +393,7 @@ Notice that a new temporary layer called Grid is added on the Layer pane and dis
 
 ![](images/image33.jpg)
 
-#### 3.1.1 Editing the hexagon layer
+### 3.1.1 Editing the hexagon layer
 
 Using the **Intersection** function, intersect the Grid layer and MP19_SUBZONE layer.
 
@@ -405,13 +405,13 @@ Your screen should look similar to the screenshot below.
 
 ![](images/image35.jpg)
 
-#### 3.1.2 Saving the hexagon layer
+### 3.1.2 Saving the hexagon layer
 
 Using the steps you had learned in previous sections, save the edited Grid layer into GeoPackage format. Name the layer hexagon.
 
 Before you move on to the next section, remember to remove the temporary Grid layer.
 
-#### 3.1.3  Computing hexagon centroid
+### 3.1.3  Computing hexagon centroid
 
 In general, network analysis required the demand in a point feature. Hexagon, on the other hand, is a polygon feature. In order to meet the analysis need, we will compute the centroids of the hexagons.
 
@@ -433,15 +433,15 @@ Notice that a new temporary layer called Centroids is added onto the **Layers** 
 
 ![](images/image36.jpg)
 
-#### 3.1.4 Saving the centroid layer
+### 3.1.4 Saving the centroid layer
 
 Using the steps you had learned in previous hands-on exercise, save the temporary Centroids layer into GeoPackage format. Name the newly created layer hex_centroids .
 
 Before you move on to the next section, remember to remove the temporary Centroids layer.
 
-#### 3.2.2 Network Accessibility Analysis
+### 3.2.2 Network Accessibility Analysis
 
-#### 3.2.2.1 Install QNEAT Plugin
+### 3.2.2.1 Install QNEAT Plugin
 
 1.  From the menu bar, select **Plugins → Manage and Install plugins**. **Plugins** dialog window appears. 
 
@@ -453,7 +453,7 @@ Before you move on to the next section, remember to remove the temporary Centroi
 
 When the installation is completed, click on the **Close** button. 
 
-#### 3.2.2.2 Working with OD Matrix Tool
+### 3.2.2.2 Working with OD Matrix Tool
 
 Next, we will use the Origin-Destination Matrix (OD Matrix) tool of QNEAT3 plugin to calculate the distances between hexagon centrois (as the demand points) and primary schools (as the supply points).
 
@@ -513,7 +513,7 @@ A data table that looks similar to the screenshot below appears.
 
  Using the steps learnt in previous sections, save the temporary Output OD Matrix table as GeoPackage format. Name the layer OD_primaryschools.
 
-#### 2.2.2.3 Extracting shortest distance pairs
+### 2.2.2.3 Extracting shortest distance pairs
 
 Next, we will use the SQL tool of QGIS to select destination points with the shortest distance.
 
@@ -549,9 +549,9 @@ Notice that a temporary table called SQL Output is added onto **Layers** panel. 
 
 Using the steps you learnt in previous sections save the temporary SQL Output table as GeoPackage format. Name the layer acc_primaryschools.
 
-#### 3.2.3 Mapping Accessibility Values
+### 3.2.3 Mapping Accessibility Values
 
-#### 3.2.3.1 Creating a Duplicate Layer
+### 3.2.3.1 Creating a Duplicate Layer
 
 Before we getting started, let us create a duplicate copy of hexagon layer
 
@@ -561,7 +561,7 @@ A new layer called hexagon copy is added onto **Layers** panel.
 
 -   Rename the layer to Accessibility to primary schools.
 
-#### 3.2.3.2 Performing relational join
+### 3.2.3.2 Performing relational join
 
 Before we can prepare the choropleth map, we need to join acc_primaryschools data table to the newly created  Accessibility to primary schools by using fid of acc_primaryschools data table and fid of Accessibility to primary schools attribute table as unique join fields.
 
@@ -587,7 +587,7 @@ The **Add Vector Join** dialog window appears.
 
 -   When you are ready, click on **OK** button.
 
-#### 3.2.3.3 Preparing Choropleth Map
+### 3.2.3.3 Preparing Choropleth Map
 
 Prepare a choropleth map to show the distribution of accessibility to primary schools.
 
