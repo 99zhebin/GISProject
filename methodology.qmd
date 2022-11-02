@@ -1,9 +1,7 @@
 ---
-title: "Methodology"
+title: "Methodology - Step by Step Guide"
 editor: visual
 ---
-
-# Step by Step Guide
 
 ## 1.0 Data Collection
 
@@ -35,7 +33,7 @@ Assuming the root directory of this project is called GISProject, create a sub-f
 
     -   Place them in data folder
 
-## 2.0 Data Preparation, Data Cleaning and QGIS Project Setup
+## 2.0 Data Preparation, Data Cleaning and QGIS Project Setup (Primary School)
 
 ### 2.1 Creating a New Project and Assigning Project Coordinate System for New Project
 
