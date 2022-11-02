@@ -151,7 +151,7 @@ The final not-foundschools.csv should look similar to this. 
 
 ![](images/image12.jpg)
 
-### **2.4.1.1 Installing the MMQGIS Plugin**
+### 2.4.1.1 Installing the MMQGIS Plugin
 
 To install the MMQGIS plugin, you will need to load the QGIS plugin repository by following the steps below.
 
