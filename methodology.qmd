@@ -45,7 +45,7 @@ Assuming the root directory of this project is called GISProject, create a sub-f
 
 3.  Ensure that your projection system at the bottom right bar is using EPSG:3414, if not reassign the projection system by selecting SVY21 / Singapore TM.
 
-![](https://lh6.googleusercontent.com/bwKWnQl9JdxpcVqCMOKEn3o1XJhLiHtPfUR_cbR3RionwEAL0kwopM45PMllwXqSJtIz0H9JTRHYU53otj3D4aqNDwOA2tmJNEIjGM0KCvkR_MQ2_y7ZiR5D6HyJi1bgsM26AhOXk6fxUNxE8DX-mP0rVJj3SMF2WdHMbaFXo1oMynNW0VFavI2IrQ)
+![](images/image1)
 
 Notice that the projection system has been updated to EPSG:3414 now.
 
@@ -119,7 +119,7 @@ Your screen should look like the figure below.
 
 1.  Using appropriate Excel functions to sort the schools according to the  mainlevel_code field, retain only the schools categorized as Primary. 
 
-Take note that there are 3 Primary Schools: Catholic High School, CHIJ St. Nicholas Girls\'  School and Maris Stella High School categorized as Mixed Levels under the mainlevel_code. 
+Take note that there are 3 Primary Schools: Catholic High School, CHIJ St. Nicholas Girls'  School and Maris Stella High School categorized as Mixed Levels under the mainlevel_code. 
 
 2.  Using appropriate Excel function, retain the school_name, address,  postal_code, and mainlevel_code field and delete the unwanted fields. 
 
@@ -309,7 +309,7 @@ To further filter the road network layer, we will exclude roads that are not wal
 
     1.  Under the expression pane, key in the following:
 
-**"fclass" not in (\'bridleway\', \'track\', \'track_grade1\', \'track_grade2\', \'track_grade3\', \'track_grade4\', \'track_grade5\', \'unclassified\', \'unknown\')**
+**"fclass" not in ('bridleway', 'track', 'track_grade1', 'track_grade2', 'track_grade3', 'track_grade4', 'track_grade5', 'unclassified', 'unknown')**
 
 The query statement in the Expression pane should look similar to this:
 
@@ -377,9 +377,8 @@ Now, we are going to create a hexagon layer by using the MP19_SUBZONE layer as t
 
 -   For Vertical spacing, type 500.
 
-```{=html}
 <!-- -->
-```
+
 -   For Grid CRS, make sure that EPSG 3414 is used.
 
 When you are ready to run the process,
@@ -654,7 +653,7 @@ b\. Carefully check each school labelled with mixed_level, and remove schools th
 
 ![](https://lh4.googleusercontent.com/xlfEFfEYIkG6iIM00G7jAbZ8L0AKWLjlB7PIlqHlzX1wE6uQRgLxyL5AG_fHCZODh_sT2At6P8jd-IMVc4OpBzIN8QeEeCNUvh217LVD7BvEz_Hz_2uMB23eaQe6qdw4-bQ18mC6c-1Qb6KhrfMXqIo0pyIbyd7ZBhsPGGsTWJAKpSjJ6sTuh_d_Bg)
 
-3.  Now you may notice a layer called geocoded appears, let\'s rename it \'SecondarySchool\'
+3.  Now you may notice a layer called geocoded appears, let's rename it 'SecondarySchool'
 
 4.   navigate to the notfound file in your geocode folder, there are some schools are not geocoded properly, we need to manually find it one the map
 
@@ -742,4 +741,3 @@ Clean School Directory and Information file downloaded form [General Information
 ![](https://lh5.googleusercontent.com/q0rViv4kgK17JEQgV3ERjp3qTf50Il0PZ1kiWWm1b-NasTvn3z88GmDGQ4eS0gzpqle6eYgHXxwkYqS5faNNQj8XjjXCo4n9S1pZ9Qlm7RiGH4bL8ooIS06Y3Cl07Odto3XeDdjXgOfcEq5t6eD9w-qv8wrPg1QzCcMiRVSrdC9jqVZLrzjT5amYpQ)
 
 \
-
