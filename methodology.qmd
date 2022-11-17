@@ -483,8 +483,6 @@ Now, we are going to create a hexagon layer by using the MP19_SUBZONE layer as t
 
 -   For Vertical spacing, type 500.
 
-<!-- -->
-
 -   For Grid CRS, make sure that EPSG 3414 is used.
 
 When you are ready to run the process,
@@ -501,15 +499,13 @@ Notice that a new temporary layer called Grid is added on the Layer pane and dis
 
 ### 3.1.1 Editing the hexagon layer
 
-Using the **Intersection** function, intersect the Grid layer and MP19_SUBZONE layer.
+Using the **Clipped** function, intersect the Grid layer and MP19_SUBZONE layer.
 
 Using **Select features by polygon** function as learnt in the previous section, select the area that falls under Singapore mainland. 
 
-![](images/image34.jpg)
-
+![](images/pic9.jpg)
 Your screen should look similar to the screenshot below.
-
-![](images/image35.jpg)
+![](images/pic10.jpg)
 
 ### 3.1.2 Saving the hexagon layer
 
