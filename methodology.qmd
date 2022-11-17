@@ -382,7 +382,7 @@ group by "PA","SZ"
 
 3.  For Geometry type, select **No geometry**
 
-    ![](images/pic%201)
+    ![](images/pic1.jpg)
 
 ```{=html}
 <!-- -->
@@ -397,7 +397,7 @@ We will now perform relational join between the SQL Output layer and the MP19_SU
 
 1.  Right-click on SQL Output → select **Open Attribute Table.** Observe that the **SZ** column values are currently in lower case. We will change the values to upper case.
 
-2.  Click **Open field calculator** ![](images/pic%202)icon
+2.  Click **Open field calculator** ![](images/pic2.jpg)icon
 
 3.  Click **Update existing field**
 
@@ -407,11 +407,11 @@ We will now perform relational join between the SQL Output layer and the MP19_SU
 
 6.  Click **OK** button
 
-![](images/pic%203)
+![](images/pic3.jpg)
 
 Notice that the **SZ** column values are now in upper case.
 
-![](images/pic%204)
+![](images/pic4.jpg)
 
 Using the steps learned previously, save SQL Output  into Geopackage format. Name the layer Young People Distribution.
 
@@ -419,7 +419,7 @@ We will now join the Young People Distribution layer and the MP19_SUBZONE layer.
 
 1.  Right click on MP19_SUBZONE layer → click **Properties** → click **Joins**
 
-2.  Click on the **+** icon at the bottom of the screen.![](images/pic%205)
+2.  Click on the **+** icon at the bottom of the screen.![](images/pic5.jpg)
 
 3.  The **Add Vector Join** dialog window appears.
 
@@ -429,7 +429,7 @@ We will now join the Young People Distribution layer and the MP19_SUBZONE layer.
 
     3.  For Target field, select **SUBZONE_N**
 
-    ![](images/pic%206)
+    ![](images/pic6.jpg)
 
 4.  Click **OK** button.
 
@@ -455,11 +455,11 @@ We will now prepare the choropleth map to analyse the distribution of the youth 
 
     6.  Click **Classify** button
 
-    ![](images/pic%207)
+    ![](images/pic7.jpg)
 
 3.  Click the OK button.Notice that a choropleth map is now formed.
 
-![](images/pic%208)
+![](images/pic8.jpg)
 
 # 3.0 Preparing Maps for Analysis
 
