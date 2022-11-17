@@ -1029,4 +1029,91 @@ Repeat the above steps with the after merger OD matrices.
 
 Repeat the steps in section 3.2.4 to create chroropleth/ bivariate choropleth maps for Walking/ MRT/ Driving Accessibility maps for both Secondary Schools both before and after merger.
 
-# 5.0 Data Preparation for JC 
+# 5.0 Data Preparation for JC
+
+## 5.1 Data Preparation
+
+1.  Clean School Directory and Information file downloaded from [General Information of Schools](https://data.gov.sg/dataset/school-directory-and-information) by keeping the column like shown below, filtering the mainlevel_code with the value of JUNIOR COLLEGE and MIXED_LEVEL.
+
+2.  Carefully check each school labelled with mixed_level, and remove schools that do not include Junior Colleges or are special schools, for example Singapore Sports School and School of the Arts, save it into the Data folder and name it **JC_After_Mergers**.
+
+![](images/pic34.jpg)
+
+3.  Duplicate the file and change the following schools:
+
+    1.  Anderson Serangoon → Anderson
+
+    2.  Jurong Pioneer → Pioneer
+
+    3.  Tampines Meridian → Meridian
+
+    4.  Yishun Innova → Yishun
+
+    5.  Add Serangoon Junior College → 1033 Upper Serangoon Road
+
+    6.  Add Jurong Junior College → 800 Corporation Road
+
+    7.  Add Tampines Junior College → 2 Tampines Avenue 9
+
+    8.  Add Innova Junior College → 21 Champions Way
+
+4.  Save this file in the Data folder and name it **JC_Before_Mergers**.
+
+## 5.2 Geocoding
+
+1.  Open **MMQGIS → Geocode → Geocode CSV with Web Service** \
+
+![](images/pic35.jpg)
+
+2.  Navigate to the JC_before_mergers.csv by clicking the button at the end of the bar under **Input CSV File (UTF-8 )**
+
+-   For **Address**, select address from the dropdown list
+
+-   For **City**, select City
+
+-   For **Country**, select Country 
+
+-   For **Web Service**, select OpenStreetMap / Nominatim
+
+-   Save it in your geocoded file
+
+![](images/pic36.jpg)
+
+3.  Now you may notice a layer called geocoded appears. Let us rename it to \'JC_before_merger\'
+
+4.  Navigate to the notfound file in your geocode folder. There are some schools that are not geocoded properly, and we need to manually find them on the map.
+
+![](images/pic37.jpg)
+
+5.  Now click Browser -\> double click OpenStreetMap
+
+![](images/pic38.jpg)
+
+6.  For example, Dunman High School is not geocoded properly. We can manually find it by using the OpenStreetMap by using its address.
+
+![](images/pic39.jpg)
+
+7.  After you find Dunman High School on Open Map, active and tick the JC_before_merger layer, right click and select **Toggle Editing**.
+
+![](images/pic40.jpg)
+
+8.  Click the **Add Point Feature** icon that is circled in red
+
+![](images/pic41.jpg)
+
+9.  Fill in the necessary information according to your notfound.csv file
+
+![](images/pic42.jpg)
+
+10. Repeat the steps for the other schools in the notfound.csv file, now open the attribute table, there should be 20 features, now save it into the Geopackage database
+
+![](images/pic43.jpg)
+
+11. Repeat the steps for JC_after_merger as well. You should end up with 16 features.
+
+![](images/pic44.jpg)
+
+\
+
+
+

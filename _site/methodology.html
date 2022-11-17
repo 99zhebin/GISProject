@@ -174,7 +174,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#mapping-accessibility-values-1" id="toc-mapping-accessibility-values-1" class="nav-link" data-scroll-target="#mapping-accessibility-values-1">4.4.3 Mapping Accessibility Values</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#data-preparation-for-jc" id="toc-data-preparation-for-jc" class="nav-link" data-scroll-target="#data-preparation-for-jc">5.0 Data Preparation for JC</a></li>
+  <li><a href="#data-preparation-for-jc" id="toc-data-preparation-for-jc" class="nav-link" data-scroll-target="#data-preparation-for-jc">5.0 Data Preparation for JC</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation-2" id="toc-data-preparation-2" class="nav-link" data-scroll-target="#data-preparation-2">5.1 Data Preparation</a></li>
+  <li><a href="#geocoding" id="toc-geocoding" class="nav-link" data-scroll-target="#geocoding">5.2 Geocoding</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1063,8 +1067,84 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-preparation-for-jc" class="level1">
 <h1>5.0 Data Preparation for JC</h1>
+<section id="data-preparation-2" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation-2">5.1 Data Preparation</h2>
+<ol type="1">
+<li><p>Clean School Directory and Information file downloaded from <a href="https://data.gov.sg/dataset/school-directory-and-information">General Information of Schools</a> by keeping the column like shown below, filtering the mainlevel_code with the value of JUNIOR COLLEGE and MIXED_LEVEL.</p></li>
+<li><p>Carefully check each school labelled with mixed_level, and remove schools that do not include Junior Colleges or are special schools, for example Singapore Sports School and School of the Arts, save it into the Data folder and name it <strong>JC_After_Mergers</strong>.</p></li>
+</ol>
+<p><img src="images/pic34.jpg" class="img-fluid"></p>
+<ol start="3" type="1">
+<li><p>Duplicate the file and change the following schools:</p>
+<ol type="1">
+<li><p>Anderson Serangoon → Anderson</p></li>
+<li><p>Jurong Pioneer → Pioneer</p></li>
+<li><p>Tampines Meridian → Meridian</p></li>
+<li><p>Yishun Innova → Yishun</p></li>
+<li><p>Add Serangoon Junior College → 1033 Upper Serangoon Road</p></li>
+<li><p>Add Jurong Junior College → 800 Corporation Road</p></li>
+<li><p>Add Tampines Junior College → 2 Tampines Avenue 9</p></li>
+<li><p>Add Innova Junior College → 21 Champions Way</p></li>
+</ol></li>
+<li><p>Save this file in the Data folder and name it <strong>JC_Before_Mergers</strong>.</p></li>
+</ol>
+</section>
+<section id="geocoding" class="level2">
+<h2 class="anchored" data-anchor-id="geocoding">5.2 Geocoding</h2>
+<ol type="1">
+<li>Open <strong>MMQGIS → Geocode → Geocode CSV with Web Service</strong><br>
+</li>
+</ol>
+<p><img src="images/pic35.jpg" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Navigate to the JC_before_mergers.csv by clicking the button at the end of the bar under <strong>Input CSV File (UTF-8 )</strong></li>
+</ol>
+<ul>
+<li><p>For <strong>Address</strong>, select address from the dropdown list</p></li>
+<li><p>For <strong>City</strong>, select City</p></li>
+<li><p>For <strong>Country</strong>, select Country&nbsp;</p></li>
+<li><p>For <strong>Web Service</strong>, select OpenStreetMap / Nominatim</p></li>
+<li><p>Save it in your geocoded file</p></li>
+</ul>
+<p><img src="images/pic36.jpg" class="img-fluid"></p>
+<ol start="3" type="1">
+<li><p>Now you may notice a layer called geocoded appears. Let us rename it to 'JC_before_merger'</p></li>
+<li><p>Navigate to the notfound file in your geocode folder. There are some schools that are not geocoded properly, and we need to manually find them on the map.</p></li>
+</ol>
+<p><img src="images/pic37.jpg" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Now click Browser -&gt; double click OpenStreetMap</li>
+</ol>
+<p><img src="images/pic38.jpg" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>For example, Dunman High School is not geocoded properly. We can manually find it by using the OpenStreetMap by using its address.</li>
+</ol>
+<p><img src="images/pic39.jpg" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>After you find Dunman High School on Open Map, active and tick the JC_before_merger layer, right click and select <strong>Toggle Editing</strong>.</li>
+</ol>
+<p><img src="images/pic40.jpg" class="img-fluid"></p>
+<ol start="8" type="1">
+<li>Click the <strong>Add Point Feature</strong> icon that is circled in red</li>
+</ol>
+<p><img src="images/pic41.jpg" class="img-fluid"></p>
+<ol start="9" type="1">
+<li>Fill in the necessary information according to your notfound.csv file</li>
+</ol>
+<p><img src="images/pic42.jpg" class="img-fluid"></p>
+<ol start="10" type="1">
+<li>Repeat the steps for the other schools in the notfound.csv file, now open the attribute table, there should be 20 features, now save it into the Geopackage database</li>
+</ol>
+<p><img src="images/pic43.jpg" class="img-fluid"></p>
+<ol start="11" type="1">
+<li>Repeat the steps for JC_after_merger as well. You should end up with 16 features.</li>
+</ol>
+<p><img src="images/pic44.jpg" class="img-fluid"></p>
+<p><br>
+</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
