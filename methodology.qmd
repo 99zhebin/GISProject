@@ -382,8 +382,11 @@ group by "PA","SZ"
 
 3.  For Geometry type, select **No geometry**
 
-![](https://lh5.googleusercontent.com/H6NSPYezdkX_GXDwOYB7cojoyWK0kBZUd0o9uifuLdnCVLdCAizxhFQsqaIlMpWOW9Ft9Tzx8l9lq5AQ39dneuSbLWwjirZLA61fy5yRsC4CFJtoWbNKFv-eSX7cpw-yAFU1QUS6oWQpLpMqQZXPfPjlxLwaBbPVDjZ3R4vOkGctaVE3ElMako-6_MgBig)
+    ![](images/pic%201)
 
+```{=html}
+<!-- -->
+```
 4.  Click **Run** button. 
 
 5.  A new layer called SQL Output will appear in the **Layers** panel.
@@ -394,7 +397,7 @@ We will now perform relational join between the SQL Output layer and the MP19_SU
 
 1.  Right-click on SQL Output → select **Open Attribute Table.** Observe that the **SZ** column values are currently in lower case. We will change the values to upper case.
 
-2.  Click **Open field calculator ![](https://lh3.googleusercontent.com/_Mze8e89wGpfrgqeHU_0Fb8Z30rO7HGQcdrs_uQmVsRz-gtvC7yPcjvTSGhYlS2vxIIqZJN_36bTn3o0Ooewst-jL3N40XlgrO2lbUTTzqhAyNReVsNX9JexxzwNBLw9MVyZjRIf-0ScAADCx-rowQZIThlr4sxS9NHgcIjTDKL-S8Dv7dAC0AylqCGG9w)** icon
+2.  Click **Open field calculator** ![](images/pic%202)icon
 
 3.  Click **Update existing field**
 
@@ -404,11 +407,11 @@ We will now perform relational join between the SQL Output layer and the MP19_SU
 
 6.  Click **OK** button
 
-![](https://lh3.googleusercontent.com/OPz7UVm3dPzXkvRgHJzaAYuV0RXktISqtv-slScFF1c6zMFE7LHSe8jFBTyytqsU1r7-okocpFafUtdG0QsCSxynlHEJhAJbjs9WEMEA9Xw5LdUoiJ2g-d7Nj5gskx9-w7LLgQn7S2I-5JsBV7jmgU3jup07sKYZiedXy6LOofLsD4eEh9upSyxMlKOyUA)
+![](images/pic%203)
 
 Notice that the **SZ** column values are now in upper case.
 
-![](https://lh4.googleusercontent.com/ZiZ5KmUMIr8vn5R657TJ7RtGE4AQSiwT_dPbCkNiHFZA0ViiUW_xThG3b60dP8HRRS_3Jb5FIxncpvBJia5-GqbFTHbCyXX8hP63VSC-ZrA3Ecc-N6hGUH0wkaYnuWZHNWoErVp07n7XhKXI2wvf2CWCeN0RuCibB2Vsj6DdzyrWbaYqpuxYJU9OdzSpiQ)
+![](images/pic%204)
 
 Using the steps learned previously, save SQL Output  into Geopackage format. Name the layer Young People Distribution.
 
@@ -416,7 +419,7 @@ We will now join the Young People Distribution layer and the MP19_SUBZONE layer.
 
 1.  Right click on MP19_SUBZONE layer → click **Properties** → click **Joins**
 
-2.  Click on the **+** icon at the bottom of the screen.![](https://lh3.googleusercontent.com/d5AGw6p9hAUlz0_ct5_o-iVAt2PPOQltMfiQl1YFWPFmoQ4plqGVwBAHKpnAAEOsB4fZ5HBkl8gkmy-eXnohQ_SBS6QGrlMmd7LcCp7M6Z7nycPitTQk-9V5JeM6l2F8eUl9uftVsV1-jVDId45-2QSRRSytJyLSgGR02B9GCOB64y-9wz-2fE5wSKOmew)
+2.  Click on the **+** icon at the bottom of the screen.![](images/pic%205)
 
 3.  The **Add Vector Join** dialog window appears.
 
@@ -426,7 +429,7 @@ We will now join the Young People Distribution layer and the MP19_SUBZONE layer.
 
     3.  For Target field, select **SUBZONE_N**
 
-![](https://lh6.googleusercontent.com/84Sz8A5nOqRPVIWMLo6zPqcSUsrO1WOOVI2XFUWlsVJwRosYlb-erkCFscBbfWyxHauDtgdg4GLMa1Ro6t9gDwGzWYYhWXGLC_AC7Ah47lib1FymVCWDo1J0QhsJGUhJvS2g4IZPn6IXbaPylo4fLYiqBx5JM4b4ActU6bhrXm4aJH3QqBjChb79JMTQHA)
+    ![](images/pic%206)
 
 4.  Click **OK** button.
 
@@ -452,11 +455,11 @@ We will now prepare the choropleth map to analyse the distribution of the youth 
 
     6.  Click **Classify** button
 
-![](https://lh5.googleusercontent.com/bO9DY4oFFYSboZTD0qAHWnQWnbyF3xGMdFe4nERE__DXCgBdElGpQfdV_n9-ghkCzxrcnOfnkVCbVHiDHXWM0XDdyDR9Q6Afw35aanzMtE0qpOXOrynV_VWvtKcB9oucTUYxIrYxBIvN1JY3T6cd0kklPS3tgf4VVIx4fK2c29E-AgbKgE0yFdIgsZ_EWg)
+    ![](images/pic%207)
 
 3.  Click the OK button.Notice that a choropleth map is now formed.
 
-![](https://lh5.googleusercontent.com/M5oZbX873EnKHpp7wgffh2a4y6bvVLDLO-Kxv4SaicjtS74heNgdXcHD6DmizSwY70sqV36wbyW-qsTBl5memVLE5E8diYdUT5akhkQbkK2B8BZ_b84WM0txq0R7M28yYNf8LSTjHbowUCjKF0VbvIWnxYMQG73gS5LBvIRyYfVMeQiab49GNiO7Y5_3Rw)
+![](images/pic%208)
 
 # 3.0 Preparing Maps for Analysis
 

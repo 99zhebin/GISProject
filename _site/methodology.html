@@ -508,9 +508,10 @@ ul.task-list li input[type="checkbox"] {
 <p>where “Time” = “2019” and “Age” in ('0','1','2','3','4','5','6','7','8','9','10',‘11’,‘12’,‘13’,‘14’,‘15’,‘16’,‘17’,‘18’,’)&nbsp;</p>
 <p>group by “PA”,“SZ”</p>
 <ol start="3" type="1">
-<li>For Geometry type, select <strong>No geometry</strong></li>
+<li><p>For Geometry type, select <strong>No geometry</strong></p>
+<p><img src="images/pic%201.png" class="img-fluid"></p></li>
 </ol>
-<p><img src="https://lh5.googleusercontent.com/H6NSPYezdkX_GXDwOYB7cojoyWK0kBZUd0o9uifuLdnCVLdCAizxhFQsqaIlMpWOW9Ft9Tzx8l9lq5AQ39dneuSbLWwjirZLA61fy5yRsC4CFJtoWbNKFv-eSX7cpw-yAFU1QUS6oWQpLpMqQZXPfPjlxLwaBbPVDjZ3R4vOkGctaVE3ElMako-6_MgBig.png" class="img-fluid"></p>
+<!-- -->
 <ol start="4" type="1">
 <li><p>Click <strong>Run</strong> button.&nbsp;</p></li>
 <li><p>A new layer called SQL Output will appear in the <strong>Layers</strong> panel.</p></li>
@@ -521,30 +522,28 @@ ul.task-list li input[type="checkbox"] {
 <p>We will now perform relational join between the SQL Output layer and the MP19_SUBZONE layer.We will use the subzone name as the unique identifier to join these two layers.&nbsp;</p>
 <ol type="1">
 <li><p>Right-click on SQL Output → select <strong>Open Attribute Table.</strong> Observe that the <strong>SZ</strong> column values are currently in lower case. We will change the values to upper case.</p></li>
-<li><p>Click <strong>Open field calculator <img src="https://lh3.googleusercontent.com/_Mze8e89wGpfrgqeHU_0Fb8Z30rO7HGQcdrs_uQmVsRz-gtvC7yPcjvTSGhYlS2vxIIqZJN_36bTn3o0Ooewst-jL3N40XlgrO2lbUTTzqhAyNReVsNX9JexxzwNBLw9MVyZjRIf-0ScAADCx-rowQZIThlr4sxS9NHgcIjTDKL-S8Dv7dAC0AylqCGG9w.png" class="img-fluid"></strong> icon</p></li>
+<li><p>Click <strong>Open field calculator</strong> <img src="images/pic%202.png" class="img-fluid">icon</p></li>
 <li><p>Click <strong>Update existing field</strong></p></li>
 <li><p>For Value, select <strong>SZ</strong></p></li>
 <li><p>Under <strong>Expression</strong> panel, type <strong>upper("SZ")</strong></p></li>
 <li><p>Click <strong>OK</strong> button</p></li>
 </ol>
-<p><img src="https://lh3.googleusercontent.com/OPz7UVm3dPzXkvRgHJzaAYuV0RXktISqtv-slScFF1c6zMFE7LHSe8jFBTyytqsU1r7-okocpFafUtdG0QsCSxynlHEJhAJbjs9WEMEA9Xw5LdUoiJ2g-d7Nj5gskx9-w7LLgQn7S2I-5JsBV7jmgU3jup07sKYZiedXy6LOofLsD4eEh9upSyxMlKOyUA.png" class="img-fluid"></p>
+<p><img src="images/pic%203.png" class="img-fluid"></p>
 <p>Notice that the <strong>SZ</strong> column values are now in upper case.</p>
-<p><img src="https://lh4.googleusercontent.com/ZiZ5KmUMIr8vn5R657TJ7RtGE4AQSiwT_dPbCkNiHFZA0ViiUW_xThG3b60dP8HRRS_3Jb5FIxncpvBJia5-GqbFTHbCyXX8hP63VSC-ZrA3Ecc-N6hGUH0wkaYnuWZHNWoErVp07n7XhKXI2wvf2CWCeN0RuCibB2Vsj6DdzyrWbaYqpuxYJU9OdzSpiQ.png" class="img-fluid"></p>
+<p><img src="images/pic%204.png" class="img-fluid"></p>
 <p>Using the steps learned previously, save SQL Output&nbsp; into Geopackage format. Name the layer Young People Distribution.</p>
 <p>We will now join the Young People Distribution layer and the MP19_SUBZONE layer.&nbsp;</p>
 <ol type="1">
 <li><p>Right click on MP19_SUBZONE layer → click <strong>Properties</strong> → click <strong>Joins</strong></p></li>
-<li><p>Click on the <strong>+</strong> icon at the bottom of the screen.<img src="https://lh3.googleusercontent.com/d5AGw6p9hAUlz0_ct5_o-iVAt2PPOQltMfiQl1YFWPFmoQ4plqGVwBAHKpnAAEOsB4fZ5HBkl8gkmy-eXnohQ_SBS6QGrlMmd7LcCp7M6Z7nycPitTQk-9V5JeM6l2F8eUl9uftVsV1-jVDId45-2QSRRSytJyLSgGR02B9GCOB64y-9wz-2fE5wSKOmew.png" class="img-fluid"></p></li>
+<li><p>Click on the <strong>+</strong> icon at the bottom of the screen.<img src="images/pic%205.png" class="img-fluid"></p></li>
 <li><p>The <strong>Add Vector Join</strong> dialog window appears.</p>
 <ol type="1">
 <li><p>For Join layer, select <strong>Young People</strong></p></li>
 <li><p>For Join field, select <strong>SZ</strong></p></li>
 <li><p>For Target field, select <strong>SUBZONE_N</strong></p></li>
-</ol></li>
 </ol>
-<p><img src="https://lh6.googleusercontent.com/84Sz8A5nOqRPVIWMLo6zPqcSUsrO1WOOVI2XFUWlsVJwRosYlb-erkCFscBbfWyxHauDtgdg4GLMa1Ro6t9gDwGzWYYhWXGLC_AC7Ah47lib1FymVCWDo1J0QhsJGUhJvS2g4IZPn6IXbaPylo4fLYiqBx5JM4b4ActU6bhrXm4aJH3QqBjChb79JMTQHA.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li>Click <strong>OK</strong> button.</li>
+<p><img src="images/pic%206.png" class="img-fluid"></p></li>
+<li><p>Click <strong>OK</strong> button.</p></li>
 </ol>
 <p>Notice that a relational join between Young People and MP19_SUBZONE has been created.</p>
 </section>
@@ -561,13 +560,11 @@ ul.task-list li input[type="checkbox"] {
 <li><p>For Color ramp, choose <strong>Blues</strong></p></li>
 <li><p>For Mode, select <strong>Natural Breaks (Jenks)</strong> from the drop-down list</p></li>
 <li><p>Click <strong>Classify</strong> button</p></li>
-</ol></li>
 </ol>
-<p><img src="https://lh5.googleusercontent.com/bO9DY4oFFYSboZTD0qAHWnQWnbyF3xGMdFe4nERE__DXCgBdElGpQfdV_n9-ghkCzxrcnOfnkVCbVHiDHXWM0XDdyDR9Q6Afw35aanzMtE0qpOXOrynV_VWvtKcB9oucTUYxIrYxBIvN1JY3T6cd0kklPS3tgf4VVIx4fK2c29E-AgbKgE0yFdIgsZ_EWg.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>Click the OK button.Notice that a choropleth map is now formed.</li>
+<p><img src="images/pic%207.png" class="img-fluid"></p></li>
+<li><p>Click the OK button.Notice that a choropleth map is now formed.</p></li>
 </ol>
-<p><img src="https://lh5.googleusercontent.com/M5oZbX873EnKHpp7wgffh2a4y6bvVLDLO-Kxv4SaicjtS74heNgdXcHD6DmizSwY70sqV36wbyW-qsTBl5memVLE5E8diYdUT5akhkQbkK2B8BZ_b84WM0txq0R7M28yYNf8LSTjHbowUCjKF0VbvIWnxYMQG73gS5LBvIRyYfVMeQiab49GNiO7Y5_3Rw.png" class="img-fluid"></p>
+<p><img src="images/pic%208.png" class="img-fluid"></p>
 </section>
 </section>
 </section>
