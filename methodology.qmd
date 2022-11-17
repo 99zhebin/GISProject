@@ -3,9 +3,9 @@ title: "Methodology - Step by Step Guide"
 editor: visual
 ---
 
-## 1.0 Data Collection
+# 1.0 Data Collection
 
-### 1.1 Downloading Data
+## 1.1 Downloading Data
 
 Firstly, you are required to download the following data from data.gov.sg:
 
@@ -13,15 +13,16 @@ Firstly, you are required to download the following data from data.gov.sg:
 
 2.  [General Information of Schools](https://data.gov.sg/dataset/school-directory-and-information)
 
+3.  [Singapore Residents by Planning Area / Subzone, Single Year of Age and Sex, June 2011-2020 ](https://www.singstat.gov.sg/find-data/search-by-theme/population/geographic-distribution/latest-data)
+
 Next, you are required to download geospatial data from [geofabrik](https://download.geofabrik.de/asia/malaysia-singapore-brunei.html): 
 
 1.  Roads data from OpenStreetMap (OSM) data sets 
-
--   Click on Asia → Malaysia, Singapore, and Brunei → Download malaysia-singapore-brunei-latest-free.shp.zip 
+    -   Click on Asia → Malaysia, Singapore, and Brunei → Download malaysia-singapore-brunei-latest-free.shp.zip 
 
 Next, you are required to download MRT data (Train Station) from the [Land Transport Authority (LTA) Data Mall](https://datamall.lta.gov.sg/content/datamall/en/static-data.html). The data set provides the locations of MRT stations in Singapore. 
 
-### 1.2 Managing the Imported Data
+## 1.2 Managing the Imported Data
 
 Assuming the root directory of this project is called GISProject, create a sub-folder called data.
 
@@ -33,9 +34,9 @@ Assuming the root directory of this project is called GISProject, create a sub-f
 
     -   Place them in data folder
 
-## 2.0 Data Preparation, Data Cleaning and QGIS Project Setup (Primary School)
+# 2.0 Data Preparation, Data Cleaning and QGIS Project Setup (Primary School)
 
-### 2.1 Creating a New Project and Assigning Project Coordinate System for New Project
+## 2.1 Creating a New Project and Assigning Project Coordinate System for New Project
 
 1.  From Windows Desktop, launch QGIS. 
 
@@ -59,7 +60,7 @@ It is time to save the project. 
 
 ![](images/image3.jpg)
 
-### 2.2 Preparing base layer for study area
+## 2.2 Preparing base layer for study area
 
 Our study area would be the Singapore Planning Subzone excluding all the outer islands  such as Pulau Ubin and Pulau Tekong.
 
@@ -83,7 +84,7 @@ We will now select the main island of Singapore, excluding the outer islands. 
 
 ![](images/image7.jpg)
 
-### 2.3 Storing your data sets in GeoPackage format
+## 2.3 Storing your data sets in GeoPackage format
 
 1.  Save all your data sets into an integrated database called GISProject.
 
@@ -107,7 +108,7 @@ We will now select the main island of Singapore, excluding the outer islands. 
 
 From the Layers panel, right click the URA_MP19_SUBZONE_NO_SEA_PL layer and click **Remove Layer.**
 
-### 2.4 Preparation of Primary School Layer
+## 2.4 Preparation of Primary School Layer
 
 Review the content of general-information-of-schools.csv file. Locate and open the file with **Excel.**
 
@@ -149,7 +150,7 @@ The final not-foundschools.csv should look similar to this. 
 
 ![](images/image12.jpg)
 
-### 2.4.1.1 Installing the MMQGIS Plugin
+#### 2.4.1.1 Installing the MMQGIS Plugin
 
 To install the MMQGIS plugin, you will need to load the QGIS plugin repository by following the steps below.
 
@@ -173,7 +174,7 @@ After installing mmqgis plugin, remember to close the **Plugin** dialog window.
 
 -   Click on **Close** button.
 
-### 2.4.1.2 Geocoding using MMQGIS Plugin
+#### 2.4.1.2 Geocoding using MMQGIS Plugin
 
 Now, you are ready geocode not-foundschools dataset.
 
@@ -271,7 +272,7 @@ In the **Layers** panel, notice that the primary_schools layer has been added. 
 
 ![](images/image22.jpg)
 
-### 2.5 Preparation of Road Network Layer
+## 2.5 Preparation of Road Network Layer
 
 Using the steps learned from the previous section, import the Road Network Data (gis_osm_roads_free_1.shp) into QGIS. The Road Network data contains road networks from Malaysia, Brunei and Singapore.
 
@@ -353,9 +354,113 @@ Using appropriate QGIS functions learnt from previous sections, extract the pede
 
 ![](images/image30.jpg)
 
-## 3.0 Preparing Maps for Analysis
+## 2.6 Preparation of Young People Distribution Layer
 
-### 3.1 Creating the hexagon layer
+Using the steps learned previously, import Singapore Residents by Planning Area / Subzone, Single Year of Age and Sex, June 2011-2020 layer (respopagesex2011to2020) into the project. 
+
+### 2.6.1 Extracting Youth Population
+
+We will now use SQL to extract the distribution of the youth population from respopagesex2011to2020.
+
+1.  Click **Processing → Toolbox**
+
+2.  Type Execute SQLinto the search bar.
+
+3.  **Execute SQL toolbox appears.**
+
+    1.  **For Additional input datasources, select respopagesex2011to2020**
+
+    2.  **For SQL query, type**
+
+Select "PA", "SZ", sum("Pop") as "Young People"  
+
+from respopagesex2011to2020 
+
+where "Time" = "2019" and "Age" in (\'0\',\'1\',\'2\',\'3\',\'4\',\'5\',\'6\',\'7\',\'8\',\'9\',\'10\','11','12','13','14','15','16','17','18',') 
+
+group by "PA","SZ"
+
+3.  For Geometry type, select **No geometry**
+
+![](https://lh5.googleusercontent.com/H6NSPYezdkX_GXDwOYB7cojoyWK0kBZUd0o9uifuLdnCVLdCAizxhFQsqaIlMpWOW9Ft9Tzx8l9lq5AQ39dneuSbLWwjirZLA61fy5yRsC4CFJtoWbNKFv-eSX7cpw-yAFU1QUS6oWQpLpMqQZXPfPjlxLwaBbPVDjZ3R4vOkGctaVE3ElMako-6_MgBig)
+
+4.  Click **Run** button. 
+
+5.  A new layer called SQL Output will appear in the **Layers** panel.
+
+### 2.6.2 Creating Relational Join
+
+We will now perform relational join between the SQL Output layer and the MP19_SUBZONE layer.We will use the subzone name as the unique identifier to join these two layers. 
+
+1.  Right-click on SQL Output → select **Open Attribute Table.** Observe that the **SZ** column values are currently in lower case. We will change the values to upper case.
+
+2.  Click **Open field calculator ![](https://lh3.googleusercontent.com/_Mze8e89wGpfrgqeHU_0Fb8Z30rO7HGQcdrs_uQmVsRz-gtvC7yPcjvTSGhYlS2vxIIqZJN_36bTn3o0Ooewst-jL3N40XlgrO2lbUTTzqhAyNReVsNX9JexxzwNBLw9MVyZjRIf-0ScAADCx-rowQZIThlr4sxS9NHgcIjTDKL-S8Dv7dAC0AylqCGG9w)** icon
+
+3.  Click **Update existing field**
+
+4.  For Value, select **SZ**
+
+5.  Under **Expression** panel, type **upper(\"SZ\")**
+
+6.  Click **OK** button
+
+![](https://lh3.googleusercontent.com/OPz7UVm3dPzXkvRgHJzaAYuV0RXktISqtv-slScFF1c6zMFE7LHSe8jFBTyytqsU1r7-okocpFafUtdG0QsCSxynlHEJhAJbjs9WEMEA9Xw5LdUoiJ2g-d7Nj5gskx9-w7LLgQn7S2I-5JsBV7jmgU3jup07sKYZiedXy6LOofLsD4eEh9upSyxMlKOyUA)
+
+Notice that the **SZ** column values are now in upper case.
+
+![](https://lh4.googleusercontent.com/ZiZ5KmUMIr8vn5R657TJ7RtGE4AQSiwT_dPbCkNiHFZA0ViiUW_xThG3b60dP8HRRS_3Jb5FIxncpvBJia5-GqbFTHbCyXX8hP63VSC-ZrA3Ecc-N6hGUH0wkaYnuWZHNWoErVp07n7XhKXI2wvf2CWCeN0RuCibB2Vsj6DdzyrWbaYqpuxYJU9OdzSpiQ)
+
+Using the steps learned previously, save SQL Output  into Geopackage format. Name the layer Young People Distribution.
+
+We will now join the Young People Distribution layer and the MP19_SUBZONE layer. 
+
+1.  Right click on MP19_SUBZONE layer → click **Properties** → click **Joins**
+
+2.  Click on the **+** icon at the bottom of the screen.![](https://lh3.googleusercontent.com/d5AGw6p9hAUlz0_ct5_o-iVAt2PPOQltMfiQl1YFWPFmoQ4plqGVwBAHKpnAAEOsB4fZ5HBkl8gkmy-eXnohQ_SBS6QGrlMmd7LcCp7M6Z7nycPitTQk-9V5JeM6l2F8eUl9uftVsV1-jVDId45-2QSRRSytJyLSgGR02B9GCOB64y-9wz-2fE5wSKOmew)
+
+3.  The **Add Vector Join** dialog window appears.
+
+    1.  For Join layer, select **Young People**
+
+    2.  For Join field, select **SZ**
+
+    3.  For Target field, select **SUBZONE_N**
+
+![](https://lh6.googleusercontent.com/84Sz8A5nOqRPVIWMLo6zPqcSUsrO1WOOVI2XFUWlsVJwRosYlb-erkCFscBbfWyxHauDtgdg4GLMa1Ro6t9gDwGzWYYhWXGLC_AC7Ah47lib1FymVCWDo1J0QhsJGUhJvS2g4IZPn6IXbaPylo4fLYiqBx5JM4b4ActU6bhrXm4aJH3QqBjChb79JMTQHA)
+
+4.  Click **OK** button.
+
+Notice that a relational join between Young People and MP19_SUBZONE has been created.
+
+### 2.6.3 Creating Choropleth Map to Display Youth Population Distribution
+
+We will now prepare the choropleth map to analyse the distribution of the youth population.
+
+1.  From the **Layers** panel, right-click on MP19_SUBZONE layer → click **Properties.**
+
+2.  The **Layer Properties** dialog window appears. Click on **Symbology** tab
+
+    1.  At Symbol selection drop-down list, select **Graduated** from the drop-down list
+
+    2.  For Value, select **Young_People_Distribution_Young_People**
+
+    3.  For Classes, keep it as 5
+
+    4.  For Color ramp, choose **Blues**
+
+    5.  For Mode, select **Natural Breaks (Jenks)** from the drop-down list
+
+    6.  Click **Classify** button
+
+![](https://lh5.googleusercontent.com/bO9DY4oFFYSboZTD0qAHWnQWnbyF3xGMdFe4nERE__DXCgBdElGpQfdV_n9-ghkCzxrcnOfnkVCbVHiDHXWM0XDdyDR9Q6Afw35aanzMtE0qpOXOrynV_VWvtKcB9oucTUYxIrYxBIvN1JY3T6cd0kklPS3tgf4VVIx4fK2c29E-AgbKgE0yFdIgsZ_EWg)
+
+3.  Click the OK button.Notice that a choropleth map is now formed.
+
+![](https://lh5.googleusercontent.com/M5oZbX873EnKHpp7wgffh2a4y6bvVLDLO-Kxv4SaicjtS74heNgdXcHD6DmizSwY70sqV36wbyW-qsTBl5memVLE5E8diYdUT5akhkQbkK2B8BZ_b84WM0txq0R7M28yYNf8LSTjHbowUCjKF0VbvIWnxYMQG73gS5LBvIRyYfVMeQiab49GNiO7Y5_3Rw)
+
+# 3.0 Preparing Maps for Analysis
+
+## 3.1 Creating the hexagon layer
 
 Now, we are going to create a hexagon layer by using the MP19_SUBZONE layer as the base. The hexagon distance is 250m.
 
@@ -439,7 +544,7 @@ Before you move on to the next section, remember to remove the temporary Centroi
 
 ### 3.2.2 Network Accessibility Analysis
 
-### 3.2.2.1 Install QNEAT Plugin
+#### 3.2.2.1 Install QNEAT Plugin
 
 1.  From the menu bar, select **Plugins → Manage and Install plugins**. **Plugins** dialog window appears. 
 
@@ -451,7 +556,7 @@ Before you move on to the next section, remember to remove the temporary Centroi
 
 When the installation is completed, click on the **Close** button. 
 
-### 3.2.2.2 Working with OD Matrix Tool
+#### 3.2.2.2 Working with OD Matrix Tool
 
 Next, we will use the Origin-Destination Matrix (OD Matrix) tool of QNEAT3 plugin to calculate the distances between hexagon centrois (as the demand points) and primary schools (as the supply points).
 
@@ -511,7 +616,7 @@ A data table that looks similar to the screenshot below appears.
 
  Using the steps learnt in previous sections, save the temporary Output OD Matrix table as GeoPackage format. Name the layer OD_primaryschools.
 
-### 2.2.2.3 Extracting shortest distance pairs
+#### 2.2.2.3 Extracting shortest distance pairs
 
 Next, we will use the SQL tool of QGIS to select destination points with the shortest distance.
 
@@ -549,7 +654,7 @@ Using the steps you learnt in previous sections save the temporary SQL Output ta
 
 ### 3.2.3 Mapping Accessibility Values
 
-### 3.2.3.1 Creating a Duplicate Layer
+#### 3.2.3.1 Creating a Duplicate Layer
 
 Before we getting started, let us create a duplicate copy of hexagon layer
 
@@ -559,7 +664,7 @@ A new layer called hexagon copy is added onto **Layers** panel.
 
 -   Rename the layer to Accessibility to primary schools.
 
-### 3.2.3.2 Performing relational join
+#### 3.2.3.2 Performing relational join
 
 Before we can prepare the choropleth map, we need to join acc_primaryschools data table to the newly created  Accessibility to primary schools by using fid of acc_primaryschools data table and fid of Accessibility to primary schools attribute table as unique join fields.
 
@@ -585,7 +690,7 @@ The **Add Vector Join** dialog window appears.
 
 -   When you are ready, click on **OK** button.
 
-### 3.2.3.3 Preparing Choropleth Map
+#### 3.2.3.3 Preparing Choropleth Map
 
 Prepare a choropleth map to show the distribution of accessibility to primary schools.
 
