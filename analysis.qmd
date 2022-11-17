@@ -27,7 +27,7 @@ These schools should be easily accessible to residents living in the different s
 
 ### 1.3.1 Before Merger
 
-# ![](images/pic47.jpg) 
+![](images/pic47-01.jpg)
 
 In Singapore, most of the roads are walkable except for the main roads and expressways. Hence, we should take into consideration all types of roads except the major roads, expressways, links to these roads, unclassified roads and bridleway that are path for horses. All other types of roads except for the aforementioned will be the network layer in determining the accessibility of hexagon centroids to primary schools.
 
