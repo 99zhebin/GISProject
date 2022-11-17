@@ -57,7 +57,7 @@ Residents in these areas all face lower priority to primary schools, representin
 
 ## 1.5 Driving Accessibility Analysis to Primary Schools Before and After Merger (Bivariate Map)
 
-### ![](images/pic50.jpg)
+![](images/pic50-01.jpg)
 
 While walking is the main mode of transport for primary school students, there are still parents who would prefer to drive their children to school. As such, we have also analysed the change in driving accessibility before and after merger. 
 
