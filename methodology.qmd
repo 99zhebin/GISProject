@@ -543,7 +543,7 @@ Using the steps you had learned in previous hands-on exercise, save the temporar
 
 Before you move on to the next section, remember to remove the temporary Centroids layer.
 
-## 3.2 Network Accessibility Analysis
+## 3.2 Network Accessibility Analysis - Primary
 
 ### 3.2.1 Install QNEAT Plugin
 
@@ -841,29 +841,23 @@ We will now create a bivariate choropleth map to compare the driving and walking
 
     6.  To create the report, go to **Project** → **New Print Layout**. Create the print layout.
 
-# Accessibility Analysis for Secondary School 
+# 4.0 Data Preparation for Secondary School
 
-\
+## 4.1 Data Preparation
 
-## 1.0 Data Preparation 
-
-### 1.1 Data cleaning 
+### 4.1.1 Data Cleaning
 
 a\. Clean School Directory and Information file downloaded from [General Information of Schools](https://data.gov.sg/dataset/school-directory-and-information) by keeping the column like shown below, filtering the mainlevel_code with the value of SECONDARY and MIXED_LEVEL.
 
-b\. Carefully check each school labelled with mixed_level, and remove schools that do not include secondary school, for example Singapore Sports School and School of the Arts, save it into **Data** folder and name it **Singapore_Secondary_Schools**.
+b\. Carefully check each school labelled with mixed_level, and remove schools that do not include secondary school, for example Singapore Sports School and School of the Arts, save it into the Data folder and name it **Singapore_Secondary_Schools**.
 
-![](https://lh5.googleusercontent.com/wu3QHPvlBfJhezdEeNp8rI6nZbHmCmGmf6jCAZV0s3ek7uw6ulyGJ9jwsb85TqD1QgqzQyxiihbHJg7X4ywjfa-Rk5bU3OduyjJelWlaqJ4lT5WumsNcttae07sl8evZY8G4AABOgYGF5-r8xSlnUrQ8nkiu_U_IDlR74R3rv9PQCFQLrUn3FuAQGQ)
+![](images/pic21.jpg)
 
-### 1.1 Geocode the prepared data
+## 4.2 Geocode the prepared data
 
-1.  Open MMQGIS -\> Geocode -\> Geocode CSV with Web Service 
+1.  Open **MMQGIS → Geocode → Geocode CSV with Web Service**
 
-\
-
-![](https://lh3.googleusercontent.com/0HqpdPINV1IRIqXR_uBuEtQ1ja4sujhDxYvvctTk7PYS406Ie3qHF2UzXkBzrlntmAm3OGrky8njQydioBxfvxDuRi0LunJF4scUgvVf6zdDTS8qIwbvQ8F-BMkrXrovDpadz6u7GOWMKkY_rf23Bc_BUZW5Mg_kZpzUzsy_RLAfwJojNVr50qFphw)
-
-\
+![](images/pic22.jpg)
 
 2.  Navigate to the singapore_secondary_schools.csv by clicking the button at the end of the bar under **Input CSV File (UTF-8 )**
 
@@ -875,95 +869,164 @@ b\. Carefully check each school labelled with mixed_level, and remove schools th
 
 -   For **Web Service**, select OpenStreetMap / Nominatim
 
--   Then save it in your geocoded file
+-   Save it in your geocoded file
 
-![](https://lh4.googleusercontent.com/xlfEFfEYIkG6iIM00G7jAbZ8L0AKWLjlB7PIlqHlzX1wE6uQRgLxyL5AG_fHCZODh_sT2At6P8jd-IMVc4OpBzIN8QeEeCNUvh217LVD7BvEz_Hz_2uMB23eaQe6qdw4-bQ18mC6c-1Qb6KhrfMXqIo0pyIbyd7ZBhsPGGsTWJAKpSjJ6sTuh_d_Bg)
+![](images/pic23.jpg)
 
-3.  Now you may notice a layer called geocoded appears, let's rename it 'SecondarySchool'
+3.  Now you may notice a layer called geocoded appears. Let us rename it to \'SecondarySchool\'
 
-4.   navigate to the notfound file in your geocode folder, there are some schools are not geocoded properly, we need to manually find it one the map
+4.  Navigate to the notfound file in your geocode folder. There are some schools that are not geocoded properly, and we need to manually find them on the map.
 
-![](https://lh6.googleusercontent.com/cJwvfCfGgBkhAoiNIOFvQXBeQZ7yHxVmEaLc3iaIf6cZ94EaLLkkza-p0usnDPYcNeVtEa0uTgtvcs-FKl9FWQJU631ZaGEv_d9sEzsm_BIDb64wx5DWeMEJGvWIO1HhTGIG7EIeSrM3zqrw23mJFiYRXJVuHhcczwfxsRz6LKNs3H2PHPAygF-ppA)
+![](images/pic24.jpg)
 
-5.  Now click Browser -\> double click OpenStreetMap
+5.  Now click Browser **→** double click OpenStreetMap
 
-![](https://lh5.googleusercontent.com/5EfWA3jEV4Qe2uOXAsjQCwWoVFKW3oLjuJ38Mjeg657UJOaLTvK62YaOKWVRrBW7FDeGIAoFfeogn6FDJJkb4Mzr3BLGqnxitEz9RWetDo5rNUm2xDyuqYL5ztfCY66IeJIPOl6MYNGNbbgh4XlGlm9oUF0Wy44ESWaaF6mcUHBpSSMNrdhpdfzmsQ)
+![](images/pic25.jpg)
 
 6.  For example, Bowen Secondary school is not geocoded properly, we can manually find it by using the OpenStreetMap by using its address.
 
-![](https://lh4.googleusercontent.com/O6wdfK2nK4WS-zGoC7u6_MGJ_0oOHf1vuGQyhThE4vS2eq3pK-8IaJ4hIjVE2WrWKOWzceqhvb9_3aPG0mdD-gUR-iIL2cdb1uMQA7DKg999Iv1Qvv-kThaTeKf5-TRBm2g32Mvzj8QRSZhg03Bs-14KVB2RuKYvfWA_RuUdYbHEpcbOaNOsshn9xg)
+![](images/pic26.jpg)
 
-7.  After you find Bowen Secondary School on Open Map, active and tick the SecondarySchool layer, right click and select Toggle Editing 
+7.  After you find Bowen Secondary School on Open Map, active and tick the SecondarySchool layer → right click and select **Toggle Editing**
 
-![](https://lh4.googleusercontent.com/FSpGGarEroK9X5F4pFqkCgsTwwj2zuldn0Cl-bfUk70hoLhtWL-HciPv5NDT7oX5ZFMQYPbpkjc8pNBM1kTz45Jz0PveW2YBnTYYa28rY-NTyozC9-eLF5k_Rbg9OqfZVxf3_ojHjmXTF-LC3ZOmk4UACRwqDXKNB57dgFFwkWmi-GqYiRtSwOVLjw)
+![](images/pic27.jpg)
 
-8.  Click the Add Point Feature icon that circled in red
+8.  Click the **Add Point Feature** icon that is circled in red.
 
-![](https://lh5.googleusercontent.com/RYoHE0LDUcxoAzZB9yo19aVGwYjxpjbGY9BP5CVhf-OLXreVs9_UbRpbb5HNVLFFSpkr2lfxC4dBfy4wlhg4vikxydSndu-bPrFArOX8h34dcY2rz3_5MBmXvmkMWLyJSV58vqEeJ4RQBUv_Ckry0_fy4LB7dU8ZupUd_XIAt2NllFWVAYXuL_spbA)
+![](images/pic28.jpg)
 
 9.  Fill in the necessary information according to your notfound.csv file
 
-![](https://lh3.googleusercontent.com/hY8khGIJEAgWHyDHYSZY2g0JlQgNG1m4AHge6JHYJEZym7Lx-QNYBpRfH78-VJv4o8JMAuvueeCMoTZj_URocNzaSSYIcJ_O5MP83vDjZCb1u35MBNI_cuJGr1RqRopK63w2hhYgOmAkCBSNxHQw0WdCDss96_h1VDmpjwT-nhIsVpQ2mQiaywpbwA)
+![](images/pic29.jpg)
 
-10. Repeat the steps for the other school in the notfound.csv file, now open the attribute table， there should be 153 features, now save it into the geopackage database
+10. Repeat the steps for the other school in the notfound.csv file, and open the attribute table. There should be 153 features. Save it into the Geopackage database.\
 
-\
+![](images/pic30.jpg)
 
-![](https://lh6.googleusercontent.com/xJQzxJ_g4Rqeii5ncrcllVuV3-N27Qg8up9YfxUNjd-7NTPuZf71rsm0ECmZL5OP8oNJI-Q2ihqjAazIWBtb0kMP5QTxYxzAzemxR9fs5mKx4SJwTYLmmRW_OpD9oGFrfDs0kjiQt9QLfRkPlseBgb5V2T7F5Lb8__GWrX3Yfz4L9X9RzBWoVyCA4g)
+## 4.3 Network Accessibility Analysis - Secondary (Walking and Driving)
 
-\
+The logic for preparing maps including creating the hexagon layer and Network Accessibility Analysis are the same as demonstrated in the previous section. Follow the instructions from section 3.2 with secondary school before and after merger layers instead.
 
-## 2.0  Preparing base layer for study area
+## 4.4 Network Accessibility Analysis - Secondary (MRT)
 
--   The steps of preparing base layer which is MP19_Subzone and hexagon layer are demonstrated in previous section, the logic is same for analysing secondary school
+### 4.4.1 Data Preparation
 
--   \
+1.  Load the[ MRTLRTStnPt](https://datamall.lta.gov.sg/content/datamall/en/static-data.html) data from LTA data mall. Save it into GeoPackage as MRTstations_after_merger. 
 
-\
+2.  Load a second MRTLRTStnPtt layer. Open its attribute table and remove the following stations which were not open at the time of the mergers
 
-Accessibility Analysis for Junior Colleges
+    1.  Woodlands North
 
-\
+    2.  Woodlands South
 
-Data Used
+    3.  Springleaf
 
-Clean School Directory and Information file downloaded form [General Information of Schools](https://data.gov.sg/dataset/school-directory-and-information) by keeping the column like shown below, filtering the mainlevel_code with the value of SECONDARY and MIXED_LEVEL
+    4.  Lentor
 
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
+    5.  Mayflower
 
-![](https://lh5.googleusercontent.com/q0rViv4kgK17JEQgV3ERjp3qTf50Il0PZ1kiWWm1b-NasTvn3z88GmDGQ4eS0gzpqle6eYgHXxwkYqS5faNNQj8XjjXCo4n9S1pZ9Qlm7RiGH4bL8ooIS06Y3Cl07Odto3XeDdjXgOfcEq5t6eD9w-qv8wrPg1QzCcMiRVSrdC9jqVZLrzjT5amYpQ)
+    6.  Bright Hill
 
-\
+    7.  Upper Thompson
+
+    8.  Caldecott (On the Thompson East Coast Line side)
+
+3.  Save it into GeoPackage as MRTstations_before_merger
+
+![](images/pic31.jpg)
+
+4.  Load in the gis_osm_railways from Geofabrik. Select all the MRT, LRT tracks using  "fclass" in ( 'light_rail' , 'monorail' , 'rail' , 'subway' )
+
+![](images/pic32.jpg)
+
+5.  Save the selected features as MRT_after_merger
+
+6.  Create a duplicate of MRT_after_merger and call it MRT_before_merger. Delete the TEL from the layer (Highlighted in bright yellow)
+
+![](images/pic33.jpg)
+
+### 4.4.2 Extracting Shortest Distance from Hexagon Centroid to School via MRT
+
+#### 4.4.2.1 OD Matrix for hex centroid to MRT stations
+
+Perform the same steps as in section 3.2.2, but with the following parameters changed:
+
+-   For Network Layer, select pedestrian_roads from the drop-down list.
+
+-   For From-Point Layer, select hex_centroids from the drop-down list.
+
+-   For Unique Point ID Field, select fid from the drop-down list.
+
+-   For To-Point Layer, select MRTstations_before_merger from the drop-down list.
+
+-   For Unique Point ID Field, select fid from the drop-down list.
+
+Save this in GeoPackage as OD_Secondary_before_merger_MRT_walk
+
+Repeat the steps with MRTstations_after_merger to get OD_Secondary_after_merger_MRT_walk
+
+#### 4.4.2.2 OD Matrix for MRT station to MRT station
+
+Perform the same steps as in section 3.2.2, but with the following parameters changed:
+
+-   For Network Layer, select MRT_before_merger from the drop-down list.
+
+-   For From-Point Layer, select MRTstations_before_merger from the drop-down list.
+
+-   For Unique Point ID Field, select fid from the drop-down list.
+
+-   For To-Point Layer, select MRTstations_before_merger from the drop-down list.
+
+-   For Unique Point ID Field, select fid from the drop-down list.
+
+Save this in GeoPackage as OD_before_merger_MRT_travel
+
+Repeat the steps with MRT_after_merger and MRTstations_after_merger to get OD_after_merger_MRT_travel
+
+#### 4.4.2.3 OD Matrix for MRT station to Secondary School
+
+Perform the same steps as in section 3.2.2, but with the following parameters changed:
+
+-   For Network Layer, select pedestrian_roads from the drop-down list.
+
+-   For From-Point Layer, select Secondary_before_merger from the drop-down list.
+
+-   For Unique Point ID Field, select fid from the drop-down list.
+
+-   For To-Point Layer, select MRTstations_before_merger from the drop-down list.
+
+-   For Unique Point ID Field, select fid from the drop-down list.
+
+Save this in GeoPackage as OD_before_merger_MRT-school
+
+Repeat the steps with Secondary_after_merger and MRTstations_after_merger to get OD_after_merger_MRT-school
+
+#### 4.4.2.4 SQL to get accessibility
+
+Repeat steps 3.2.3 but with the following parameters changed:
+
+1.  For **Additional input datasources**, select OD_before_merger_MRT-school as input1 and OD_before_merger_MRT_travel
+
+2.  Enter the following as the SQL query:
+
+    1.  select min(input1.total_cost) as shortest_distance, input2.total_cost, input2.origin_id, input2.destination_id, input1.origin_id as school from input1, input2 where input1.destination_id = input2.destination_id group by input1.origin_id, input2.origin_id
+
+3.  Save the output as before_merger_sql
+
+4.  Open execute SQL again
+
+5.  For **Additional input datasources**, select OD_Secondary_before_merger_MRT_walk as input1 and before_merger_sql as input2
+
+6.  Enter the following SQL query:
+
+    1.  select input1.origin_id as origin_id, input1.destination_id as origin_MRT, input2.destination_id as destination_MRT, input2.school as destination_id, min(input1.total_cost) as dist1, min(input2.total_cost) as dist2, input2.shortest_distance as dist3 from input1, input2 where input1.destination_id = input2.origin_id and input1.total_cost \< 1000 group by input1.origin_id
+
+7.  Save the output as acc_Secondary_before_merger_MRT
+
+Repeat the above steps with the after merger OD matrices.
+
+### 4.4.3 Mapping Accessibility Values
+
+Repeat the steps in section 3.2.4 to create chroropleth/ bivariate choropleth maps for Walking/ MRT/ Driving Accessibility maps for both Secondary Schools both before and after merger.
+
+# 5.0 Data Preparation for JC 

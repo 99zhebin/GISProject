@@ -151,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#computing-hexagon-centroid" id="toc-computing-hexagon-centroid" class="nav-link" data-scroll-target="#computing-hexagon-centroid">3.1.3&nbsp; Computing hexagon centroid</a></li>
   <li><a href="#saving-the-centroid-layer" id="toc-saving-the-centroid-layer" class="nav-link" data-scroll-target="#saving-the-centroid-layer">3.1.4 Saving the centroid layer</a></li>
   </ul></li>
-  <li><a href="#network-accessibility-analysis" id="toc-network-accessibility-analysis" class="nav-link" data-scroll-target="#network-accessibility-analysis">3.2 Network Accessibility Analysis</a>
+  <li><a href="#network-accessibility-analysis---primary" id="toc-network-accessibility-analysis---primary" class="nav-link" data-scroll-target="#network-accessibility-analysis---primary">3.2 Network Accessibility Analysis - Primary</a>
   <ul class="collapse">
   <li><a href="#install-qneat-plugin" id="toc-install-qneat-plugin" class="nav-link" data-scroll-target="#install-qneat-plugin">3.2.1 Install QNEAT Plugin</a></li>
   <li><a href="#working-with-od-matrix-tool" id="toc-working-with-od-matrix-tool" class="nav-link" data-scroll-target="#working-with-od-matrix-tool">3.2.2 Working with OD Matrix Tool</a></li>
@@ -159,15 +159,22 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#mapping-accessibility-values" id="toc-mapping-accessibility-values" class="nav-link" data-scroll-target="#mapping-accessibility-values">3.2.4 Mapping Accessibility Values</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#accessibility-analysis-for-secondary-school" id="toc-accessibility-analysis-for-secondary-school" class="nav-link" data-scroll-target="#accessibility-analysis-for-secondary-school">Accessibility Analysis for Secondary School&nbsp;</a>
+  <li><a href="#data-preparation-for-secondary-school" id="toc-data-preparation-for-secondary-school" class="nav-link" data-scroll-target="#data-preparation-for-secondary-school">4.0 Data Preparation for Secondary School</a>
   <ul class="collapse">
-  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">1.0 Data Preparation&nbsp;</a>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">4.1 Data Preparation</a>
   <ul class="collapse">
-  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">1.1 Data cleaning&nbsp;</a></li>
-  <li><a href="#geocode-the-prepared-data" id="toc-geocode-the-prepared-data" class="nav-link" data-scroll-target="#geocode-the-prepared-data">1.1 Geocode the prepared data</a></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">4.1.1 Data Cleaning</a></li>
   </ul></li>
-  <li><a href="#preparing-base-layer-for-study-area-1" id="toc-preparing-base-layer-for-study-area-1" class="nav-link" data-scroll-target="#preparing-base-layer-for-study-area-1">2.0&nbsp; Preparing base layer for study area</a></li>
+  <li><a href="#geocode-the-prepared-data" id="toc-geocode-the-prepared-data" class="nav-link" data-scroll-target="#geocode-the-prepared-data">4.2 Geocode the prepared data</a></li>
+  <li><a href="#network-accessibility-analysis---secondary-walking-and-driving" id="toc-network-accessibility-analysis---secondary-walking-and-driving" class="nav-link" data-scroll-target="#network-accessibility-analysis---secondary-walking-and-driving">4.3 Network Accessibility Analysis - Secondary (Walking and Driving)</a></li>
+  <li><a href="#network-accessibility-analysis---secondary-mrt" id="toc-network-accessibility-analysis---secondary-mrt" class="nav-link" data-scroll-target="#network-accessibility-analysis---secondary-mrt">4.4 Network Accessibility Analysis - Secondary (MRT)</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation-1" id="toc-data-preparation-1" class="nav-link" data-scroll-target="#data-preparation-1">4.4.1 Data Preparation</a></li>
+  <li><a href="#extracting-shortest-distance-from-hexagon-centroid-to-school-via-mrt" id="toc-extracting-shortest-distance-from-hexagon-centroid-to-school-via-mrt" class="nav-link" data-scroll-target="#extracting-shortest-distance-from-hexagon-centroid-to-school-via-mrt">4.4.2 Extracting Shortest Distance from Hexagon Centroid to School via MRT</a></li>
+  <li><a href="#mapping-accessibility-values-1" id="toc-mapping-accessibility-values-1" class="nav-link" data-scroll-target="#mapping-accessibility-values-1">4.4.3 Mapping Accessibility Values</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#data-preparation-for-jc" id="toc-data-preparation-for-jc" class="nav-link" data-scroll-target="#data-preparation-for-jc">5.0 Data Preparation for JC</a></li>
   </ul>
 </nav>
     </div>
@@ -645,8 +652,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Before you move on to the next section, remember to remove the temporary Centroids layer.</p>
 </section>
 </section>
-<section id="network-accessibility-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="network-accessibility-analysis">3.2 Network Accessibility Analysis</h2>
+<section id="network-accessibility-analysis---primary" class="level2">
+<h2 class="anchored" data-anchor-id="network-accessibility-analysis---primary">3.2 Network Accessibility Analysis - Primary</h2>
 <section id="install-qneat-plugin" class="level3">
 <h3 class="anchored" data-anchor-id="install-qneat-plugin">3.2.1 Install QNEAT Plugin</h3>
 <ol type="1">
@@ -893,28 +900,23 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="accessibility-analysis-for-secondary-school" class="level1">
-<h1>Accessibility Analysis for Secondary School&nbsp;</h1>
-<p><br>
-</p>
+<section id="data-preparation-for-secondary-school" class="level1">
+<h1>4.0 Data Preparation for Secondary School</h1>
 <section id="data-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="data-preparation">1.0 Data Preparation&nbsp;</h2>
+<h2 class="anchored" data-anchor-id="data-preparation">4.1 Data Preparation</h2>
 <section id="data-cleaning" class="level3">
-<h3 class="anchored" data-anchor-id="data-cleaning">1.1 Data cleaning&nbsp;</h3>
+<h3 class="anchored" data-anchor-id="data-cleaning">4.1.1 Data Cleaning</h3>
 <p>a. Clean School Directory and Information file downloaded from <a href="https://data.gov.sg/dataset/school-directory-and-information">General Information of Schools</a> by keeping the column like shown below, filtering the mainlevel_code with the value of SECONDARY and MIXED_LEVEL.</p>
-<p>b. Carefully check each school labelled with mixed_level, and remove schools that do not include secondary school, for example Singapore Sports School and School of the Arts, save it into <strong>Data</strong> folder and name it <strong>Singapore_Secondary_Schools</strong>.</p>
-<p><img src="https://lh5.googleusercontent.com/wu3QHPvlBfJhezdEeNp8rI6nZbHmCmGmf6jCAZV0s3ek7uw6ulyGJ9jwsb85TqD1QgqzQyxiihbHJg7X4ywjfa-Rk5bU3OduyjJelWlaqJ4lT5WumsNcttae07sl8evZY8G4AABOgYGF5-r8xSlnUrQ8nkiu_U_IDlR74R3rv9PQCFQLrUn3FuAQGQ.png" class="img-fluid"></p>
+<p>b. Carefully check each school labelled with mixed_level, and remove schools that do not include secondary school, for example Singapore Sports School and School of the Arts, save it into the Data folder and name it <strong>Singapore_Secondary_Schools</strong>.</p>
+<p><img src="images/pic21.jpg" class="img-fluid"></p>
 </section>
-<section id="geocode-the-prepared-data" class="level3">
-<h3 class="anchored" data-anchor-id="geocode-the-prepared-data">1.1 Geocode the prepared data</h3>
+</section>
+<section id="geocode-the-prepared-data" class="level2">
+<h2 class="anchored" data-anchor-id="geocode-the-prepared-data">4.2 Geocode the prepared data</h2>
 <ol type="1">
-<li>Open MMQGIS -&gt; Geocode -&gt; Geocode CSV with Web Service&nbsp;</li>
+<li>Open <strong>MMQGIS → Geocode → Geocode CSV with Web Service</strong></li>
 </ol>
-<p><br>
-</p>
-<p><img src="https://lh3.googleusercontent.com/0HqpdPINV1IRIqXR_uBuEtQ1ja4sujhDxYvvctTk7PYS406Ie3qHF2UzXkBzrlntmAm3OGrky8njQydioBxfvxDuRi0LunJF4scUgvVf6zdDTS8qIwbvQ8F-BMkrXrovDpadz6u7GOWMKkY_rf23Bc_BUZW5Mg_kZpzUzsy_RLAfwJojNVr50qFphw.png" class="img-fluid"></p>
-<p><br>
-</p>
+<p><img src="images/pic22.jpg" class="img-fluid"></p>
 <ol start="2" type="1">
 <li>Navigate to the singapore_secondary_schools.csv by clicking the button at the end of the bar under <strong>Input CSV File (UTF-8 )</strong></li>
 </ol>
@@ -923,99 +925,146 @@ ul.task-list li input[type="checkbox"] {
 <li><p>For <strong>City</strong>, select City</p></li>
 <li><p>For <strong>Country</strong>, select Country&nbsp;</p></li>
 <li><p>For <strong>Web Service</strong>, select OpenStreetMap / Nominatim</p></li>
-<li><p>Then save it in your geocoded file</p></li>
+<li><p>Save it in your geocoded file</p></li>
 </ul>
-<p><img src="https://lh4.googleusercontent.com/xlfEFfEYIkG6iIM00G7jAbZ8L0AKWLjlB7PIlqHlzX1wE6uQRgLxyL5AG_fHCZODh_sT2At6P8jd-IMVc4OpBzIN8QeEeCNUvh217LVD7BvEz_Hz_2uMB23eaQe6qdw4-bQ18mC6c-1Qb6KhrfMXqIo0pyIbyd7ZBhsPGGsTWJAKpSjJ6sTuh_d_Bg.png" class="img-fluid"></p>
+<p><img src="images/pic23.jpg" class="img-fluid"></p>
 <ol start="3" type="1">
-<li><p>Now you may notice a layer called geocoded appears, let’s rename it ‘SecondarySchool’</p></li>
-<li><p>&nbsp;navigate to the notfound file in your geocode folder, there are some schools are not geocoded properly, we need to manually find it one the map</p></li>
+<li><p>Now you may notice a layer called geocoded appears. Let us rename it to 'SecondarySchool'</p></li>
+<li><p>Navigate to the notfound file in your geocode folder. There are some schools that are not geocoded properly, and we need to manually find them on the map.</p></li>
 </ol>
-<p><img src="https://lh6.googleusercontent.com/cJwvfCfGgBkhAoiNIOFvQXBeQZ7yHxVmEaLc3iaIf6cZ94EaLLkkza-p0usnDPYcNeVtEa0uTgtvcs-FKl9FWQJU631ZaGEv_d9sEzsm_BIDb64wx5DWeMEJGvWIO1HhTGIG7EIeSrM3zqrw23mJFiYRXJVuHhcczwfxsRz6LKNs3H2PHPAygF-ppA.png" class="img-fluid"></p>
+<p><img src="images/pic24.jpg" class="img-fluid"></p>
 <ol start="5" type="1">
-<li>Now click Browser -&gt; double click OpenStreetMap</li>
+<li>Now click Browser <strong>→</strong> double click OpenStreetMap</li>
 </ol>
-<p><img src="https://lh5.googleusercontent.com/5EfWA3jEV4Qe2uOXAsjQCwWoVFKW3oLjuJ38Mjeg657UJOaLTvK62YaOKWVRrBW7FDeGIAoFfeogn6FDJJkb4Mzr3BLGqnxitEz9RWetDo5rNUm2xDyuqYL5ztfCY66IeJIPOl6MYNGNbbgh4XlGlm9oUF0Wy44ESWaaF6mcUHBpSSMNrdhpdfzmsQ.png" class="img-fluid"></p>
+<p><img src="images/pic25.jpg" class="img-fluid"></p>
 <ol start="6" type="1">
 <li>For example, Bowen Secondary school is not geocoded properly, we can manually find it by using the OpenStreetMap by using its address.</li>
 </ol>
-<p><img src="https://lh4.googleusercontent.com/O6wdfK2nK4WS-zGoC7u6_MGJ_0oOHf1vuGQyhThE4vS2eq3pK-8IaJ4hIjVE2WrWKOWzceqhvb9_3aPG0mdD-gUR-iIL2cdb1uMQA7DKg999Iv1Qvv-kThaTeKf5-TRBm2g32Mvzj8QRSZhg03Bs-14KVB2RuKYvfWA_RuUdYbHEpcbOaNOsshn9xg.png" class="img-fluid"></p>
+<p><img src="images/pic26.jpg" class="img-fluid"></p>
 <ol start="7" type="1">
-<li>After you find Bowen Secondary School on Open Map, active and tick the SecondarySchool layer, right click and select Toggle Editing&nbsp;</li>
+<li>After you find Bowen Secondary School on Open Map, active and tick the SecondarySchool layer → right click and select <strong>Toggle Editing</strong></li>
 </ol>
-<p><img src="https://lh4.googleusercontent.com/FSpGGarEroK9X5F4pFqkCgsTwwj2zuldn0Cl-bfUk70hoLhtWL-HciPv5NDT7oX5ZFMQYPbpkjc8pNBM1kTz45Jz0PveW2YBnTYYa28rY-NTyozC9-eLF5k_Rbg9OqfZVxf3_ojHjmXTF-LC3ZOmk4UACRwqDXKNB57dgFFwkWmi-GqYiRtSwOVLjw.png" class="img-fluid"></p>
+<p><img src="images/pic27.jpg" class="img-fluid"></p>
 <ol start="8" type="1">
-<li>Click the Add Point Feature icon that circled in red</li>
+<li>Click the <strong>Add Point Feature</strong> icon that is circled in red.</li>
 </ol>
-<p><img src="https://lh5.googleusercontent.com/RYoHE0LDUcxoAzZB9yo19aVGwYjxpjbGY9BP5CVhf-OLXreVs9_UbRpbb5HNVLFFSpkr2lfxC4dBfy4wlhg4vikxydSndu-bPrFArOX8h34dcY2rz3_5MBmXvmkMWLyJSV58vqEeJ4RQBUv_Ckry0_fy4LB7dU8ZupUd_XIAt2NllFWVAYXuL_spbA.png" class="img-fluid"></p>
+<p><img src="images/pic28.jpg" class="img-fluid"></p>
 <ol start="9" type="1">
 <li>Fill in the necessary information according to your notfound.csv file</li>
 </ol>
-<p><img src="https://lh3.googleusercontent.com/hY8khGIJEAgWHyDHYSZY2g0JlQgNG1m4AHge6JHYJEZym7Lx-QNYBpRfH78-VJv4o8JMAuvueeCMoTZj_URocNzaSSYIcJ_O5MP83vDjZCb1u35MBNI_cuJGr1RqRopK63w2hhYgOmAkCBSNxHQw0WdCDss96_h1VDmpjwT-nhIsVpQ2mQiaywpbwA.png" class="img-fluid"></p>
+<p><img src="images/pic29.jpg" class="img-fluid"></p>
 <ol start="10" type="1">
-<li>Repeat the steps for the other school in the notfound.csv file, now open the attribute table， there should be 153 features, now save it into the geopackage database</li>
+<li>Repeat the steps for the other school in the notfound.csv file, and open the attribute table. There should be 153 features. Save it into the Geopackage database.<br>
+</li>
 </ol>
-<p><br>
-</p>
-<p><img src="https://lh6.googleusercontent.com/xJQzxJ_g4Rqeii5ncrcllVuV3-N27Qg8up9YfxUNjd-7NTPuZf71rsm0ECmZL5OP8oNJI-Q2ihqjAazIWBtb0kMP5QTxYxzAzemxR9fs5mKx4SJwTYLmmRW_OpD9oGFrfDs0kjiQt9QLfRkPlseBgb5V2T7F5Lb8__GWrX3Yfz4L9X9RzBWoVyCA4g.png" class="img-fluid"></p>
-<p><br>
-</p>
+<p><img src="images/pic30.jpg" class="img-fluid"></p>
 </section>
+<section id="network-accessibility-analysis---secondary-walking-and-driving" class="level2">
+<h2 class="anchored" data-anchor-id="network-accessibility-analysis---secondary-walking-and-driving">4.3 Network Accessibility Analysis - Secondary (Walking and Driving)</h2>
+<p>The logic for preparing maps including creating the hexagon layer and Network Accessibility Analysis are the same as demonstrated in the previous section. Follow the instructions from section 3.2 with secondary school before and after merger layers instead.</p>
 </section>
-<section id="preparing-base-layer-for-study-area-1" class="level2">
-<h2 class="anchored" data-anchor-id="preparing-base-layer-for-study-area-1">2.0&nbsp; Preparing base layer for study area</h2>
+<section id="network-accessibility-analysis---secondary-mrt" class="level2">
+<h2 class="anchored" data-anchor-id="network-accessibility-analysis---secondary-mrt">4.4 Network Accessibility Analysis - Secondary (MRT)</h2>
+<section id="data-preparation-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation-1">4.4.1 Data Preparation</h3>
+<ol type="1">
+<li><p>Load the<a href="https://datamall.lta.gov.sg/content/datamall/en/static-data.html">MRTLRTStnPt</a> data from LTA data mall. Save it into GeoPackage as MRTstations_after_merger.&nbsp;</p></li>
+<li><p>Load a second MRTLRTStnPtt layer. Open its attribute table and remove the following stations which were not open at the time of the mergers</p>
+<ol type="1">
+<li><p>Woodlands North</p></li>
+<li><p>Woodlands South</p></li>
+<li><p>Springleaf</p></li>
+<li><p>Lentor</p></li>
+<li><p>Mayflower</p></li>
+<li><p>Bright Hill</p></li>
+<li><p>Upper Thompson</p></li>
+<li><p>Caldecott (On the Thompson East Coast Line side)</p></li>
+</ol></li>
+<li><p>Save it into GeoPackage as MRTstations_before_merger</p></li>
+</ol>
+<p><img src="images/pic31.jpg" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Load in the gis_osm_railways from Geofabrik. Select all the MRT, LRT tracks using&nbsp; “fclass” in ( ‘light_rail’ , ‘monorail’ , ‘rail’ , ‘subway’ )</li>
+</ol>
+<p><img src="images/pic32.jpg" class="img-fluid"></p>
+<ol start="5" type="1">
+<li><p>Save the selected features as MRT_after_merger</p></li>
+<li><p>Create a duplicate of MRT_after_merger and call it MRT_before_merger. Delete the TEL from the layer (Highlighted in bright yellow)</p></li>
+</ol>
+<p><img src="images/pic33.jpg" class="img-fluid"></p>
+</section>
+<section id="extracting-shortest-distance-from-hexagon-centroid-to-school-via-mrt" class="level3">
+<h3 class="anchored" data-anchor-id="extracting-shortest-distance-from-hexagon-centroid-to-school-via-mrt">4.4.2 Extracting Shortest Distance from Hexagon Centroid to School via MRT</h3>
+<section id="od-matrix-for-hex-centroid-to-mrt-stations" class="level4">
+<h4 class="anchored" data-anchor-id="od-matrix-for-hex-centroid-to-mrt-stations">4.4.2.1 OD Matrix for hex centroid to MRT stations</h4>
+<p>Perform the same steps as in section 3.2.2, but with the following parameters changed:</p>
 <ul>
-<li><p>The steps of preparing base layer which is MP19_Subzone and hexagon layer are demonstrated in previous section, the logic is same for analysing secondary school</p></li>
-<li><p><br>
-</p></li>
+<li><p>For Network Layer, select pedestrian_roads from the drop-down list.</p></li>
+<li><p>For From-Point Layer, select hex_centroids from the drop-down list.</p></li>
+<li><p>For Unique Point ID Field, select fid from the drop-down list.</p></li>
+<li><p>For To-Point Layer, select MRTstations_before_merger from the drop-down list.</p></li>
+<li><p>For Unique Point ID Field, select fid from the drop-down list.</p></li>
 </ul>
-<p><br>
-</p>
-<p>Accessibility Analysis for Junior Colleges</p>
-<p><br>
-</p>
-<p>Data Used</p>
-<p>Clean School Directory and Information file downloaded form <a href="https://data.gov.sg/dataset/school-directory-and-information">General Information of Schools</a> by keeping the column like shown below, filtering the mainlevel_code with the value of SECONDARY and MIXED_LEVEL</p>
-<p><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-</p>
-<p><img src="https://lh5.googleusercontent.com/q0rViv4kgK17JEQgV3ERjp3qTf50Il0PZ1kiWWm1b-NasTvn3z88GmDGQ4eS0gzpqle6eYgHXxwkYqS5faNNQj8XjjXCo4n9S1pZ9Qlm7RiGH4bL8ooIS06Y3Cl07Odto3XeDdjXgOfcEq5t6eD9w-qv8wrPg1QzCcMiRVSrdC9jqVZLrzjT5amYpQ.png" class="img-fluid"></p>
-<p><br>
-</p>
-
-
+<p>Save this in GeoPackage as OD_Secondary_before_merger_MRT_walk</p>
+<p>Repeat the steps with MRTstations_after_merger to get OD_Secondary_after_merger_MRT_walk</p>
 </section>
+<section id="od-matrix-for-mrt-station-to-mrt-station" class="level4">
+<h4 class="anchored" data-anchor-id="od-matrix-for-mrt-station-to-mrt-station">4.4.2.2 OD Matrix for MRT station to MRT station</h4>
+<p>Perform the same steps as in section 3.2.2, but with the following parameters changed:</p>
+<ul>
+<li><p>For Network Layer, select MRT_before_merger from the drop-down list.</p></li>
+<li><p>For From-Point Layer, select MRTstations_before_merger from the drop-down list.</p></li>
+<li><p>For Unique Point ID Field, select fid from the drop-down list.</p></li>
+<li><p>For To-Point Layer, select MRTstations_before_merger from the drop-down list.</p></li>
+<li><p>For Unique Point ID Field, select fid from the drop-down list.</p></li>
+</ul>
+<p>Save this in GeoPackage as OD_before_merger_MRT_travel</p>
+<p>Repeat the steps with MRT_after_merger and MRTstations_after_merger to get OD_after_merger_MRT_travel</p>
+</section>
+<section id="od-matrix-for-mrt-station-to-secondary-school" class="level4">
+<h4 class="anchored" data-anchor-id="od-matrix-for-mrt-station-to-secondary-school">4.4.2.3 OD Matrix for MRT station to Secondary School</h4>
+<p>Perform the same steps as in section 3.2.2, but with the following parameters changed:</p>
+<ul>
+<li><p>For Network Layer, select pedestrian_roads from the drop-down list.</p></li>
+<li><p>For From-Point Layer, select Secondary_before_merger from the drop-down list.</p></li>
+<li><p>For Unique Point ID Field, select fid from the drop-down list.</p></li>
+<li><p>For To-Point Layer, select MRTstations_before_merger from the drop-down list.</p></li>
+<li><p>For Unique Point ID Field, select fid from the drop-down list.</p></li>
+</ul>
+<p>Save this in GeoPackage as OD_before_merger_MRT-school</p>
+<p>Repeat the steps with Secondary_after_merger and MRTstations_after_merger to get OD_after_merger_MRT-school</p>
+</section>
+<section id="sql-to-get-accessibility" class="level4">
+<h4 class="anchored" data-anchor-id="sql-to-get-accessibility">4.4.2.4 SQL to get accessibility</h4>
+<p>Repeat steps 3.2.3 but with the following parameters changed:</p>
+<ol type="1">
+<li><p>For <strong>Additional input datasources</strong>, select OD_before_merger_MRT-school as input1 and OD_before_merger_MRT_travel</p></li>
+<li><p>Enter the following as the SQL query:</p>
+<ol type="1">
+<li>select min(input1.total_cost) as shortest_distance, input2.total_cost, input2.origin_id, input2.destination_id, input1.origin_id as school from input1, input2 where input1.destination_id = input2.destination_id group by input1.origin_id, input2.origin_id</li>
+</ol></li>
+<li><p>Save the output as before_merger_sql</p></li>
+<li><p>Open execute SQL again</p></li>
+<li><p>For <strong>Additional input datasources</strong>, select OD_Secondary_before_merger_MRT_walk as input1 and before_merger_sql as input2</p></li>
+<li><p>Enter the following SQL query:</p>
+<ol type="1">
+<li>select input1.origin_id as origin_id, input1.destination_id as origin_MRT, input2.destination_id as destination_MRT, input2.school as destination_id, min(input1.total_cost) as dist1, min(input2.total_cost) as dist2, input2.shortest_distance as dist3 from input1, input2 where input1.destination_id = input2.origin_id and input1.total_cost &lt; 1000 group by input1.origin_id</li>
+</ol></li>
+<li><p>Save the output as acc_Secondary_before_merger_MRT</p></li>
+</ol>
+<p>Repeat the above steps with the after merger OD matrices.</p>
+</section>
+</section>
+<section id="mapping-accessibility-values-1" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-accessibility-values-1">4.4.3 Mapping Accessibility Values</h3>
+<p>Repeat the steps in section 3.2.4 to create chroropleth/ bivariate choropleth maps for Walking/ MRT/ Driving Accessibility maps for both Secondary Schools both before and after merger.</p>
+</section>
+</section>
+</section>
+<section id="data-preparation-for-jc" class="level1">
+<h1>5.0 Data Preparation for JC</h1>
+
+
 </section>
 
 </main> <!-- /main -->
