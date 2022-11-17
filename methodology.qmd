@@ -543,9 +543,9 @@ Using the steps you had learned in previous hands-on exercise, save the temporar
 
 Before you move on to the next section, remember to remove the temporary Centroids layer.
 
-### 3.2.2 Network Accessibility Analysis
+## 3.2 Network Accessibility Analysis
 
-#### 3.2.2.1 Install QNEAT Plugin
+### 3.2.1 Install QNEAT Plugin
 
 1.  From the menu bar, select **Plugins → Manage and Install plugins**. **Plugins** dialog window appears. 
 
@@ -557,7 +557,7 @@ Before you move on to the next section, remember to remove the temporary Centroi
 
 When the installation is completed, click on the **Close** button. 
 
-#### 3.2.2.2 Working with OD Matrix Tool
+### 3.2.2 Working with OD Matrix Tool
 
 Next, we will use the Origin-Destination Matrix (OD Matrix) tool of QNEAT3 plugin to calculate the distances between hexagon centrois (as the demand points) and primary schools (as the supply points).
 
@@ -617,7 +617,7 @@ A data table that looks similar to the screenshot below appears.
 
  Using the steps learnt in previous sections, save the temporary Output OD Matrix table as GeoPackage format. Name the layer OD_primaryschools.
 
-#### 2.2.2.3 Extracting shortest distance pairs
+### 3.2.3 Extracting shortest distance pairs
 
 Next, we will use the SQL tool of QGIS to select destination points with the shortest distance.
 
@@ -673,9 +673,9 @@ In **Expression** panel, type shortest_distance
 
 Repeat the above steps for acc_primaryschools_aftermerger.
 
-### 3.2.3 Mapping Accessibility Values
+### 3.2.4 Mapping Accessibility Values
 
-#### 3.2.3.1 Creating a Duplicate Layer
+#### 3.2.4.1 Creating a Duplicate Layer
 
 Before we getting started, let us create a duplicate copy of hexagon layer
 
@@ -685,7 +685,7 @@ A new layer called hexagon copy is added onto **Layers** panel.
 
 -   Rename the layer to Accessibility to primary schools.
 
-#### 3.2.3.2 Performing relational join
+#### 3.2.4.2 Performing relational join
 
 Before we can prepare the choropleth map, we need to join acc_primaryschools data table to the newly created  Accessibility to primary schools by using fid of acc_primaryschools data table and fid of Accessibility to primary schools attribute table as unique join fields.
 
@@ -711,7 +711,7 @@ The **Add Vector Join** dialog window appears.
 
 -   When you are ready, click on **OK** button.
 
-#### 3.2.3.3 Preparing Choropleth Map
+#### 3.2.4.3 Preparing Choropleth Map
 
 Prepare a choropleth map to show the distribution of accessibility to primary schools.
 
@@ -751,7 +751,7 @@ Repeat the above steps to obtain choropleth maps for
 
 To obtain b and c, under section 3.2.2.2, for Network Layer, select walking_roads from the drop-down list.
 
-#### 3.2.3.4 Preparing Bivariate Choropleth Map
+#### 3.2.4.4 Preparing Bivariate Choropleth Map
 
 We will now create a bivariate choropleth map to compare the driving and walking accessibility to primary schools, both before and after the merger of schools. To do this,
 

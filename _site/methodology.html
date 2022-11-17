@@ -150,8 +150,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#saving-the-hexagon-layer" id="toc-saving-the-hexagon-layer" class="nav-link" data-scroll-target="#saving-the-hexagon-layer">3.1.2 Saving the hexagon layer</a></li>
   <li><a href="#computing-hexagon-centroid" id="toc-computing-hexagon-centroid" class="nav-link" data-scroll-target="#computing-hexagon-centroid">3.1.3&nbsp; Computing hexagon centroid</a></li>
   <li><a href="#saving-the-centroid-layer" id="toc-saving-the-centroid-layer" class="nav-link" data-scroll-target="#saving-the-centroid-layer">3.1.4 Saving the centroid layer</a></li>
-  <li><a href="#network-accessibility-analysis" id="toc-network-accessibility-analysis" class="nav-link" data-scroll-target="#network-accessibility-analysis">3.2.2 Network Accessibility Analysis</a></li>
-  <li><a href="#mapping-accessibility-values" id="toc-mapping-accessibility-values" class="nav-link" data-scroll-target="#mapping-accessibility-values">3.2.3 Mapping Accessibility Values</a></li>
+  </ul></li>
+  <li><a href="#network-accessibility-analysis" id="toc-network-accessibility-analysis" class="nav-link" data-scroll-target="#network-accessibility-analysis">3.2 Network Accessibility Analysis</a>
+  <ul class="collapse">
+  <li><a href="#install-qneat-plugin" id="toc-install-qneat-plugin" class="nav-link" data-scroll-target="#install-qneat-plugin">3.2.1 Install QNEAT Plugin</a></li>
+  <li><a href="#working-with-od-matrix-tool" id="toc-working-with-od-matrix-tool" class="nav-link" data-scroll-target="#working-with-od-matrix-tool">3.2.2 Working with OD Matrix Tool</a></li>
+  <li><a href="#extracting-shortest-distance-pairs" id="toc-extracting-shortest-distance-pairs" class="nav-link" data-scroll-target="#extracting-shortest-distance-pairs">3.2.3 Extracting shortest distance pairs</a></li>
+  <li><a href="#mapping-accessibility-values" id="toc-mapping-accessibility-values" class="nav-link" data-scroll-target="#mapping-accessibility-values">3.2.4 Mapping Accessibility Values</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#accessibility-analysis-for-secondary-school" id="toc-accessibility-analysis-for-secondary-school" class="nav-link" data-scroll-target="#accessibility-analysis-for-secondary-school">Accessibility Analysis for Secondary School&nbsp;</a>
@@ -639,10 +644,11 @@ ul.task-list li input[type="checkbox"] {
 <p>Using the steps you had learned in previous hands-on exercise, save the temporary Centroids layer into GeoPackage format. Name the newly created layer hex_centroids .</p>
 <p>Before you move on to the next section, remember to remove the temporary Centroids layer.</p>
 </section>
-<section id="network-accessibility-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="network-accessibility-analysis">3.2.2 Network Accessibility Analysis</h3>
-<section id="install-qneat-plugin" class="level4">
-<h4 class="anchored" data-anchor-id="install-qneat-plugin">3.2.2.1 Install QNEAT Plugin</h4>
+</section>
+<section id="network-accessibility-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="network-accessibility-analysis">3.2 Network Accessibility Analysis</h2>
+<section id="install-qneat-plugin" class="level3">
+<h3 class="anchored" data-anchor-id="install-qneat-plugin">3.2.1 Install QNEAT Plugin</h3>
 <ol type="1">
 <li><p>From the menu bar, select <strong>Plugins → Manage and Install plugins</strong>. <strong>Plugins</strong> dialog window appears.&nbsp;</p></li>
 <li><p>At the query, type QNEAT3. Notice that QNEAT3 appears on the search output list.</p></li>
@@ -653,8 +659,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>When the installation is completed, click on the <strong>Close</strong> button.&nbsp;</p>
 </section>
-<section id="working-with-od-matrix-tool" class="level4">
-<h4 class="anchored" data-anchor-id="working-with-od-matrix-tool">3.2.2.2 Working with OD Matrix Tool</h4>
+<section id="working-with-od-matrix-tool" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-od-matrix-tool">3.2.2 Working with OD Matrix Tool</h3>
 <p>Next, we will use the Origin-Destination Matrix (OD Matrix) tool of QNEAT3 plugin to calculate the distances between hexagon centrois (as the demand points) and primary schools (as the supply points).</p>
 <ul>
 <li><p>From the menu bar, click on <strong>Processing → Toolbox</strong></p></li>
@@ -695,8 +701,8 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/image39.jpg" class="img-fluid"></p>
 <p>&nbsp;Using the steps learnt in previous sections, save the temporary Output OD Matrix table as GeoPackage format. Name the layer OD_primaryschools.</p>
 </section>
-<section id="extracting-shortest-distance-pairs" class="level4">
-<h4 class="anchored" data-anchor-id="extracting-shortest-distance-pairs">2.2.2.3 Extracting shortest distance pairs</h4>
+<section id="extracting-shortest-distance-pairs" class="level3">
+<h3 class="anchored" data-anchor-id="extracting-shortest-distance-pairs">3.2.3 Extracting shortest distance pairs</h3>
 <p>Next, we will use the SQL tool of QGIS to select destination points with the shortest distance.</p>
 <ul>
 <li>At the <strong>Search</strong> pane of <strong>Processing Toolbox</strong>, type SQL.</li>
@@ -741,11 +747,10 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Repeat the above steps for acc_primaryschools_aftermerger.</p>
 </section>
-</section>
 <section id="mapping-accessibility-values" class="level3">
-<h3 class="anchored" data-anchor-id="mapping-accessibility-values">3.2.3 Mapping Accessibility Values</h3>
+<h3 class="anchored" data-anchor-id="mapping-accessibility-values">3.2.4 Mapping Accessibility Values</h3>
 <section id="creating-a-duplicate-layer" class="level4">
-<h4 class="anchored" data-anchor-id="creating-a-duplicate-layer">3.2.3.1 Creating a Duplicate Layer</h4>
+<h4 class="anchored" data-anchor-id="creating-a-duplicate-layer">3.2.4.1 Creating a Duplicate Layer</h4>
 <p>Before we getting started, let us create a duplicate copy of hexagon layer</p>
 <ul>
 <li>At the <strong>Layers</strong> panel, right-click on hexagon layer and select Duplicate Layer from the context menu.</li>
@@ -756,7 +761,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="performing-relational-join" class="level4">
-<h4 class="anchored" data-anchor-id="performing-relational-join">3.2.3.2 Performing relational join</h4>
+<h4 class="anchored" data-anchor-id="performing-relational-join">3.2.4.2 Performing relational join</h4>
 <p>Before we can prepare the choropleth map, we need to join acc_primaryschools data table to the newly created&nbsp; Accessibility to primary schools by using fid of acc_primaryschools data table and fid of Accessibility to primary schools attribute table as unique join fields.</p>
 <ul>
 <li>At the <strong>Layer</strong> panel, right-click on Accessibility to primary schools layer and select <strong>Properties</strong> from the context menu.</li>
@@ -779,7 +784,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="preparing-choropleth-map" class="level4">
-<h4 class="anchored" data-anchor-id="preparing-choropleth-map">3.2.3.3 Preparing Choropleth Map</h4>
+<h4 class="anchored" data-anchor-id="preparing-choropleth-map">3.2.4.3 Preparing Choropleth Map</h4>
 <p>Prepare a choropleth map to show the distribution of accessibility to primary schools.</p>
 <ol type="1">
 <li><p>From the <strong>Layers</strong> panel, double-click on the Accessibility to primary schools layer. The <strong>Layer Properties</strong> dialog window appears.&nbsp;</p></li>
@@ -807,7 +812,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To obtain b and c, under section 3.2.2.2, for Network Layer, select walking_roads from the drop-down list.</p>
 </section>
 <section id="preparing-bivariate-choropleth-map" class="level4">
-<h4 class="anchored" data-anchor-id="preparing-bivariate-choropleth-map">3.2.3.4 Preparing Bivariate Choropleth Map</h4>
+<h4 class="anchored" data-anchor-id="preparing-bivariate-choropleth-map">3.2.4.4 Preparing Bivariate Choropleth Map</h4>
 <p>We will now create a bivariate choropleth map to compare the driving and walking accessibility to primary schools, both before and after the merger of schools. To do this,</p>
 <ol type="1">
 <li><p>Create a copy of the Accessibility to Primary Schools Before Merger (Driving) and &nbsp;Accessibility to Primary Schools Before Merger (Walking). Right-click on the layer and select <strong>Duplicate layer</strong></p></li>
