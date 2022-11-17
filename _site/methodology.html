@@ -604,7 +604,9 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="editing-the-hexagon-layer">3.1.1 Editing the hexagon layer</h3>
 <p>Using the <strong>Clipped</strong> function, intersect the Grid layer and MP19_SUBZONE layer.</p>
 <p>Using <strong>Select features by polygon</strong> function as learnt in the previous section, select the area that falls under Singapore mainland.&nbsp;</p>
-<p><img src="images/pic9.jpg" class="img-fluid"> Your screen should look similar to the screenshot below. <img src="images/pic10.jpg" class="img-fluid"></p>
+<p><img src="images/pic9.jpg" class="img-fluid"></p>
+<p>Your screen should look similar to the screenshot below.</p>
+<p><img src="images/pic10.jpg" class="img-fluid"></p>
 </section>
 <section id="saving-the-hexagon-layer" class="level3">
 <h3 class="anchored" data-anchor-id="saving-the-hexagon-layer">3.1.2 Saving the hexagon layer</h3>
@@ -630,7 +632,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Click on <strong>Close</strong> button.</li>
 </ul>
 <p>Notice that a new temporary layer called Centroids is added onto the <strong>Layers</strong> panel and display on Map view.</p>
-<p><img src="images/image36.jpg" class="img-fluid"></p>
+<p><img src="images/pic11.jpg" class="img-fluid"></p>
 </section>
 <section id="saving-the-centroid-layer" class="level3">
 <h3 class="anchored" data-anchor-id="saving-the-centroid-layer">3.1.4 Saving the centroid layer</h3>
@@ -722,6 +724,22 @@ ul.task-list li input[type="checkbox"] {
 <p>Notice that a temporary table called SQL Output is added onto <strong>Layers</strong> panel. It consists of four fields. The values in shortest_distance field are the shortest distance between demand points and its nearest primary school.</p>
 <p><img src="images/image44.jpg" class="img-fluid"></p>
 <p>Using the steps you learnt in previous sections save the temporary SQL Output table as GeoPackage format. Name the layer acc_primaryschools.</p>
+<p>For the SQL Output created from walking_roads, there will be several null values in the shortest_distance column that prevents us from joining this layer to the hexagon layer</p>
+<p>in the next step. To circumvent this, we will create a new column for shortest_distance that is type integer.</p>
+<ul>
+<li><p>Right-click on acc_primaryschools_walking_beforemerger → <strong>Open Attribute Table</strong>.</p></li>
+<li><p>Click on <strong>Create new field</strong> icon <img src="images/pic2-01.jpg" class="img-fluid"></p>
+<ul>
+<li><p>For <strong>Output field name</strong>, type shortest_distance_new</p></li>
+<li><p>For <strong>Output field type,</strong> select Decimal number (real)</p></li>
+</ul></li>
+</ul>
+<p>In <strong>Expression</strong> panel, type shortest_distance</p>
+<p><img src="images/pic12.jpg" class="img-fluid"></p>
+<ul>
+<li>Click <strong>OK</strong> button. A new column called&nbsp; shortest_distance_new is created.</li>
+</ul>
+<p>Repeat the above steps for acc_primaryschools_aftermerger.</p>
 </section>
 </section>
 <section id="mapping-accessibility-values" class="level3">
@@ -755,7 +773,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>For <strong>Target field,</strong> select fid from the drop-down lsit.</p></li>
 <li><p>Keep the checkbox in front of Cache join layer in memory checked.</p></li>
 </ul>
-<p><img src="images/image45.jpg" class="img-fluid"></p>
+<p><img src="images/pic13.jpg" class="img-fluid"></p>
 <ul>
 <li>When you are ready, click on <strong>OK</strong> button.</li>
 </ul>
@@ -777,9 +795,95 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Click on the <strong>Classify</strong> button.&nbsp;</p></li>
 </ol>
 <p>Your screen should look similar to the screenshot below.</p>
-<p><br>
-</p>
+<p><img src="images/pic14.jpg" class="img-fluid"></p>
 <p>Your choropleth map should look similar to the screenshot below.</p>
+<p><img src="images/pic15.jpg" class="img-fluid"></p>
+<p>Repeat the above steps to obtain choropleth maps for</p>
+<ol type="1">
+<li><p>Accessibility to Primary Schools After Merger (Driving)</p></li>
+<li><p>Accessibility to Primary Schools Before Merger (Walking)</p></li>
+<li><p>Accessibility to Primary Schools After Merger (Walking)</p></li>
+</ol>
+<p>To obtain b and c, under section 3.2.2.2, for Network Layer, select walking_roads from the drop-down list.</p>
+</section>
+<section id="preparing-bivariate-choropleth-map" class="level4">
+<h4 class="anchored" data-anchor-id="preparing-bivariate-choropleth-map">3.2.3.4 Preparing Bivariate Choropleth Map</h4>
+<p>We will now create a bivariate choropleth map to compare the driving and walking accessibility to primary schools, both before and after the merger of schools. To do this,</p>
+<ol type="1">
+<li><p>Create a copy of the Accessibility to Primary Schools Before Merger (Driving) and &nbsp;Accessibility to Primary Schools Before Merger (Walking). Right-click on the layer and select <strong>Duplicate layer</strong></p></li>
+<li><p>For Accessibility to Primary Schools Before Merger (Driving) layer, right-click → <strong>Properties → Symbology</strong></p>
+<ol type="1">
+<li><p>Select <strong>Graduated</strong></p></li>
+<li><p>For <strong>Value,</strong> select acc_primaryschools_beforemerger_shortest_distance</p></li>
+<li><p>For <strong>Classes</strong></p>
+<ol type="1">
+<li><p>&lt;2km</p>
+<ol type="1">
+<li><p>Color: #be64ac</p></li>
+<li><p>Values: 0-2000</p></li>
+</ol></li>
+<li><p>2-5km</p>
+<ol type="1">
+<li><p>Color: #dfb0d6</p></li>
+<li><p>Values: 2000-5000</p></li>
+</ol></li>
+<li><p>&gt;5km</p>
+<ol type="1">
+<li><p>Color: #e8e8e8</p></li>
+<li><p>Values: 5000-52359.78</p></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<p><img src="images/pic16.jpg" class="img-fluid"></p>
+<ol start="3" type="1">
+<li><p>For Accessibility to Primary Schools BeforeMerger (Driving) layer, right-click → <strong>Properties → Symbology</strong></p>
+<ol type="1">
+<li><p>Select <strong>Graduated</strong></p></li>
+<li><p>For <strong>Value,</strong> select acc_primaryschools_walking_beforemerger_shortest_distance_new</p></li>
+<li><p>For <strong>Classes</strong></p>
+<ol type="1">
+<li><p>&lt;1km</p>
+<ol type="1">
+<li><p>Color: #5ac8c8</p></li>
+<li><p>Values: 0-1000</p></li>
+</ol></li>
+<li><p>2-5km</p>
+<ol type="1">
+<li><p>Color: #ace4e4</p></li>
+<li><p>Values: 1000-2000</p></li>
+</ol></li>
+<li><p>&gt;2km</p>
+<ol type="1">
+<li><p>Color: #e8e8e8</p></li>
+<li><p>Values: 2000-53051</p></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<p><img src="images/pic17.jpg" class="img-fluid"></p>
+<ol start="4" type="1">
+<li><p>For Accessibility to Primary Schools Before Merger (Driving) layer, on <strong>Symbology</strong> page, click <strong>Layer Rendering</strong></p>
+<ol type="1">
+<li><p>For <strong>Blending mode</strong>, select Multiply</p>
+<p><img src="images/pic18-01.jpg" class="img-fluid"></p></li>
+<li><p>Click the <strong>OK</strong> button and close the window.</p></li>
+</ol></li>
+<li><p>A bivariate choropleth map will appear.</p></li>
+</ol>
+<p><img src="images/pic19.jpg" class="img-fluid"></p>
+<ol start="6" type="1">
+<li><p>To create the bivariate legend, install the plugin called <strong>Bivariate Legend.</strong> Using the Bivariate legend, the parameters will be:</p>
+<ol type="1">
+<li><p><strong>Top layer:</strong> Accessibility to Primary Schools Before Merger (Driving)&nbsp;</p></li>
+<li><p><strong>Bottom layer</strong>: Accessibility to Primary Schools Before Merger (Walking)&nbsp;</p></li>
+<li><p><strong>Square width</strong>: 48</p></li>
+<li><p>Multiply</p>
+<p><img src="images/pic20.jpg" class="img-fluid"></p></li>
+<li><p>Click <strong>Generate legend</strong> and <strong>Export legend to image</strong>, and save it as a .png file</p></li>
+<li><p>To create the report, go to <strong>Project</strong> → <strong>New Print Layout</strong>. Create the print layout.</p></li>
+</ol></li>
+</ol>
 </section>
 </section>
 </section>

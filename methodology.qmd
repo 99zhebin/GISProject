@@ -504,7 +504,9 @@ Using the **Clipped** function, intersect the Grid layer and MP19_SUBZONE layer.
 Using **Select features by polygon** function as learnt in the previous section, select the area that falls under Singapore mainland. 
 
 ![](images/pic9.jpg)
+
 Your screen should look similar to the screenshot below.
+
 ![](images/pic10.jpg)
 
 ### 3.1.2 Saving the hexagon layer
@@ -533,7 +535,7 @@ Reminder: Read the log before closing.
 
 Notice that a new temporary layer called Centroids is added onto the **Layers** panel and display on Map view.
 
-![](images/image36.jpg)
+![](images/pic11.jpg)
 
 ### 3.1.4 Saving the centroid layer
 
@@ -651,6 +653,26 @@ Notice that a temporary table called SQL Output is added onto **Layers** panel. 
 
 Using the steps you learnt in previous sections save the temporary SQL Output table as GeoPackage format. Name the layer acc_primaryschools.
 
+For the SQL Output created from walking_roads, there will be several null values in the shortest_distance column that prevents us from joining this layer to the hexagon layer
+
+in the next step. To circumvent this, we will create a new column for shortest_distance that is type integer.
+
+-   Right-click on acc_primaryschools_walking_beforemerger → **Open Attribute Table**.
+
+-   Click on **Create new field** icon ![](images/pic2-01.jpg)
+
+    -   For **Output field name**, type shortest_distance_new
+
+    -   For **Output field type,** select Decimal number (real)
+
+In **Expression** panel, type shortest_distance
+
+![](images/pic12.jpg)
+
+-   Click **OK** button. A new column called  shortest_distance_new is created.
+
+Repeat the above steps for acc_primaryschools_aftermerger.
+
 ### 3.2.3 Mapping Accessibility Values
 
 #### 3.2.3.1 Creating a Duplicate Layer
@@ -685,7 +707,7 @@ The **Add Vector Join** dialog window appears.
 
 -   Keep the checkbox in front of Cache join layer in memory checked.
 
-![](images/image45.jpg)
+![](images/pic13.jpg)
 
 -   When you are ready, click on **OK** button.
 
@@ -713,9 +735,111 @@ Prepare a choropleth map to show the distribution of accessibility to primary sc
 
 Your screen should look similar to the screenshot below.
 
-\
+![](images/pic14.jpg)
 
 Your choropleth map should look similar to the screenshot below.
+
+![](images/pic15.jpg)
+
+Repeat the above steps to obtain choropleth maps for
+
+1.  Accessibility to Primary Schools After Merger (Driving)
+
+2.  Accessibility to Primary Schools Before Merger (Walking)
+
+3.  Accessibility to Primary Schools After Merger (Walking)
+
+To obtain b and c, under section 3.2.2.2, for Network Layer, select walking_roads from the drop-down list.
+
+#### 3.2.3.4 Preparing Bivariate Choropleth Map
+
+We will now create a bivariate choropleth map to compare the driving and walking accessibility to primary schools, both before and after the merger of schools. To do this,
+
+1.  Create a copy of the Accessibility to Primary Schools Before Merger (Driving) and  Accessibility to Primary Schools Before Merger (Walking). Right-click on the layer and select **Duplicate layer**
+
+2.  For Accessibility to Primary Schools Before Merger (Driving) layer, right-click → **Properties → Symbology**
+
+    1.  Select **Graduated**
+
+    2.  For **Value,** select acc_primaryschools_beforemerger_shortest_distance
+
+    3.  For **Classes**
+
+        1.  \<2km
+
+            1.  Color: #be64ac
+
+            2.  Values: 0-2000
+
+        2.  2-5km
+
+            1.  Color: #dfb0d6
+
+            2.  Values: 2000-5000
+
+        3.  \>5km
+
+            1.  Color: #e8e8e8
+
+            2.  Values: 5000-52359.78
+
+![](images/pic16.jpg)
+
+3.  For Accessibility to Primary Schools BeforeMerger (Driving) layer, right-click → **Properties → Symbology**
+
+    1.  Select **Graduated**
+
+    2.  For **Value,** select acc_primaryschools_walking_beforemerger_shortest_distance_new
+
+    3.  For **Classes**
+
+        1.  \<1km
+
+            1.  Color: #5ac8c8
+
+            2.  Values: 0-1000
+
+        2.  2-5km
+
+            1.  Color: #ace4e4
+
+            2.  Values: 1000-2000
+
+        3.  \>2km
+
+            1.  Color: #e8e8e8
+
+            2.  Values: 2000-53051
+
+![](images/pic17.jpg)
+
+4.  For Accessibility to Primary Schools Before Merger (Driving) layer, on **Symbology** page, click **Layer Rendering**
+
+    1.  For **Blending mode**, select Multiply
+
+        ![](images/pic18-01.jpg)
+
+    2.  Click the **OK** button and close the window.
+
+5.  A bivariate choropleth map will appear.
+
+![](images/pic19.jpg)
+
+6.  To create the bivariate legend, install the plugin called **Bivariate Legend.** Using the Bivariate legend, the parameters will be:
+
+    1.  **Top layer:** Accessibility to Primary Schools Before Merger (Driving) 
+
+    2.  **Bottom layer**: Accessibility to Primary Schools Before Merger (Walking) 
+
+    3.  **Square width**: 48
+
+    4.  Multiply
+
+        ![](images/pic20.jpg)
+
+    5.  Click **Generate legend** and **Export legend to image**, and save it as a .png file
+
+    6.  To create the report, go to **Project** → **New Print Layout**. Create the print layout.
 
 # Accessibility Analysis for Secondary School 
 
