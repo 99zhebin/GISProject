@@ -173,5 +173,12 @@
     "title": "Methodology - Step by Step Guide",
     "section": "5.2 Geocoding",
     "text": "5.2 Geocoding\n\nOpen MMQGIS → Geocode → Geocode CSV with Web Service\n\n\n\n\nNavigate to the JC_before_mergers.csv by clicking the button at the end of the bar under Input CSV File (UTF-8 )\n\n\nFor Address, select address from the dropdown list\nFor City, select City\nFor Country, select Country \nFor Web Service, select OpenStreetMap / Nominatim\nSave it in your geocoded file\n\n\n\nNow you may notice a layer called geocoded appears. Let us rename it to 'JC_before_merger'\nNavigate to the notfound file in your geocode folder. There are some schools that are not geocoded properly, and we need to manually find them on the map.\n\n\n\nNow click Browser -> double click OpenStreetMap\n\n\n\nFor example, Dunman High School is not geocoded properly. We can manually find it by using the OpenStreetMap by using its address.\n\n\n\nAfter you find Dunman High School on Open Map, active and tick the JC_before_merger layer, right click and select Toggle Editing.\n\n\n\nClick the Add Point Feature icon that is circled in red\n\n\n\nFill in the necessary information according to your notfound.csv file\n\n\n\nRepeat the steps for the other schools in the notfound.csv file, now open the attribute table, there should be 20 features, now save it into the Geopackage database\n\n\n\nRepeat the steps for JC_after_merger as well. You should end up with 16 features."
+  },
+  {
+    "objectID": "methodology.html#network-accessibility-analysis---jc",
+    "href": "methodology.html#network-accessibility-analysis---jc",
+    "title": "Methodology - Step by Step Guide",
+    "section": "5.3 Network Accessibility Analysis - JC",
+    "text": "5.3 Network Accessibility Analysis - JC\nThe logic for preparing maps including creating the hexagon layer and Network Accessibility Analysis are the same as demonstrated in a previous section. Follow the instructions from section 3.2 with JC before and after merger layers to get walking and driving accessibility maps.\nRepeat section 4.4.2 using JC before and after merger data to get the accessibility map for MRT travel."
   }
 ]

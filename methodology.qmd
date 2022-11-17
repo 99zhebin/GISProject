@@ -1113,6 +1113,12 @@ Repeat the steps in section 3.2.4 to create chroropleth/ bivariate choropleth ma
 
 ![](images/pic44.jpg)
 
+## 5.3 Network Accessibility Analysis - JC
+
+The logic for preparing maps including creating the hexagon layer and Network Accessibility Analysis are the same as demonstrated in a previous section. Follow the instructions from section 3.2 with JC before and after merger layers to get walking and driving accessibility maps.
+
+Repeat section 4.4.2 using JC before and after merger data to get the accessibility map for MRT travel.
+
 \
 
 
