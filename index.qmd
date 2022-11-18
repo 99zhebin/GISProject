@@ -3,5 +3,5 @@
 This is the project website for AY2022-23 SMT201 G1 Group 2 and our project **"Singapore Education Institutions Analysis".**
 
 ```{=html}
-<button class="btn btn-primary" href="https://smt201g2map.netlify.app/">Map</button>
+<button class="btn btn-primary" onclick="location.href='https://smt201g2map.netlify.app/';">Map</button>
 ```
