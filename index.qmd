@@ -3,7 +3,7 @@
 This is the project website for AY2022-23 SMT201 G1 Group 2 and our project **"Singapore Education Institutions Analysis".**
 
 ```{=html}
-<div class="d-inline-flex justify-content-around">
+<div class="d-inline-flex justify-content-evenly">
   <h4>Interactive Map Link : </h4>
   <button class="btn btn-primary rounded" onclick="location.href='https://smt201g2map.netlify.app/';">Map</button>&nbsp;&nbsp;
 
