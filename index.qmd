@@ -2,6 +2,11 @@
 
 This is the project website for AY2022-23 SMT201 G1 Group 2 and our project **"Singapore Education Institutions Analysis".**
 
+#### Website
+
 ```{=html}
 <button class="btn btn-primary" onclick="location.href='https://smt201g2map.netlify.app/';">Map</button>
 ```
+#### Poster
+
+![](images/GIS%20Poster%20Group%202_Accessibility%20Analysis.jpg)
