@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "GISProject",
     "section": "",
-    "text": "This is the project website for AY2022-23 SMT201 G1 Group 2 and our project “Singapore Education Institutions Analysis”.\n\n\nMap"
+    "text": "This is the project website for AY2022-23 SMT201 G1 Group 2 and our project “Singapore Education Institutions Analysis”.\n\n\nMap\n\n\n\n\n\n\n\n<button class=\"btn btn-primary\" onclick=\"location.href'https://github.com/99zhebin/SMT201G2.git'\">Github</button>"
   },
   {
     "objectID": "intro.html",
