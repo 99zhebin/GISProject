@@ -5,10 +5,10 @@ This is the project website for AY2022-23 SMT201 G1 Group 2 and our project **"S
 ```{=html}
 <div class="d-inline-flex justify-content-around">
   <h4>Interactive Map Link : </h4>
-  <button class="btn btn-primary" onclick="location.href='https://smt201g2map  .netlify.app/';">Map</button><br><br>
+  <button class="btn btn-primary rounded-pill" onclick="location.href='https://smt201g2map  .netlify.app/';">Map</button>&nbsp;&nbsp;
 
   <h4>Github Link : </h4>
-  <button class="btn btn-primary" onclick="location.href='https://github.com/99zhebin/SMT201G2.git'">Github</button>
+  <button class="btn btn-primary rounded-pill" onclick="location.href='https://github.com/99zhebin/SMT201G2.git'">Github</button>
 </div>
 ```
 #### Poster {style="text-align: left"}
