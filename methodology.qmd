@@ -1052,7 +1052,7 @@ Repeat the above steps with the after merger OD matrices.
 
 ### 4.5.3 Mapping Accessibility Values
 
-Repeat the steps in section 3.2.4 to create chroropleth/ bivariate choropleth maps for Walking/ MRT/ Driving Accessibility maps for both Secondary Schools both before and after merger.
+Repeat the steps in section 3.2.4 to create chroropleth/ bivariate choropleth maps for Walking/ MRT/ Driving Accessibility maps for both Secondary Schools both before and after merger. The choropleth thresholds used for walking and driving maps are the same as in Primary School, while MRT uses the same thresholds for driving
 
 # 5.0 Data Preparation for JC
 
@@ -1143,5 +1143,11 @@ Repeat the steps in section 3.2.4 to create chroropleth/ bivariate choropleth ma
 The logic for preparing maps including creating the hexagon layer and Network Accessibility Analysis are the same as demonstrated in a previous section. Follow the instructions from section 3.2 with JC before and after merger layers to get walking and driving accessibility maps.
 
 Repeat section 4.4.2 using JC before and after merger data to get the accessibility map for MRT travel.
+
+The thresholds used for driving are 0 - 5 km, 5 - 8 km and more than 8 km.
+
+The thresholds for walking is the same as Primary and Secondary School.
+
+The thresholds used for MRT are 0 - 5 km, 5 - 10 km, more than 10 km.
 
 \
