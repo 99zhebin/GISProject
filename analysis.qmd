@@ -7,7 +7,7 @@ editor: visual
 
 ## 1.1 Main Mode of Transport for Students
 
-According to the Department of Statistics Singapore, the main mode of transport for primary school students is walking. For secondary school students, the main mode of transport is public buses. However, as conducting accessibility analysis by bus network is out of scope for the timeframe of our project, we have chosen to focus on driving and MRT accessibility. For post-secondary students such as Junior College, we have chosen to focus on driving and MRT accessibility as well. 
+According to the Department of Statistics Singapore, the main mode of transport for students differs across levels. For primary school students, they mainly walk to school. For secondary school students, the main mode of transport is public buses. However, as conducting accessibility analysis by bus network is out of scope for the timeframe of our project, we have chosen to focus on walking, MRT and driving accessibility. For post-secondary students such as Junior College, we have chosen to focus on walking, MRT and driving accessibility as well. This is considering that secondary school and JC students may be more willing to travel a further distance to their preferred school. 
 
 ![](images/pic45.jpg)
 
