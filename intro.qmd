@@ -3,11 +3,23 @@ title: "Introduction"
 editor: visual
 ---
 
-## Overview
+## Issue
 
-Our project **"Singapore Education Institutions Analysis"**, aims to find the impact of closures or mergers of schools on the equity of access to education in Singapore.
+In 2019, due to falling birth rates, MOE conducted a **large scale merger** **of schools**, involving 14 primary schools, 6 secondary schools, and 8 JCs. This resulted in lower accessibility for certain areas, making it more difficult for children to travel to school.
 
-Our group chose to tackle this problem due to the competitiveness in primary school enrollment for schools in nearby neighborhoods. Since 2017, MOE started announcing school mergers and closures in waves every year, in order to improve ["the quality of the school experience"](https://www.gov.sg/article/why-is-the-ministry-of-education-merging-some-schools) due to declining birth rates leading to low-enrolment schools with insufficient class sizes. By merging these schools, MOE wants to maintain class sizes so schools can offer wider ranges of subjects, CCAs and programmes. Our group's objective is to find if these school mergers and closures have resulted in certain estates and subzones getting left behind in terms of access to nearby schools as their schools have been shut down.
+## Motivation
+
+With various school mergers, certain estates are impacted more than others and experience **lower accessibility to schools.** This results in spatial inequalities across Singapore, especially due to the competitiveness in primary school enrollment, where children living within 1km of schools have priority admission. For a meritocratic society, everyone should have similar levels of access to education. As such, we aim to identify which estates have been **disproportionately affected** by the merger, and provide suggestions to alleviate the issue.
+
+## Objective
+
+Our project aims to analyze the **impact of mergers of schools on** **equity of access** in terms of driving, MRT and walking accessibility.
+
+-   **Primary Schools** - Walking
+
+-   **Secondary Schools** - Walking, MRT and Driving
+
+-   **Junior Colleges (JCs)** - Walking, MRT and Driving
 
 ## Project Tasks
 
